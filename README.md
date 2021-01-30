@@ -1,6 +1,6 @@
 Project for CS97
 
-Team:
+Team Members:
     Harshil Bhullar
     Dorian Jimenez
     Luis Frias
