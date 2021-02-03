@@ -1,7 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
 // whats up - hi ping
+<<<<<<< HEAD
 // EDITNG ON BRANCH!
+=======
+// EDITING ON BRANCH
+>>>>>>> test
 function App() {
   return (
     <div className="App">
