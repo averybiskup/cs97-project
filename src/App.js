@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 // whats up - hi ping
+// whats up ping  dorian
 <<<<<<< HEAD
 // EDITNG ON BRANCH!
 =======
