@@ -12,7 +12,6 @@ const filterCourses = (courses, query) => {
     var search = new JsSearch.Search('id')
     search.addIndex('title')
     search.addIndex('tags')
-    search.addIndex('author')
 
     search.addDocuments(courses)
     const result = search.search(query)
