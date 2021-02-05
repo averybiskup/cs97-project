@@ -1,3 +1,5 @@
+// Component for the home page of the app
+
 import './App.css';
 import CourseRenderer from './CourseRenderer'
 import getCourses from './getCourses.js'

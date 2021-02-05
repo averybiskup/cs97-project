@@ -1,3 +1,10 @@
+// Cards that show up on main page.
+// Should contain:
+// Name of Course
+// Author of Course (maybe)
+// Course Image
+// Link to the course page
+
 import { useLocation, Link } from "react-router-dom";
 import './App.css'
 

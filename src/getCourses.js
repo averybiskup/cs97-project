@@ -1,4 +1,5 @@
 // Function for getting courses, later this will fetch from server
+
 let getCourses = () => {
 
     const courses = [

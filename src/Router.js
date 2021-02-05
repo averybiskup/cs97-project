@@ -1,3 +1,6 @@
+// Component for routing. Renders components based on given path.
+
+
 import React from 'react';
 import App from './App.js';
 import CoursePage from './CoursePage.js';

@@ -1,3 +1,8 @@
+// Component for each course
+// Will also have components:
+// StarRating
+// Reviews
+
 import { useLocation, Link } from "react-router-dom";
 import './App.css'
 import getCourses from './getCourses.js'
