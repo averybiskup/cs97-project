@@ -1,28 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
-// whats up - hi ping
-// whats up ping  dorian
-<<<<<<< HEAD
-// EDITNG ON BRANCH!
-=======
-// EDITING ON BRANCH
->>>>>>> test
-function App() {
+import CourseCard from './CourseCard.js'
+
+const RenderCourses = () => {
+    const courses = ['React Native', 'Python', 'Node.js']
+    return (
+        <div>
+        {courses.map(course => (
+             <CourseCard name={course} course_id={course} />
+        ))}
+        </div>
+    )
+}
+
+let App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <RenderCourses />
       </header>
     </div>
   );
