@@ -2,7 +2,7 @@ import { useLocation, Link } from "react-router-dom";
 import './App.css'
 
 let CourseCard = (props) => {
-    const path_to_course = "/course/" + props.course_id
+    const path_to_course = "/cs97-project/course/" + props.course_id
     return (
         <div className="course-card">
                 <div>{props.name}</div>
