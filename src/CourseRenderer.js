@@ -35,7 +35,7 @@ const CourseRenderer = (props) => {
     const [query, setQuery] = useState('');
     const courses = props.courses
     const filteredCourses = filterCourses(courses, query)
-
+    
     return (
         <div>
             <input type="text" id="course-search" placeholder="search" name="s" onChange={e => setQuery(e.target.value)}/>

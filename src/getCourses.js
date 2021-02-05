@@ -1,6 +1,6 @@
 // Function for getting courses, later this will fetch from server
 
-let getCourses = () => {
+const getCourses = () => {
 
     const courses = [
         { 
@@ -22,4 +22,4 @@ let getCourses = () => {
     ]
     return courses
 }
-export default getCourses;
+export default getCourses
