@@ -6,7 +6,7 @@ let CoursePage = () => {
     const course_id = location.pathname.split('/')[location.pathname.split('/').length - 1]
     return (
         <div className="course-page">
-                <Link className="home-button" to='/cs97-project'>Home</Link>
+                <Link className="home-button" to='/cs97-project/'>Home</Link>
                 <div>
                     This is course: {course_id}
                 </div>
