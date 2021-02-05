@@ -1,22 +1,12 @@
 import './App.css';
-import CourseCard from './CourseCard.js'
+import CourseRenderer from './CourseRenderer'
+import getCourses from './getCourses.js'
 
-const RenderCourses = () => {
-    const courses = ['React Native', 'Python', 'Node.js']
-    return (
-        <div>
-        {courses.map(course => (
-             <CourseCard name={course} course_id={course} />
-        ))}
-        </div>
-    )
-}
-
-let App = () => {
+const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <RenderCourses />
+        <CourseRenderer courses={getCourses()} />
       </header>
     </div>
   );
