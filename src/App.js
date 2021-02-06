@@ -26,6 +26,7 @@ const App = () => {
     }
 
     if (courses.length == 0) {
+        setCourses(getCourses())
         return <div>No Courses Loaded... Server is likely down.</div>
     }
 
