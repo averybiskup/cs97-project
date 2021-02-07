@@ -1,6 +1,7 @@
 // Fetching data from the server
 
 import axios from 'axios'
+import getCourses from './getCourses.js'
 
 const fetchCourses = async () => {
     const key = process.env.SERVER_KEY
@@ -8,17 +9,17 @@ const fetchCourses = async () => {
 
     // We can use /api/test because we have a proxy in package.json which
     // points to the server address (localhost:8000)
-    const data = await axios.get('/api/test')
+    const data = await axios.get('/api/getcourses')
         
         .then(res => {
             if (res.status == 200) {
                 return res.data
             } else {
-                return []
+                return getCourses()
             }
         })
 
-    return data
+    return getCourses()
 
 }
 

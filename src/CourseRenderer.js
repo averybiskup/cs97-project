@@ -33,7 +33,11 @@ const filterCourses = (courses, query) => {
 
 const CourseRenderer = (props) => {
     const [query, setQuery] = useState('');
-    const courses = props.courses
+    const coursesObj = props.courses
+    const courses = Object.keys(coursesObj).map((id) => {
+       return coursesObj[id]
+    })
+
     const filteredCourses = filterCourses(courses, query)
     
     return (

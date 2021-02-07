@@ -28,14 +28,50 @@ admin.initializeApp({
     databaseURL: "https://cs-97-project-default-rtdb.firebaseio.com"
 });
 
+const db = admin.database()
+
+const dataRef = db.ref('data')
+
+let addCourse = (title, author, tags, price, course_rating, reviews, url) => {
+    var course = dataRef.child("courses")
+    var id = Date.now();
+
+    let newCourse = {
+        'id': id,
+        'title': title,
+        'author': author,
+        'tags': tags,
+        'price': price,
+        'course_rating': course_rating,
+        'reviews': reviews,
+        'url': url
+    }
+
+    course.child(id).set(newCourse)
+}
+
+let getCourses = (callback) => {
+    dataRef.child('courses').orderByChild('author').once('value', callback)
+}
+
+
 app.get('/', (req, res) => {
     console.log('User connected')
     res.send('hello world')
 })
 
-app.get('/api/:key', (req, res) => {
-    console.log('User connected to API')
-    res.send(courses)
+app.get('/api/addcourse', (req, res) => {
+    console.log('Attempting to add course')
+    addCourse('test', 'test', ['test', 'test'], 50, 95, [], 'https://www.course.com')
+    res.send('Course Added')
+})
+
+app.get('/api/getcourses', (req, res) => {
+    console.log('Attempting to get courses')
+    getCourses((snapshot) => {
+        res.send(snapshot.val())
+        return snapshot.val()
+    })
 })
 
 console.log('Listening on: localhost:' + PORT)

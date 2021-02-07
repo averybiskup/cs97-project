@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react'
 
 const App = () => {
     const [isLoading, setLoading] = useState(true);
-    const [courses, setCourses] = useState([]);
+    const [courses, setCourses] = useState({});
 
     // Getting data from fetchCourse function
     useEffect(() => {
@@ -26,7 +26,6 @@ const App = () => {
     }
 
     if (courses.length == 0) {
-        setCourses(getCourses())
         return <div>No Courses Loaded... Server is likely down.</div>
     }
 
