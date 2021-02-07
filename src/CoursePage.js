@@ -12,19 +12,11 @@ let CoursePage = () => {
     const location = useLocation()
     const URLparam = location.pathname.split('/')[location.pathname.split('/').length - 1]
 
-    // Getting the course related to the url
-    let course_id = ''
-    getCourses().forEach((course) => {
-        if (course.id == URLparam) {
-            course_id = course.title
-        }
-    })
-
     return (
         <div className="course-page">
                 <Link className="home-button" to='/cs97-project/'>Home</Link>
                 <div>
-                    This is course: {course_id}
+                    This is course: {URLparam}
                 </div>
         </div>
     );
