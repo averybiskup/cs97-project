@@ -24,8 +24,8 @@ const App = () => {
     if (isLoading) {
         return <div>Loading Courses...</div>
     }
-
-    if (courses.length == 0) {
+    if (Object.keys(courses).length == 0) {
+        setCourses(getCourses())
         return <div>No Courses Loaded... Server is likely down.</div>
     }
 

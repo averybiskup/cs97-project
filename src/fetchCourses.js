@@ -18,7 +18,7 @@ const fetchCourses = async () => {
                 return getCourses()
             }
         })
-
+    console.log('test')
     return getCourses()
 
 }
