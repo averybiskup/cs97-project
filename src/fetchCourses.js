@@ -19,6 +19,7 @@ const fetchCourses = async () => {
                 return getCourses()
             }
         })
+
     return data
 
 }

@@ -31,10 +31,12 @@ const App = () => {
     // Render if no courses were recieved from fetchCourse(), and also 
     // set courses to the static courses object that getCourses() returns
     if (Object.keys(courses).length == 0) {
-        setCourses(getCourses())
-        return <div>No Courses Loaded... Server is likely down.</div>
+        setTimeout(() => {
+            setCourses(getCourses())
+        }, 5000)
+        return <div>Server is likely down. Serving static data in 5 seconds...</div>
+
     } else {
-        console.log("Added to local storage")
         window.localStorage.setItem("courses", JSON.stringify(courses))
     }
 

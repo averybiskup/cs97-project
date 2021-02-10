@@ -14,10 +14,9 @@ const postReview = async (course_id, body, author, title, rating) => {
     const json = JSON.stringify(review)
 
     const p = await axios.post('/api/postreview', json, { headers: { 'Content-Type': 'application/json' }}) 
-    if (p.res !== 200) {
-        console.log('Something went wrong with server.')
-    }
-
+        .catch(err => {
+            window.alert('Post failed. Server is probably down.')
+        })
 }
 
 export default postReview

@@ -63,7 +63,6 @@ const getCourses = () => {
             }
         }
     }
-    console.log('test')
     return courses
 }
 export default getCourses
