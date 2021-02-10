@@ -6,6 +6,7 @@
 import { useLocation, Link } from "react-router-dom";
 import './App.css'
 import getCourses from './getCourses.js'
+import postReview from './postReview.js'
 
 let CoursePage = () => {
     // This gets whaetever is being the last / in the current url
@@ -14,10 +15,11 @@ let CoursePage = () => {
 
     return (
         <div className="course-page">
-                <Link className="home-button" to='/cs97-project/'>Home</Link>
-                <div>
-                    This is course: {URLparam}
-                </div>
+            <button onClick={() => postReview()}>add review</button> 
+            <Link className="home-button" to='/cs97-project/'>Home</Link>
+            <div>
+                This is course: {URLparam}
+            </div>
         </div>
     );
 }

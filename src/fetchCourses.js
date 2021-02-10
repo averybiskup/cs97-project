@@ -13,13 +13,13 @@ const fetchCourses = async () => {
         
         .then(res => {
             if (res.status == 200) {
+                console.log(res.data)
                 return res.data
             } else {
                 return getCourses()
             }
         })
-    console.log('test')
-    return getCourses()
+    return data
 
 }
 
