@@ -7,6 +7,7 @@ import { useLocation, Link } from "react-router-dom";
 import './App.css'
 import getCourses from './getCourses.js'
 import postReview from './postReview.js'
+import ReviewCard from './ReviewCard.js'
 
 let handleReview = (course_id) => {
     // This gets whaetever is behind the last / in the current url in this
@@ -14,6 +15,21 @@ let handleReview = (course_id) => {
     
     //postReview(URLparam, data.body, data.author, data.title, data.rating)
     postReview(course_id, 'testing body', 'testing author', 'testing title', 53)
+}
+
+let RenderReviews = (props) => {
+    const reviews = Object.keys(props.reviews).map((id) => {
+       return props.reviews[id]
+    })
+    
+    return (
+        <div className="reviews">
+            <h1>Reviews:</h1>
+            {reviews.map((review) => {
+                return <ReviewCard review={review} />
+            })}
+        </div>
+    )
 }
 
 
@@ -27,6 +43,7 @@ let CoursePage = () => {
 
     const courses = JSON.parse(window.localStorage.getItem('courses'))
     const current_course = courses[url_param]
+    console.log(current_course)
 
     return (
         <div className="course-page">
@@ -35,6 +52,7 @@ let CoursePage = () => {
             <div>Title: {current_course['title']}</div>
             <div>Author: {current_course['author']}</div>
             <div>Rating: {current_course['rating']}</div>
+            <RenderReviews reviews={current_course['reviews']} />
         </div>
     );
 }

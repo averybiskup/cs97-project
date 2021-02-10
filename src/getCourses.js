@@ -10,13 +10,24 @@ const getCourses = () => {
         'tags': ['React', 'React Native'],
         'rating': 50,
         'reviews': {
-            'course_id': 2,
-            'body': 'This is a great course!',
-            'author': 'Anon',
-            'title': 'Awesome course!',
-            'rating': 100
-            }
-        }, 
+            0: {
+                'id': 0,
+                'course_id': 0,
+                'body': 'This is a great course!',
+                'author': 'Anon',
+                'title': 'Awesome course!',
+                'rating': 100
+                },
+            1: {
+                'id': 0,
+                'course_id': 0,
+                'body': 'This is a great course!',
+                'author': 'Anon',
+                'title': 'Awesome course!',
+                'rating': 100
+                }
+            } 
+        },
         '1': {
         'id': 1,
         'title': 'Python',
@@ -24,13 +35,16 @@ const getCourses = () => {
         'tags': ['Python'],
         'rating': 78,
         'reviews': {
-            'course_id': 2,
-            'body': 'This is a great course!',
-            'author': 'Anon',
-            'title': 'Awesome course!',
-            'rating': 100
-            }
-        }, 
+            1: {
+                'id': 1,
+                'course_id': 1,
+                'body': 'This is a great course!',
+                'author': 'Anon',
+                'title': 'Awesome course!',
+                'rating': 100
+                }
+            } 
+        },
         '2': {
         'id': 2,
         'title': 'Node.js',
@@ -38,11 +52,14 @@ const getCourses = () => {
         'tags': ['Node', 'Node.js', 'Javascript'],
         'rating': 86,
         'reviews': {
-            'course_id': 2,
-            'body': 'This is a great course!',
-            'author': 'Anon',
-            'title': 'Awesome course!',
-            'rating': 100
+            2: {
+                'id': 2,
+                'course_id': 2,
+                'body': 'This is a great course!',
+                'author': 'Anon',
+                'title': 'Awesome course!',
+                'rating': 100
+                }
             }
         }
     }
