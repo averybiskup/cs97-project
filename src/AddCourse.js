@@ -1,3 +1,5 @@
+// Button that appears on CoursePage that adds a static course to the db
+
 import './App.css'
 import axios from 'axios'
 
@@ -6,12 +8,9 @@ let add = () => {
 }
 
 const AddCourse = () => {
-    
     return (
-        <div className="course-page">
-                <div>
-                    <button onClick={() => add()}>add course</button>
-                </div>
+        <div>
+            <button onClick={() => add()}>add course</button>
         </div>
     );
 }

@@ -8,6 +8,11 @@ import './App.css'
 import getCourses from './getCourses.js'
 import postReview from './postReview.js'
 
+let handleReviews = () => {
+    
+}
+
+
 let CoursePage = () => {
     // This gets whaetever is being the last / in the current url
     const location = useLocation()
@@ -15,7 +20,7 @@ let CoursePage = () => {
 
     return (
         <div className="course-page">
-            <button onClick={() => postReview()}>add review</button> 
+            <button onClick={() => handleReviews()}>add review</button> 
             <Link className="home-button" to='/cs97-project/'>Home</Link>
             <div>
                 This is course: {URLparam}

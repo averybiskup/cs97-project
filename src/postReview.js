@@ -1,7 +1,8 @@
+// Function for posting a review in the db
+
 import axios from 'axios'
 
-const postReview = async () => {
-    const key = process.env.SERVER_KEY
+const postReview = async (course_id, body, author, title, rating) => {
 
     const review = {
         'course_id': 1612943659636,

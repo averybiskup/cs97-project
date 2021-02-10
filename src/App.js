@@ -24,6 +24,9 @@ const App = () => {
     if (isLoading) {
         return <div>Loading Courses...</div>
     }
+
+    // Render if no courses were recieved from fetchCourse(), and also 
+    // set courses to the static courses object that getCourses() returns
     if (Object.keys(courses).length == 0) {
         setCourses(getCourses())
         return <div>No Courses Loaded... Server is likely down.</div>
