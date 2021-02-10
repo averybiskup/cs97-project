@@ -22,3 +22,26 @@ react-dom-router
   
 react  
 - should be self explanatory  
+
+====================  
+Object models:  
+Course: {  
+- id: int  
+- title: string  
+- author: string  
+- tags: array of strings  
+- price: int  
+- course\_rating: int  
+- reviews: object of objects  
+- link: string  
+}
+
+Review: {  
+- id: int  
+- title: string  
+- author: string  
+- course\_id: int  
+- body: string  
+- rating: int  
+- date: string  
+}
