@@ -12,12 +12,15 @@ const App = () => {
 
     // Getting data from fetchCourse function
     useEffect(() => {
+
         const fetch = async () => {
             const data = await fetchCourses()
             setCourses(data)
         }
         fetch()
+
         setLoading(false)
+
     }, [])
 
     // Render a loading div to show before data has arrived 
@@ -30,6 +33,9 @@ const App = () => {
     if (Object.keys(courses).length == 0) {
         setCourses(getCourses())
         return <div>No Courses Loaded... Server is likely down.</div>
+    } else {
+        console.log("Added to local storage")
+        window.localStorage.setItem("courses", JSON.stringify(courses))
     }
 
     return (
