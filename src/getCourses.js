@@ -19,7 +19,7 @@ const getCourses = () => {
                 'rating': 100
                 },
             1: {
-                'id': 0,
+                'id': 1,
                 'course_id': 0,
                 'body': 'This is a great course!',
                 'author': 'Anon',

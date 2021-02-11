@@ -13,7 +13,9 @@ const fetchCourses = async () => {
         
         .then(res => {
             if (res.status == 200) {
-                console.log(res.data)
+                window.localStorage.clear()
+                window.localStorage.setItem("courses", JSON.stringify(res.data))
+                console.log('Resetting courses')
                 return res.data
             } else {
                 return getCourses()

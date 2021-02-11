@@ -4,6 +4,7 @@
 // Reviews
 
 import { useLocation, Link } from "react-router-dom";
+import { useState } from 'react'
 import './App.css'
 import getCourses from './getCourses.js'
 import postReview from './postReview.js'
@@ -19,22 +20,27 @@ let handleReview = (course_id) => {
 }
 
 let RenderReviews = (props) => {
-    const reviews = Object.keys(props.reviews).map((id) => {
-       return props.reviews[id]
+
+    const courses = JSON.parse(window.localStorage.getItem('courses'))
+    const reviews = courses[props.loc]['reviews']
+
+    const reviewsList = Object.keys(reviews).map((id) => {
+       return reviews[id]
     })
     
     return (
         <div className="reviews">
             <h1>Reviews:</h1>
-            {reviews.map((review) => {
-                return <ReviewCard review={review} />
+            {reviewsList.map((review) => {
+                return <ReviewCard key={review.id} review={review} />
             })}
         </div>
     )
 }
 
 
-let CoursePage = () => {
+let CoursePage = (props) => {
+
     const location = useLocation()
     const url_param = location.pathname.split('/')[location.pathname.split('/').length - 1]
 
@@ -53,7 +59,7 @@ let CoursePage = () => {
             <div>Title: {current_course['title']}</div>
             <div>Author: {current_course['author']}</div>
             <div>Rating: {current_course['rating']}</div>
-            <RenderReviews reviews={current_course['reviews']} />
+            <RenderReviews loc={url_param} />
             <CreateReview course={current_course} />
         </div>
     );

@@ -12,12 +12,8 @@ const App = () => {
 
     // Getting data from fetchCourse function
     useEffect(() => {
-
-        const fetch = async () => {
-            const data = await fetchCourses()
-            setCourses(data)
-        }
-        fetch()
+        fetchCourses()
+        setCourses(JSON.parse(window.localStorage.getItem('courses')))
 
         setLoading(false)
 
@@ -36,9 +32,7 @@ const App = () => {
         }, 5000)
         return <div>Server is likely down. Serving static data in 5 seconds...</div>
 
-    } else {
-        window.localStorage.setItem("courses", JSON.stringify(courses))
-    }
+    } 
 
     return (
         <div className="App">
