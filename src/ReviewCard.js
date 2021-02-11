@@ -1,7 +1,6 @@
 import './App.css'
 
 let ReviewCard = (props) => {
-    console.log(props)
     return (
         <div className='review'>
                 <div>Title: {props.review.title}</div>

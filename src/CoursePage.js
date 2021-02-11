@@ -8,6 +8,7 @@ import './App.css'
 import getCourses from './getCourses.js'
 import postReview from './postReview.js'
 import ReviewCard from './ReviewCard.js'
+import CreateReview from './CreateReview.js'
 
 let handleReview = (course_id) => {
     // This gets whaetever is behind the last / in the current url in this
@@ -53,6 +54,7 @@ let CoursePage = () => {
             <div>Author: {current_course['author']}</div>
             <div>Rating: {current_course['rating']}</div>
             <RenderReviews reviews={current_course['reviews']} />
+            <CreateReview course={current_course} />
         </div>
     );
 }
