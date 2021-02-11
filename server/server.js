@@ -9,7 +9,7 @@ const PORT = 8000
 
 // Authenticating firebase api key
 admin.initializeApp({
-    credentials: admin.credential.applicationDefault(),
+    credential: admin.credential.applicationDefault(),
     databaseURL: "https://cs-97-project-default-rtdb.firebaseio.com"
 });
 
@@ -17,8 +17,11 @@ const db = admin.database()
 
 const dataRef = db.ref('data')
 
+const courses = dataRef.child('courses')
+
+console.log(db.getRules())
+
 let addCourse = (title, author, tags, price, course_rating, reviews, url) => {
-    var course = dataRef.child("courses")
     var id = Date.now();
 
     let newCourse = {
@@ -31,12 +34,20 @@ let addCourse = (title, author, tags, price, course_rating, reviews, url) => {
         'reviews': reviews,
         'url': url
     }
-
-    course.child(id).set(newCourse)
+    try {
+        courses.child(id).set(newCourse, error => {
+            if (error) {
+                console.log('Post error')
+            } else {
+                console.log(id + ' added to db')
+            }
+        })
+    } catch(err) {
+        console.log(err)
+    }
 }
 
-let addReview = (course_id, body, author, title, rating) => {
-    var course = dataRef.child("courses")
+let addReview = (course_id, body, author, title, rating, callback) => {
     var id = Date.now();
     let d = new Date();
     let cDay = d.getDate();
@@ -54,11 +65,13 @@ let addReview = (course_id, body, author, title, rating) => {
         'date': date
     }
 
-    course.child(course_id).child('reviews').child(id).set(newReview)
+    courses.child(course_id).child('reviews').child(id).set(newReview, callback)
 }
 
-let getCourses = (callback) => {
-    dataRef.child('courses').orderByChild('author').once('value', callback)
+const getCourses = (callback) => {
+    courses.once('value', callback, (err) => {
+        console.log('Error fetching courses')
+    })
 }
 
 
@@ -75,13 +88,21 @@ app.get('/api/addcourse', (req, res) => {
 
 app.post('/api/postreview', (req, res) => {
     console.log('Attempting to add review')
-    addReview(req.body.course_id, req.body.body, req.body.author, req.body.title, req.body.rating)
-    res.send('Fail')
+    addReview(req.body.course_id, req.body.body, req.body.author, req.body.title, req.body.rating, (error) => {
+        if (error) {
+            console.log('Post error')
+        } else {
+            console.log('Post Succesful!')
+            res.sendStatus(200)
+        }
+    })
+
 })
 
 app.get('/api/getcourses', (req, res) => {
     console.log('Attempting to get courses')
     getCourses((snapshot) => {
+        console.log('Fetched courses')
         res.send(snapshot.val())
         return snapshot.val()
     })
