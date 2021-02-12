@@ -1,10 +1,17 @@
+// Function for fetching a singular course
+// used when a new review is added in order to update the render
+// with the newly added review.
+// This also takes less power than grabbing all the courses,
+// so using this when you can is more efficient
+//
+// This also updates the localStorage
 
 import axios from 'axios'
 import updateCourse from './updateCourse.js'
 
 const fetchReviews = async (course_id) => {
 
-    // We can use /api/test because we have a proxy in package.json which
+    // We can use /api/fetchreviews because we have a proxy in package.json which
     // points to the server address (localhost:8000)
     const data = await axios.get('/api/fetchreviews/' + course_id)
         .then(res => {

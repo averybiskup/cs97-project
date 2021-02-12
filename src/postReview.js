@@ -1,5 +1,10 @@
 // Function for posting a review to the db
 
+// Does not update localStorage because it's updated after
+// a call to this function, as they are both called upon
+// a new review being added
+
+
 import axios from 'axios'
 
 const postReview = async (course_id, body, author, title, rating) => {

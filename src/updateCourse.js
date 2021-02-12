@@ -1,3 +1,9 @@
+// Function for updating a course's rating
+// Currently this is only called when a new review is added
+//
+// This does not update the localStorage so may take time to
+// be updated.
+
 
 import axios from 'axios'
 

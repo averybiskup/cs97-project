@@ -1,4 +1,6 @@
 // Fetching data from the server
+// NOTE: fetches entire database, be careful with this, and use
+// fetchReviews when you can to fetch a single course
 
 import axios from 'axios'
 import getCourses from './getCourses.js'
