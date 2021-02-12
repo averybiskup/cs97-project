@@ -10,12 +10,13 @@ const fetchReviews = async (course_id) => {
         .then(res => {
             const courses = JSON.parse(window.localStorage.getItem('courses'))
             courses[course_id] = res.data
+            const reviews = res.data.reviews
             console.log('Updating reviews')
             
             let new_rating = 0
 
-            Object.keys(res.data).map((key) => {
-               new_rating += Number(res.data[key].rating)
+            Object.keys(reviews).map((key) => {
+               new_rating += Number(reviews[key].rating)
             })
 
 
