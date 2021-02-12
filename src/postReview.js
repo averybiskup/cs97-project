@@ -1,9 +1,10 @@
-// Function for posting a review in the db
+// Function for posting a review to the db
 
 import axios from 'axios'
 
 const postReview = async (course_id, body, author, title, rating) => {
 
+    // Creating the review based on function arguments
     const review = {
         'course_id': course_id,
         'body': body,
@@ -11,6 +12,8 @@ const postReview = async (course_id, body, author, title, rating) => {
         'title': title,
         'rating': rating
     }
+
+    // Turning review into a string to post iit
     const json = JSON.stringify(review)
 
     console.log('Posting review')

@@ -67,6 +67,12 @@ let addReview = (course_id, body, author, title, rating, callback) => {
     courses.child(course_id).child('reviews').child(id).set(newReview, callback)
 }
 
+const getReview = (id, callback) => {
+    courses.child(id).once('value', callback, (error) => {
+        console.log('Error fetching reviews')
+    })
+}
+
 const getCourses = (callback) => {
     courses.once('value', callback, (err) => {
         console.log('Error fetching courses')
@@ -96,6 +102,14 @@ app.post('/api/postreview', (req, res) => {
     })
 
 })
+
+app.get('/api/fetchreviews/:id', (req, res) => {
+    const course_id = req.params.id
+    getReview(course_id, (snapshot) => {
+        res.send(snapshot.val().reviews)
+    })
+})
+
 
 app.get('/api/getcourses', (req, res) => {
     console.log('Attempting to get courses')

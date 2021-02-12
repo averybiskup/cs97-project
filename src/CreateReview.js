@@ -1,11 +1,18 @@
+// Component for the input section of the reviews page
+
+
 import './App.css'
 import { useState } from 'react'
 import postReview from './postReview.js'
 import fetchCourses from './fetchCourses.js'
+import fetchReviews from './fetchReviews.js'
 import ReviewCard from './ReviewCard.js'
 
-let handleSubmit = (e, course_id, author, title, body, rating, setMessage) => {
+// Function for handling the submit button on the form
+const handleSubmit = (e, course_id, author, title, body, rating, setMessage) => {
     e.preventDefault()
+
+    // Checking for valid form data
     if (title.length <= 0) { 
         alert('No title')
     } else if (body.length <= 0) {
@@ -16,13 +23,22 @@ let handleSubmit = (e, course_id, author, title, body, rating, setMessage) => {
         if (author.length == 0) {
             author = 'Anon'
         }
+
+        // Posting review
         postReview(course_id, body, author, title, rating)
+
+        // Rerendering parent component
         setMessage('Preparing review...')
-        fetchCourses()
+
+        // Fetching courses and updating localStorage
+        //fetchCourses()
+        fetchReviews(course_id)
+
+        // Timeout so we have data before rerendering parent component
         setTimeout(() => {
 
-            setMessage('')
-        }, 2000)
+            setMessage('Review added!')
+        }, 5000)
 
     }
 }
@@ -30,12 +46,13 @@ let handleSubmit = (e, course_id, author, title, body, rating, setMessage) => {
 
 
 const CreateReview = (props) => {
+
+    // State variables that are changed when form gets input
     const [author, setAuthor] = useState('Anon')
     const [title, setTitle] = useState('')
     const [body, setBody] = useState('')
     const [rating, setRating] = useState(0)
     const course_id = props.course.id
-
 
     return (
         <div className='create-review'>

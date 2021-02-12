@@ -1,7 +1,5 @@
 // Component for each course
 // Will also have components:
-// StarRating
-// Reviews
 
 import { useLocation, Link } from "react-router-dom";
 import { useState } from 'react'
@@ -14,9 +12,12 @@ import fetchCourses from './fetchCourses.js'
 
 let RenderReviews = (props) => {
 
+    // Getting courses object from localStorage
     const courses = JSON.parse(window.localStorage.getItem('courses'))
     const reviews = courses[props.loc]['reviews']
 
+    // Making sure that a course has at least 1 review, otherwise
+    // displays this message
     if (!reviews) {
         return (
             <div>
@@ -25,6 +26,7 @@ let RenderReviews = (props) => {
         )
     }
 
+    // Turning object with reviews, into list of reviews
     const reviewsList = Object.keys(reviews).map((id) => {
        return reviews[id]
     })
@@ -42,16 +44,19 @@ let RenderReviews = (props) => {
 
 let CoursePage = (props) => {
 
-    const [reload, setReload] = useState(false)
+    // This allows us to rerender dom from child component
     const [message, setMessage] = useState('')
 
+    // Getting the course_id from url
     const location = useLocation()
     const url_param = location.pathname.split('/')[location.pathname.split('/').length - 1]
 
+    // Checking that the localStorage has courses
     if (window.localStorage.getItem('courses') === null) {
         return (<div>Something went wrong</div>)
     } 
 
+    // Getting courses from local storage
     const courses = JSON.parse(window.localStorage.getItem('courses'))
     const current_course = courses[url_param]
 
