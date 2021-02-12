@@ -9,6 +9,7 @@ import fetchReviews from './fetchReviews.js'
 import ReviewCard from './ReviewCard.js'
 
 // Function for handling the submit button on the form
+// Returns true if form was valid
 const handleSubmit = (e, course_id, author, title, body, rating, setMessage) => {
     e.preventDefault()
 
@@ -39,8 +40,9 @@ const handleSubmit = (e, course_id, author, title, body, rating, setMessage) => 
 
             setMessage('Review added!')
         }, 5000)
-
+        return true
     }
+    return false
 }
 
 
@@ -57,11 +59,13 @@ const CreateReview = (props) => {
     return (
         <div className='create-review'>
             <form id='createreview' onSubmit={(e) => { 
-                handleSubmit(e, course_id, author, title, body, rating, props.updateMessage)
-                setAuthor('Anon')
-                setTitle('')
-                setBody('')
-                setRating(0)
+                if (handleSubmit(e, course_id, author, title, body, rating, props.updateMessage)) {
+                    // Resetting form inputs
+                    setAuthor('Anon')
+                    setTitle('')
+                    setBody('')
+                    setRating(0)
+                }
             }}>
                 
                 <input type='text' name='author' placeholder='name' value={author} onChange={(e) => setAuthor(e.target.value)}/>
