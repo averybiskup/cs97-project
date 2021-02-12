@@ -13,9 +13,14 @@ const postReview = async (course_id, body, author, title, rating) => {
     }
     const json = JSON.stringify(review)
 
+    console.log('Posting review')
     const p = await axios.post('/api/postreview', json, { headers: { 'Content-Type': 'application/json' }}) 
+        .then((res) => {
+            console.log(res.status)
+        })
         .catch(err => {
-            window.alert('Post failed. Server is probably down.')
+            console.log(err.response.data)
+            window.alert('Post failed. Server is probably down. ' + err)
         })
 }
 

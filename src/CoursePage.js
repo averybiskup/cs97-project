@@ -10,19 +10,20 @@ import getCourses from './getCourses.js'
 import postReview from './postReview.js'
 import ReviewCard from './ReviewCard.js'
 import CreateReview from './CreateReview.js'
-
-let handleReview = (course_id) => {
-    // This gets whaetever is behind the last / in the current url in this
-    // case it's the id of the course
-    
-    //postReview(URLparam, data.body, data.author, data.title, data.rating)
-    postReview(course_id, 'testing body', 'testing author', 'testing title', 53)
-}
+import fetchCourses from './fetchCourses.js'
 
 let RenderReviews = (props) => {
 
     const courses = JSON.parse(window.localStorage.getItem('courses'))
     const reviews = courses[props.loc]['reviews']
+
+    if (!reviews) {
+        return (
+            <div>
+                Course has no reviews.
+            </div>
+        )
+    }
 
     const reviewsList = Object.keys(reviews).map((id) => {
        return reviews[id]
@@ -30,6 +31,7 @@ let RenderReviews = (props) => {
     
     return (
         <div className="reviews">
+            <div>{props.message}</div>
             <h1>Reviews:</h1>
             {reviewsList.map((review) => {
                 return <ReviewCard key={review.id} review={review} />
@@ -38,8 +40,10 @@ let RenderReviews = (props) => {
     )
 }
 
-
 let CoursePage = (props) => {
+
+    const [reload, setReload] = useState(false)
+    const [message, setMessage] = useState('')
 
     const location = useLocation()
     const url_param = location.pathname.split('/')[location.pathname.split('/').length - 1]
@@ -50,17 +54,19 @@ let CoursePage = (props) => {
 
     const courses = JSON.parse(window.localStorage.getItem('courses'))
     const current_course = courses[url_param]
-    console.log(current_course)
 
     return (
         <div className="course-page">
-            <button onClick={() => handleReview(url_param)}>add review</button> 
             <Link className="home-button" to='/cs97-project/'>Home</Link>
             <div>Title: {current_course['title']}</div>
             <div>Author: {current_course['author']}</div>
             <div>Rating: {current_course['rating']}</div>
-            <RenderReviews loc={url_param} />
-            <CreateReview course={current_course} />
+            <div> Submit a review:
+                <CreateReview course={current_course} updateMessage={setMessage} />
+            </div>
+            <div className='review-cards'>
+                <RenderReviews loc={url_param} message={message} />
+            </div>
         </div>
     );
 }

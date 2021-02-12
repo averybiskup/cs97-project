@@ -2,8 +2,9 @@ import './App.css'
 import { useState } from 'react'
 import postReview from './postReview.js'
 import fetchCourses from './fetchCourses.js'
+import ReviewCard from './ReviewCard.js'
 
-let handleSubmit = (e, course_id, author, title, body, rating) => {
+let handleSubmit = (e, course_id, author, title, body, rating, setMessage) => {
     e.preventDefault()
     if (title.length <= 0) { 
         alert('No title')
@@ -12,11 +13,21 @@ let handleSubmit = (e, course_id, author, title, body, rating) => {
     } else if (rating == 0) {
         alert('Rating can not be 0')
     } else {
+        if (author.length == 0) {
+            author = 'Anon'
+        }
         postReview(course_id, body, author, title, rating)
+        setMessage('Preparing review...')
+        fetchCourses()
+        setTimeout(() => {
+
+            setMessage('')
+        }, 2000)
+
     }
-    fetchCourses()
-    window.location.reload(true)
 }
+
+
 
 const CreateReview = (props) => {
     const [author, setAuthor] = useState('Anon')
@@ -29,10 +40,13 @@ const CreateReview = (props) => {
     return (
         <div className='create-review'>
             <form id='createreview' onSubmit={(e) => { 
-                handleSubmit(e, course_id, author, title, body, rating)
+                handleSubmit(e, course_id, author, title, body, rating, props.updateMessage)
+                setAuthor('Anon')
+                setTitle('')
+                setBody('')
+                setRating(0)
             }}>
                 
-
                 <input type='text' name='author' placeholder='name' value={author} onChange={(e) => setAuthor(e.target.value)}/>
                 <input type='text' name='title' placeholder='title (required)' value={title} onChange={(e) => setTitle(e.target.value)} />
                 <input type='text' name='body' placeholder='review (required)' value={body} onChange={(e) => setBody(e.target.value)} />

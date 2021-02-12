@@ -12,10 +12,12 @@ const App = () => {
 
     // Getting data from fetchCourse function
     useEffect(() => {
-        fetchCourses()
-        setCourses(JSON.parse(window.localStorage.getItem('courses')))
-
-        setLoading(false)
+        const grabCourses = async () => {
+            const data = await fetchCourses();
+            setCourses(data);
+            setLoading(false)
+        }
+        grabCourses()
 
     }, [])
 
@@ -26,13 +28,13 @@ const App = () => {
 
     // Render if no courses were recieved from fetchCourse(), and also 
     // set courses to the static courses object that getCourses() returns
-    if (Object.keys(courses).length == 0) {
-        setTimeout(() => {
-            setCourses(getCourses())
-        }, 5000)
-        return <div>Server is likely down. Serving static data in 5 seconds...</div>
+    //if (Object.entries(courses).length == 0) {
+        //setTimeout(() => {
+            //setCourses(getCourses())
+        //}, 5000)
+        //return <div>Server is likely down. Serving static data in 5 seconds...</div>
 
-    } 
+    //} 
 
     return (
         <div className="App">
