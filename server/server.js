@@ -6,20 +6,18 @@ app.use(express.json())
 
 const PORT = 8000
 
+let serviceAccount = require('./secret.json')
 
 // Authenticating firebase api key
 admin.initializeApp({
-    credential: admin.credential.applicationDefault(),
+    credential: admin.credential.cert(serviceAccount),
     databaseURL: "https://cs-97-project-default-rtdb.firebaseio.com"
 });
 
+// Getting reference to database's courses object
 const db = admin.database()
-
 const dataRef = db.ref('data')
-
 const courses = dataRef.child('courses')
-
-console.log(db.getRules())
 
 let addCourse = (title, author, tags, price, course_rating, reviews, url) => {
     var id = Date.now();
@@ -34,6 +32,7 @@ let addCourse = (title, author, tags, price, course_rating, reviews, url) => {
         'reviews': reviews,
         'url': url
     }
+
     try {
         courses.child(id).set(newCourse, error => {
             if (error) {
@@ -74,7 +73,6 @@ const getCourses = (callback) => {
     })
 }
 
-
 app.get('/', (req, res) => {
     console.log('User connected')
     res.send('hello world')
@@ -110,3 +108,10 @@ app.get('/api/getcourses', (req, res) => {
 
 console.log('Listening on: localhost:' + PORT)
 app.listen(PORT)
+
+
+
+
+
+
+
