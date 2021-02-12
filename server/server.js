@@ -4,8 +4,10 @@ let app = express()
 
 app.use(express.json())
 
+// Hosting on localhost:8000
 const PORT = 8000
 
+// Getting authentication from secret
 let serviceAccount = require('./secret.json')
 
 // Authenticating firebase api key
@@ -19,6 +21,9 @@ const db = admin.database()
 const dataRef = db.ref('data')
 const courses = dataRef.child('courses')
 
+// Function for adding courses
+// Will likely be deprecated in the future as support for
+// this functionality is still being decided
 let addCourse = (title, author, tags, price, course_rating, reviews, url) => {
     var id = Date.now();
 
@@ -46,6 +51,8 @@ let addCourse = (title, author, tags, price, course_rating, reviews, url) => {
     }
 }
 
+// Function for adding review
+// Uses the course_id to know which course it's for
 let addReview = (course_id, body, author, title, rating, callback) => {
     var id = Date.now();
     let d = new Date();
@@ -74,22 +81,26 @@ const getReview = (id, callback) => {
 }
 
 const getCourses = (callback) => {
-    courses.once('value', callback, (err) => {
+    courses.once('value', callback, (error) => {
         console.log('Error fetching courses')
     })
 }
 
+// Root domain, this won't be used because this is an api
 app.get('/', (req, res) => {
     console.log('User connected')
     res.send('hello world')
 })
 
+// Recieving requests to add a course, currently adds
+// with static data
 app.get('/api/addcourse', (req, res) => {
     console.log('Attempting to add course')
     addCourse('test', 'test', ['test', 'test'], 50, 95, {}, 'https://www.course.com')
     res.send('Course Added')
 })
 
+// Recieving requests to post a new review
 app.post('/api/postreview', (req, res) => {
     console.log('Attempting to add review')
     addReview(req.body.course_id, req.body.body, req.body.author, req.body.title, req.body.rating, (error) => {
@@ -103,6 +114,7 @@ app.post('/api/postreview', (req, res) => {
 
 })
 
+// Recieving request for fetching a singular course's reviews
 app.get('/api/fetchreviews/:id', (req, res) => {
     const course_id = req.params.id
     getReview(course_id, (snapshot) => {
@@ -110,7 +122,7 @@ app.get('/api/fetchreviews/:id', (req, res) => {
     })
 })
 
-
+// Recieving request for fetching all courses
 app.get('/api/getcourses', (req, res) => {
     console.log('Attempting to get courses')
     getCourses((snapshot) => {
