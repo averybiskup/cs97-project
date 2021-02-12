@@ -43,7 +43,7 @@ let addCourse = (title, author, tags, price, course_rating, reviews, url) => {
             if (error) {
                 console.log('Post error')
             } else {
-                console.log(id + ' added to db')
+                console.log(id + ' added to db\n')
             }
         })
     } catch(err) {
@@ -74,17 +74,28 @@ let addReview = (course_id, body, author, title, rating, callback) => {
     courses.child(course_id).child('reviews').child(id).set(newReview, callback)
 }
 
-const getReview = (id, callback) => {
-    courses.child(id).once('value', callback, (error) => {
-        console.log('Error fetching reviews')
+const getReview = (course_id, callback) => {
+    courses.child(course_id).once('value', callback, (error) => {
+        console.log('Error fetching reviews\n')
     })
 }
 
 const getCourses = (callback) => {
     courses.once('value', callback, (error) => {
-        console.log('Error fetching courses')
+        console.log('Error fetching courses\n')
     })
 }
+
+const updateCourse = (course_id, new_rating) => {
+    courses.child(course_id).child('course_rating').set(new_rating, (error) => {
+        if (error) {
+            console.log('Error updating course')
+        } else {
+            console.log('Updated course\n')
+        }
+    })
+}
+
 
 // Root domain, this won't be used because this is an api
 app.get('/', (req, res) => {
@@ -111,14 +122,20 @@ app.post('/api/postreview', (req, res) => {
             res.sendStatus(200)
         }
     })
+})
 
+// Recieving request to update course's data
+app.post('/api/updatecourse', (req, res) => {
+    console.log('Attempting to update course')
+    updateCourse(req.body.course_id, req.body.new_rating)
+    res.sendStatus(200)
 })
 
 // Recieving request for fetching a singular course's reviews
 app.get('/api/fetchreviews/:id', (req, res) => {
     const course_id = req.params.id
     getReview(course_id, (snapshot) => {
-        res.send(snapshot.val().reviews)
+        res.send(snapshot.val())
     })
 })
 

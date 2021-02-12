@@ -65,7 +65,7 @@ let CoursePage = (props) => {
             <Link className="home-button" to='/cs97-project/'>Home</Link>
             <div>Title: {current_course['title']}</div>
             <div>Author: {current_course['author']}</div>
-            <div>Rating: {current_course['rating']}</div>
+            <div>Rating: {current_course['course_rating']}</div>
             <div> Submit a review:
                 <CreateReview course={current_course} updateMessage={setMessage} />
             </div>
