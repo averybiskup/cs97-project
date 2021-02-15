@@ -99,3 +99,27 @@ body {
     margin-right: 16px;
     font-size: 17px;
 }
+
+.title{
+    text-align: left;
+    font-size: 20px;
+    color: white;
+}
+
+.author{
+    text-align: left;
+    font-size: 20px;
+    color: white;
+}
+
+.rating{
+    text-align: left;
+    font-size: 20px;
+    color: white;
+}
+
+@media (max-width: 400px) {
+    .course-card{
+      width: 100%;
+    }
+  }

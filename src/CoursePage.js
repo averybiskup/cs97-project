@@ -63,9 +63,9 @@ let CoursePage = (props) => {
     return (
         <div className="course-page">
             <Link className="home-button" to='/cs97-project/'>Home</Link>
-            <div>Title: {current_course['title']}</div>
-            <div>Author: {current_course['author']}</div>
-            <div>Rating: {current_course['course_rating']}</div>
+            <div className = 'title'>Title: {current_course['title']}</div>
+            <div className = 'author'>Author: {current_course['author']}</div>
+            <div className = 'rating'>Rating: {current_course['course_rating']}</div>
             <div> Submit a review:
                 <CreateReview course={current_course} updateMessage={setMessage} />
             </div>
