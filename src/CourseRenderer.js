@@ -42,11 +42,19 @@ const CourseRenderer = (props) => {
     
     return (
         <div>
-            <input type="text" id="course-search" placeholder="search" name="s" onChange={e => setQuery(e.target.value)}/>
-            
-            {filteredCourses.map(course => (
-                 <CourseCard key={course.id} name={course.title} course_id={course.id} />
-            ))}
+            <div className="top_bar">
+                <a class="title">WEBPAGE TITLE</a>
+                <a>Add Course</a>
+                <a>About Us</a>
+                <input type="text" id="course-search" placeholder="Search..." name="s" onChange={e => setQuery(e.target.value)}/>
+            </div>
+
+            <div id="wrapper">
+                {filteredCourses.map(course => (
+                     <CourseCard key={course.id} name={course.title} course_id={course.id} />
+                ))}
+            </div>
+
 
         </div>
     )
