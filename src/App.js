@@ -25,7 +25,6 @@ const App = () => {
 
     // Render a loading div to show before data has arrived 
     if (isLoading) {
-        {/*return <div><img className="image_id" src={'https://i.gifer.com/L6MI.gif'} alt="loading image"/></div>*/}
         return <div body></div>
     }
 
