@@ -79,7 +79,7 @@ const CreateReview = (props) => {
                     <option>4</option>
                     <option>5</option>
                 </select>
-                <input type="submit" value="Submit" />
+                <input type='submit' value='Submit' />
             </form>
         </div>
     );
