@@ -22,7 +22,7 @@ let MainRouter = () => {
                     <Route exact path='/cs97-project/' component={ App } />
                     <Route exact path='/cs97-project/course/:id' component={ CoursePage } />
                     <Route exact path='/cs97-project/addcourse' component={ AddCourse } />
-                    <Route exact path='/cs97-project/log' component={ Login } />
+                    <Route exact path='/cs97-project/login' component={ Login } />
                 </Switch>
             </Router>
         </div>

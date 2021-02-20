@@ -21,6 +21,12 @@ const db = admin.database()
 const dataRef = db.ref('data')
 const courses = dataRef.child('courses')
 
+const checkUser = (username, callback) => {
+    dataRef.child('users').child(username).once('value', callback, (error) => {
+        console.log('Error checking user')
+    })
+}
+
 // Function for adding courses
 // Will likely be deprecated in the future as support for
 // this functionality is still being decided
@@ -146,6 +152,19 @@ app.get('/api/getcourses', (req, res) => {
         console.log('Fetched courses')
         res.send(snapshot.val())
         return snapshot.val()
+    })
+})
+
+app.get('/checkuser/:username', (req, res) => {
+    console.log('Checking for username')
+    checkUser(req.params.username, (snapshot) => {
+        if (snapshot.exists()) {
+            res.send(true)
+            console.log('User exists')
+        } else {
+            res.send(false)
+            console.log('User does not exist')
+        }
     })
 })
 
