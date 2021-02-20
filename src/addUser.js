@@ -12,6 +12,9 @@ const addUser = async (username, password) => {
     const p = await axios.post('/signup', json, { headers: { 'Content-Type': 'application/json' }}) 
         .then((res) => {
             console.log(res.status)
+            if (res.status == 200) {
+                window.location.replace('/cs97-project/login')
+            }
         })
         .catch(err => {
             console.log(err.response.data)

@@ -208,9 +208,8 @@ app.post('/signup', (req, res) => {
 app.post('/login', (req, res) => {
     console.log('User: ' + req.body.username + ' attempting to login')
     login(req.body.username, req.body.hash, (snapshot) => {
-        console.log(snapshot.val())
         if (req.body.hash === snapshot.val().hash) {
-            console.log('Login succesful')
+            console.log('Login succesful...')
             res.status(200).send(true)
         } else {
             console.log('Bad login')
