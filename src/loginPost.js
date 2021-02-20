@@ -2,9 +2,14 @@ import axios from 'axios'
 
 const loginPost = async (username, password) => {
 
-    const json = JSON.stringify()
+    const data = {
+        'username': username,
+        'hash': password
+    }
 
-    const p = await axios.post('/api/login', json, { headers: { 'Content-Type': 'application/json' }}) 
+    const json = JSON.stringify(data)
+
+    const p = await axios.post('/login', json, { headers: { 'Content-Type': 'application/json' }}) 
         .then((res) => {
             console.log(res.status)
         })
