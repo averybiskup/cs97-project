@@ -209,12 +209,18 @@ app.post('/signup', (req, res) => {
 app.post('/login', (req, res) => {
     console.log('User: ' + req.body.username + ' attempting to login')
     login(req.body.username, req.body.hash, (snapshot) => {
-        if (req.body.hash === snapshot.val().hash) {
-            console.log('Login succesful...')
-            res.status(200).send(true)
-        } else {
-            console.log('Bad login')
-            res.status(404).send('Bad login')
+        if (snapshot.exists()) {
+            if (req.body.hash === snapshot.val().hash) {
+                console.log('Login succesful...')
+                res.status(200).send(true)
+            } else {
+                console.log('Bad login')
+                res.status(500).send('Bad login')
+            }
+        }
+        else {
+            console.log('User doesn\'t exist')
+            res.status(500).send('User doesn\'t exist')
         }
     })
 })
