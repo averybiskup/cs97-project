@@ -2,14 +2,13 @@ import './App.css';
 import StarRatings from 'react-star-ratings';
 
 let ReviewCard = (props) => {
-    console.log('props: ',props.review);
     return (
         <div className='review'>
-            <div className='title'>{props.review.title}</div>
-            <div className='author'>{props.review.author}</div>
-            <div className='rating'>
+            <div className='review-title'>{props.review.title}</div>
+            <div className='review-author'>{props.review.author}</div>
+            <div className='star-container'>
                 <StarRatings
-                rating={props.review.rating}
+                rating={Number(props.review.rating)}
                 starRatedColor="orange"
                 numberOfStars={5}
                 name='rating'
@@ -17,7 +16,7 @@ let ReviewCard = (props) => {
                 starSpacing="1px"
                 />
             </div>
-            <div className='body'>{props.review.body}</div>
+            <div className='review-body'>{props.review.body}</div>
         </div>
     );
 }
