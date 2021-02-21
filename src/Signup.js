@@ -19,7 +19,7 @@ const handleSubmit = (e, username, password) => {
             const data = await checkUser(username);
 
             if (!data.data) {
-                addUser(username, password)
+                addUser(username, sha256(password))
             } else {
                 alert('User already exists')
             }

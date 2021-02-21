@@ -11,6 +11,7 @@ const loginPost = async (username, password) => {
 
     const p = await axios.post('/login', json, { headers: { 'Content-Type': 'application/json' }}) 
         .then((res) => {
+            console.log('check')
             console.log(res.status)
             if (res.status == 200) {
                 window.localStorage.setItem('isAuthenticated', true)
@@ -19,7 +20,7 @@ const loginPost = async (username, password) => {
             }
         })
         .catch(err => {
-            console.log(err.response.data)
+            console.log(err)
             window.alert('Incorrect username or password.')
         })
 }
