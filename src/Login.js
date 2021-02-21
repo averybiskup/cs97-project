@@ -21,6 +21,7 @@ const Login = () => {
     
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const [showPassword, setShowPassword] = useState(false)
 
 
     return (
@@ -31,7 +32,9 @@ const Login = () => {
             }}>
                 <div className='login-inputs'>
                     <input className='username' type='text' name='username' placeholder='username' value={username} onChange={(e) => setUsername(e.target.value)}/>
-                    <input id='password' className='password' type='text' name='password' placeholder='password' value={'*'.repeat(password.length)} onChange={(e) => setPassword(e.target.value) }/>
+                    <input id='password' className='password' type='password' name='password' placeholder='password' value={password} onChange={(e) => setPassword(e.target.value) }/>
+                    <button className='password-button' type='button' onClick={() => {
+                    setShowPassword(!showPassword)}}>{showPassword ? 'hide password' : 'show password' }</button>
                 </div>
                 <div className='login-button-wrapper'>
                     <div className='hello'>Welcome back, <span className='hello-name'>{username}</span></div>

@@ -58,7 +58,6 @@ const Signup = () => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [showPassword, setShowPassword] = useState(false)
-    const hidden = '*'.repeat(password.length)
 
     let test = (analyzePassword(password)).toString() + (analyzePassword(password)).toString()
     let color = '#11' + test + '11'
