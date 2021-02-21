@@ -1,5 +1,7 @@
 // Function for getting courses, later this will fetch from server
 
+const testpara = "This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!"
+
 const getCourses = () => {
 
     let courses = {
@@ -13,10 +15,10 @@ const getCourses = () => {
             0: {
                 'id': 0,
                 'course_id': 0,
-                'body': 'This is a great course!',
+                'body': `${testpara}`,
                 'author': 'Anon',
                 'title': 'Awesome course!',
-                'rating': 100
+                'rating': 4
                 },
             1: {
                 'id': 1,
@@ -24,7 +26,7 @@ const getCourses = () => {
                 'body': 'This is a great course!',
                 'author': 'Anon',
                 'title': 'Awesome course!',
-                'rating': 100
+                'rating': 3
                 }
             } 
         },
