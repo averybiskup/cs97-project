@@ -10,7 +10,6 @@ const checkUser = async (username) => {
 
     const p = await axios.get('/checkuser/' + username) 
         .then((res) => {
-            console.log(res.status)
             return res
         })
         .catch(err => {

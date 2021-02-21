@@ -15,16 +15,16 @@ const handleSubmit = (e, username, password) => {
         alert('No password')
     } else {
 
-        const grabCourses = async (username) => {
+        const check = async (username) => {
             const data = await checkUser(username);
 
             if (!data.data) {
-                addUser(username, sha256(password))
+                addUser(username, password)
             } else {
                 alert('User already exists')
             }
         }
-        grabCourses(username)
+        check(username)
     }
 }
 

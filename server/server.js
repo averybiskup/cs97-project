@@ -52,6 +52,7 @@ const addUser = (username, hash, callback) => {
         if (error) {
             console.log('User sign up error')
         } else {
+            callback()
             console.log('User sign up succesful')
         }
     })
