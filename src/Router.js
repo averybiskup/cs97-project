@@ -5,6 +5,9 @@ import React from 'react';
 import App from './App.js';
 import CoursePage from './CoursePage.js';
 import AddCourse from './AddCourse.js';
+import Login from './Login.js';
+import Signup from './Signup.js';
+import Profile from './Profile.js';
 import {
     BrowserRouter as Router,
     Switch,
@@ -21,6 +24,9 @@ let MainRouter = () => {
                     <Route exact path='/cs97-project/' component={ App } />
                     <Route exact path='/cs97-project/course/:id' component={ CoursePage } />
                     <Route exact path='/cs97-project/addcourse' component={ AddCourse } />
+                    <Route exact path='/cs97-project/login' component={ Login } />
+                    <Route exact path='/cs97-project/signup' component={ Signup } />
+                    <Route exact path='/cs97-project/profile' component={ Profile } />
                 </Switch>
             </Router>
         </div>

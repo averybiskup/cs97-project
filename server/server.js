@@ -21,6 +21,43 @@ const db = admin.database()
 const dataRef = db.ref('data')
 const courses = dataRef.child('courses')
 
+const checkUser = (username, callback) => {
+    dataRef.child('users').child(username).once('value', callback, (error) => {
+        console.log('Error checking user')
+    })
+}
+
+const login = (username, hash, callback) => {
+    dataRef.child('users').child(username).once('value', callback, (error) => {
+        console.log('Error logging in')
+    })
+}
+
+const addUser = (username, hash, callback) => {
+    const id = Date.now()
+    let d = new Date();
+    let cDay = d.getDate();
+    let cMonth = d.getMonth() + 1;
+    let cYear = d.getFullYear();
+    let date = cDay + "-" + cMonth + "-" + cYear
+
+    let newUser = {
+        'username': username,
+        'hash': hash,
+        'id': id,
+        'joined': date
+    }
+
+    dataRef.child('users').child(username).set(newUser, (error) => {
+        if (error) {
+            console.log('User sign up error')
+        } else {
+            callback()
+            console.log('User sign up succesful')
+        }
+    })
+}
+
 // Function for adding courses
 // Will likely be deprecated in the future as support for
 // this functionality is still being decided
@@ -146,6 +183,45 @@ app.get('/api/getcourses', (req, res) => {
         console.log('Fetched courses')
         res.send(snapshot.val())
         return snapshot.val()
+    })
+})
+
+app.get('/checkuser/:username', (req, res) => {
+    console.log('Checking for username')
+    checkUser(req.params.username, (snapshot) => {
+        if (snapshot.exists()) {
+            console.log('User exists')
+            res.status(200).send(true)
+        } else {
+            console.log('User does not exist')
+            res.status(200).send(false)
+        }
+    })
+})
+
+app.post('/signup', (req, res) => {
+    addUser(req.body.username, req.body.hash, (snapshot) => {
+        console.log('Added user: ' + req.body.username)
+        res.sendStatus(200)
+    })
+})
+
+app.post('/login', (req, res) => {
+    console.log('User: ' + req.body.username + ' attempting to login')
+    login(req.body.username, req.body.hash, (snapshot) => {
+        if (snapshot.exists()) {
+            if (req.body.hash === snapshot.val().hash) {
+                console.log('Login succesful...')
+                res.status(200).send(true)
+            } else {
+                console.log('Bad login')
+                res.status(500).send('Bad login')
+            }
+        }
+        else {
+            console.log('User doesn\'t exist')
+            res.status(500).send('User doesn\'t exist')
+        }
     })
 })
 

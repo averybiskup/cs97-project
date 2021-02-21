@@ -6,6 +6,7 @@
 import {useState} from 'react';
 import CourseCard from './CourseCard.js'
 import * as JsSearch from 'js-search'
+import { Link } from 'react-router-dom'
 
 // Returns all objects in the courses list that match the query
 //                     array  , string
@@ -43,10 +44,15 @@ const CourseRenderer = (props) => {
     return (
         <div>
             <div className="top_bar">
+                <Link className="login" to='/cs97-project/login'>Login</Link>
                 <a class="title">WEBPAGE TITLE</a>
                 <a>Add Course</a>
                 <a>About Us</a>
-                <input type="text" id="course-search" placeholder="Search..." name="s" onChange={e => setQuery(e.target.value)}/>
+            </div>
+            <div className="middle-page">
+                <div class="middle-text">Search for Courses Here</div>
+                <br></br>
+                <input type="text"  class="middle-input" id="course-search" placeholder="Search for Course..." name="s" onChange={e => setQuery(e.target.value)}/>
             </div>
 
             <div id="wrapper">

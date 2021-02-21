@@ -1,0 +1,91 @@
+.username, .password {
+    border-top: 0px;
+    border-left-style: hidden;
+    border-right-style: hidden;
+    width: 75vw;
+    height: 10vh;
+    padding-left: 20px;
+    font-size: calc(2vh + 2vw);
+    margin-top: 10px;
+    border: none;
+    background-color: inherit;
+    padding-bottom: 10px;
+    border-bottom: 2px solid black;
+}
+
+
+.username:focus, .password:focus {
+    outline: none;
+    color: black;
+}
+
+.login-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.login-button {
+    padding: 2vw;
+    width: 50vw;
+    border: none; 
+    text-align: center;
+    background-color: inherit;
+    font-size: calc(2vh + 2vw);
+    border: 2px solid white;
+    color: white;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    margin-top: 50px;
+}
+
+.login-button:hover {
+    cursor: pointer;
+}
+
+.login-button-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #111111;
+    transition: background-color 1s linear;
+    margin-top: 50px;
+}
+
+.login-extra-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 45vh;
+    color: white;
+}
+
+.hello {
+    color: white;
+    font-size: 1vh + 1vw);
+}
+
+.hello-name {
+    font-size: calc(2vh + 2vw);
+}
+
+.signup, .login {
+    color: white;
+    text-decoration: none;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    font-size: calc(1vh + 2vw);
+}
+
+.password-button {
+    width: 15vw;
+    text-align: center;
+    background-color: inherit;
+    cursor: pointer;
+    border: none;
+    font-size: calc(1vh + 1vw);
+}
+
+

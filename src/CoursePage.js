@@ -62,6 +62,7 @@ let CoursePage = (props) => {
 
     return (
         <div className="course-page">
+            <Link className="login" to='/cs97-project/login'>Login</Link>
             <Link className="home-button" to='/cs97-project/'>Home</Link>
             <div className = 'title'>Title: {current_course['title']}</div>
             <div className = 'author'>Author: {current_course['author']}</div>

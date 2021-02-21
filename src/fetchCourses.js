@@ -12,13 +12,11 @@ const fetchCourses = async () => {
     const data = await axios.get('/api/getcourses')
         .then(res => {
             console.log('Got data')
-            window.localStorage.clear()
             window.localStorage.setItem('courses', JSON.stringify(res.data))
             return res.data
         })
         .catch(err => {
             console.log('Server error')
-            window.localStorage.clear()
             window.localStorage.setItem('courses', JSON.stringify(getCourses()))
             return getCourses()
             
