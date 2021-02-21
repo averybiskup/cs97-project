@@ -44,13 +44,11 @@ const CourseRenderer = (props) => {
     return (
         <div>
             <div className="top_bar">
-                <Link className="login" to='/cs97-project/login'>Login</Link>
-                <a class="title">WEBPAGE TITLE</a>
-                <a>Add Course</a>
-                <a>About Us</a>
+                <Link className="login" class="a" to='/cs97-project/login'>Login</Link>
+                <Link to='/cs97-project' class="title">WEBPAGE TITLE</Link>
+                <Link to='/cs97-project/addcourse'>Add Course</Link>
             </div>
             <div className="middle-page">
-                <div class="middle-text">Search for Courses Here</div>
                 <br></br>
                 <input type="text"  class="middle-input" id="course-search" placeholder="Search for Course..." name="s" onChange={e => setQuery(e.target.value)}/>
             </div>
