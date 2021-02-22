@@ -24,7 +24,7 @@ const getCourses = () => {
                 'id': 1,
                 'course_id': 0,
                 'body': 'This is a great course!',
-                'author': 'Anon',
+                'author': 'LoveLordAgain',
                 'title': 'Awesome course!',
                 'rating': 3
                 }
