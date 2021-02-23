@@ -34,6 +34,20 @@ let CoursePage = (props) => {
     const courses = JSON.parse(window.localStorage.getItem('courses'))
     const current_course = courses[url_param]
 
+    let createReview
+
+    const username = window.localStorage.getItem('username')
+
+    if (username) {
+        createReview = <CreateReview course={current_course} updateMessage={setMessage} />
+    } else {
+        createReview = 
+        <div>
+            <Link className="course-page-login" to='/cs97-project/login'>Login to leave a review</Link>
+        </div>
+    }
+
+
     return (
         <div className="course-page">
             <Link className="login" to='/cs97-project/login'>Login</Link>
@@ -41,9 +55,7 @@ let CoursePage = (props) => {
             <div className = 'title'>Title: {current_course['title']}</div>
             <div className = 'author'>Author: {current_course['author']}</div>
             <div className = 'rating'>Rating: {current_course['course_rating']}</div>
-            <div> Submit a review:
-                <CreateReview course={current_course} updateMessage={setMessage} />
-            </div>
+            {createReview}
             <div className='review-cards'>
                 <RenderReviews loc={url_param} message={message} />
             </div>

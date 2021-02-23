@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const loginPost = async (username, password) => {
+const loginPost = async (username, password, browserHistory) => {
 
     const data = {
         'username': username,
@@ -11,12 +11,11 @@ const loginPost = async (username, password) => {
 
     const p = await axios.post('/login', json, { headers: { 'Content-Type': 'application/json' }}) 
         .then((res) => {
-            console.log('check')
             console.log(res.status)
             if (res.status == 200) {
                 window.localStorage.setItem('isAuthenticated', true)
                 window.localStorage.setItem('username', username)
-                window.location.replace('/cs97-project')
+                browserHistory.goBack()
             }
         })
         .catch(err => {

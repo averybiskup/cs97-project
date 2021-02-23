@@ -1,11 +1,11 @@
 import './App.css'
 import './login.css'
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import sha256 from 'js-sha256'
 import loginPost from './loginPost.js'
 
-const handleSubmit = (e, username, password) => {
+const handleSubmit = (e, username, password, browserHistory) => {
     e.preventDefault()
 
     if (username.length <= 0) {
@@ -13,7 +13,7 @@ const handleSubmit = (e, username, password) => {
     } else if (password.length <= 0) {
         alert('No password')
     } else {
-        loginPost(username, sha256(password))
+        loginPost(username, sha256(password), browserHistory)
     }
 }
 
@@ -23,6 +23,8 @@ const Login = () => {
     const [password, setPassword] = useState('')
     const [showPassword, setShowPassword] = useState(false)
 
+    let browserHistory = useHistory()
+
     // Scrolls to top of page
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -31,7 +33,7 @@ const Login = () => {
     return (
         <div className="login-page">
             <form id='login' onSubmit={(e) => {
-                handleSubmit(e, username, password)
+                handleSubmit(e, username, password, browserHistory)
                 setPassword('')
             }}>
                 <div className='login-inputs'>
