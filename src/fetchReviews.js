@@ -29,7 +29,6 @@ const fetchReviews = async (course_id) => {
 
             updateCourse(course_id, new_rating/5)
 
-            window.localStorage.clear()
             window.localStorage.setItem('courses', JSON.stringify(courses))
 
             return res.data
