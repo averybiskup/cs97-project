@@ -55,6 +55,12 @@ const analyzePassword = (password) => {
 
 const Signup = () => {
     
+
+    // Scrolls to top of page
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])  
+
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [showPassword, setShowPassword] = useState(false)

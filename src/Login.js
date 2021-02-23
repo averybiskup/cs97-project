@@ -17,12 +17,18 @@ const handleSubmit = (e, username, password) => {
     }
 }
 
+
+
 const Login = () => {
     
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [showPassword, setShowPassword] = useState(false)
 
+    // Scrolls to top of page
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     return (
         <div className="login-page">
