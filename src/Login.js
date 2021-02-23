@@ -17,8 +17,6 @@ const handleSubmit = (e, username, password) => {
     }
 }
 
-
-
 const Login = () => {
     
     const [username, setUsername] = useState('')
