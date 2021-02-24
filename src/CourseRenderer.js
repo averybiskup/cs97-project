@@ -7,6 +7,7 @@ import {useState} from 'react';
 import CourseCard from './CourseCard.js'
 import * as JsSearch from 'js-search'
 import { Link } from 'react-router-dom'
+import signout from './signout.js'
 
 // Returns all objects in the courses list that match the query
 //                     array  , string
@@ -40,11 +41,18 @@ const CourseRenderer = (props) => {
     })
 
     const filteredCourses = filterCourses(courses, query)
+
+    let loginButton
+    if (window.localStorage.getItem('isAuthenticated')) {
+        loginButton = <button type='button' class='a' onClick={() => signout()}>Sign out</button>
+    } else {
+        loginButton = <Link className='a' to='/cs97-project/login'>Login</Link>
+    }
     
     return (
         <div>
             <div className="top_bar">
-                <Link className="login" class="a" to='/cs97-project/login'>Login</Link>
+                {loginButton}
                 <Link to='/cs97-project' class="title">WEBPAGE TITLE</Link>
                 <Link to='/cs97-project/addcourse'>Add Course</Link>
             </div>

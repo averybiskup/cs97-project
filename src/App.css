@@ -134,19 +134,10 @@ body {
     height:100%;
 }
 
-.top_bar input[type=text] {
-    float: right;
-    padding: 6px;
-    border: none;
-    margin-top: 8px;
-    margin-right: 16px;
-    font-size: 17px;
-}
-
-.title{
+.title {
     font-weight: bold;
 }
-.review-logo{
+.review-logo {
     height: 40px;
     width: 40px;
     background-color: lightblue;
