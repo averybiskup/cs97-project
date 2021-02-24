@@ -36,13 +36,11 @@ const handleSubmit = (e, course_id, title, body, rating, setMessage) => {
             setMessage('Preparing review...')
 
             // Fetching courses and updating localStorage
-            //fetchCourses()
+            // Then rerendering via setMessage
             fetchReviews(course_id)
-
-            // Timeout so we have data before rerendering parent component
-            setTimeout(() => {
-                setMessage('Review added!')
-            }, 3000)
+                .then(() => {
+                    setMessage('Review added!')
+                })
 
             return true
         }
