@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import sha256 from 'js-sha256'
 import loginPost from './loginPost.js'
+import signout from './signout.js'
 
 const handleSubmit = (e, username, password, browserHistory) => {
     e.preventDefault()
@@ -29,6 +30,18 @@ const Login = () => {
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
+
+    // If the user is logged in, we shouldn't show a login page
+    if (window.localStorage.getItem('isAuthenticated')) {
+        return (
+            <div>
+                <div>You are already signed in.</div>
+                <Link className="home-button" to='/cs97-project/'>Home</Link>
+                <button className='sign-out' onClick={() => signout()}>Sign out</button>
+            </div>
+        )
+    }
+            
 
     return (
         <div className="login-page">

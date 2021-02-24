@@ -5,6 +5,7 @@ import sha256 from 'js-sha256'
 import checkUser from './checkUser.js'
 import addUser from './addUser.js'
 import { Link } from 'react-router-dom'
+import signout from './signout.js'
 
 const handleSubmit = (e, username, password) => {
     e.preventDefault()
@@ -73,7 +74,15 @@ const Signup = () => {
         document.getElementById('password').style.borderColor = color
     }
 
-    console.log(showPassword)
+    if (window.localStorage.getItem('isAuthenticated')) {
+        return (
+            <div>
+                <div>You are already signed in.</div>
+                <Link className="home-button" to='/cs97-project/'>Home</Link>
+                <button className='sign-out' onClick={() => signout()}>Sign out</button>
+            </div>
+        )
+    }
 
     return (
         <div className="signup-page">
