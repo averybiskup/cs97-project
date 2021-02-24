@@ -21,13 +21,16 @@ const fetchReviews = async (course_id) => {
             console.log('Updating reviews')
             
             let new_rating = 0
-
+            let count = 0
             Object.keys(reviews).map((key) => {
                new_rating += Number(reviews[key].rating)
+               count++
             })
-
-
-            updateCourse(course_id, new_rating/5)
+            
+            // divide by number of reviews represented by count
+            new_rating = new_rating/count
+            new_rating = new_rating.toFixed(2)
+            updateCourse(course_id, new_rating) 
 
             window.localStorage.setItem('courses', JSON.stringify(courses))
 
