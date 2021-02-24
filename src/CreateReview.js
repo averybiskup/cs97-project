@@ -41,9 +41,10 @@ const handleSubmit = (e, course_id, title, body, rating, setMessage) => {
 
             // Timeout so we have data before rerendering parent component
             setTimeout(() => {
-
+                
                 setMessage('Review added!')
             }, 5000)
+            fetchReviews(course_id)
             return true
         }
     }
