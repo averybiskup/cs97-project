@@ -1,4 +1,4 @@
-import './App.css';
+import './ReviewCard.css';
 import StarRatings from 'react-star-ratings';
 
 let ReviewCard = (props) => {

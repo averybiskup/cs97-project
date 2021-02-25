@@ -8,6 +8,7 @@ import CourseCard from './CourseCard.js'
 import * as JsSearch from 'js-search'
 import { Link } from 'react-router-dom'
 import signout from './signout.js'
+import './CourseRenderer.css'
 
 // Returns all objects in the courses list that match the query
 //                     array  , string
@@ -44,7 +45,7 @@ const CourseRenderer = (props) => {
 
     let loginButton
     if (window.localStorage.getItem('isAuthenticated')) {
-        loginButton = <button type='button' class='a' onClick={() => signout()}>Sign out</button>
+        loginButton = <button type='button' className='a' onClick={() => signout()}>Sign out</button>
     } else {
         loginButton = <Link className='a' to='/cs97-project/login'>Login</Link>
     }
@@ -53,12 +54,12 @@ const CourseRenderer = (props) => {
         <div>
             <div className="top_bar">
                 {loginButton}
-                <Link to='/cs97-project' class="title">WEBPAGE TITLE</Link>
+                <Link to='/cs97-project' className="title">WEBPAGE TITLE</Link>
                 <Link to='/cs97-project/addcourse'>Add Course</Link>
             </div>
             <div className="middle-page">
                 <br></br>
-                <input type="text"  class="middle-input" id="course-search" placeholder="Search for Course..." name="s" onChange={e => setQuery(e.target.value)}/>
+                <input type="text"  className="middle-input" id="course-search" placeholder="Search for Course..." name="s" onChange={e => setQuery(e.target.value)}/>
             </div>
 
             <div id="wrapper">

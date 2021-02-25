@@ -1,0 +1,57 @@
+.top_bar a {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 1% 1%;
+    text-decoration: none;
+    font-size: 100%;
+    height:100%;
+}
+
+.top_bar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.top_bar a.title {
+    float:left;
+    background-color: #4CAF50;
+    height:100%;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.middle-input {
+    justify-content: center;
+    width: 80%;
+    margin-left: 10%;
+    margin-right:10%;
+    height:10%;
+    min-height: 30px;
+}
+
+.middle-page {
+    background-image: url('https://miro.medium.com/max/3118/1*iwPLQjyFYRTVeQ2cb4S9rA.png');
+    height: 60vh;
+    background-size:cover;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#wrapper{
+    display:flex;
+    flex-flow: wrap;
+    justify-content:space-evenly   
+}
+
+.top_bar {
+    background-color: #333;
+    overflow: hidden;
+    position:fixed;
+    width:100%;
+    height:6.8vh;
+    min-height: 50px;
+}
