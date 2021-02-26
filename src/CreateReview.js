@@ -7,10 +7,11 @@ import postReview from './postReview.js'
 import fetchCourses from './fetchCourses.js'
 import fetchReviews from './fetchReviews.js'
 import ReviewCard from './ReviewCard.js'
+import StarRatings2 from 'react-star-ratings'
 
 // Function for handling the submit button on the form
 // Returns true if form was valid
-const handleSubmit = (e, course_id, author, title, body, rating, setMessage) => {
+const handleSubmit = (e, course_id, title, body, rating, setMessage) => {
     e.preventDefault()
 
     // Checking for valid form data
@@ -21,26 +22,29 @@ const handleSubmit = (e, course_id, author, title, body, rating, setMessage) => 
     } else if (rating == 0) {
         alert('Rating can not be 0')
     } else {
-        if (author.length == 0) {
-            author = 'Anon'
+
+        const author = window.localStorage.getItem('username')
+        // change (!author) to (false) for review testing
+        if (!author) {
+            alert('You are not signed in');
+            window.location.replace('/cs97-project/login')
+        } else {
+
+            // Posting review
+            postReview(course_id, body, author, title, rating)
+
+            // Rerendering parent component
+            setMessage('Preparing review...')
+
+            // Fetching courses and updating localStorage
+            // Then rerendering via setMessage
+            fetchReviews(course_id)
+                .then(() => {
+                    setMessage('Review added!')
+                })
+
+            return true
         }
-
-        // Posting review
-        postReview(course_id, body, author, title, rating)
-
-        // Rerendering parent component
-        setMessage('Preparing review...')
-
-        // Fetching courses and updating localStorage
-        //fetchCourses()
-        fetchReviews(course_id)
-
-        // Timeout so we have data before rerendering parent component
-        setTimeout(() => {
-
-            setMessage('Review added!')
-        }, 5000)
-        return true
     }
     return false
 }
@@ -50,36 +54,64 @@ const handleSubmit = (e, course_id, author, title, body, rating, setMessage) => 
 const CreateReview = (props) => {
 
     // State variables that are changed when form gets input
-    const [author, setAuthor] = useState('Anon')
     const [title, setTitle] = useState('')
     const [body, setBody] = useState('')
     const [rating, setRating] = useState(0)
     const course_id = props.course.id
 
     return (
-        <div className='create-review'>
-            <form id='createreview' onSubmit={(e) => { 
-                if (handleSubmit(e, course_id, author, title, body, rating, props.updateMessage)) {
-                    // Resetting form inputs
-                    setAuthor('Anon')
-                    setTitle('')
-                    setBody('')
-                    setRating(0)
-                }
-            }}>
-                
-                <input type='text' name='author' placeholder='name' value={author} onChange={(e) => setAuthor(e.target.value)}/>
-                <input type='text' name='title' placeholder='title (required)' value={title} onChange={(e) => setTitle(e.target.value)} />
-                <input type='text' name='body' placeholder='review (required)' value={body} onChange={(e) => setBody(e.target.value)} />
-                <select value={rating} onChange={(e) => setRating(e.target.value)}>
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-                <input type='submit' value='Submit' />
+        <div className='create-review-input'>
+            <form id='create-review-form'
+                onSubmit={(e) => {
+                    if (handleSubmit(e, course_id, title, body, rating, props.updateMessage)) {
+                        // Resetting form inputs
+                        setTitle('')
+                        setBody('')
+                        setRating(0)
+                    }
+                }}
+            >
+                <label>
+                <StarRatings2
+                    rating={rating}
+                    starRatedColor="orange"
+                    starHoverColor="orange"
+                    isSelectable={true}
+                    numberOfStars={5}
+                    name='rating'
+                    starDimension="32px"
+                    starSpacing="5px"
+                    changeRating={(rating)=>setRating(rating)}
+                />
+                    <span className="rating-text">select your rating</span>
+                </label>
+
+                <label>
+                <input
+                    type='text'
+                    name='title'
+                    placeholder='title (required)'
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                    className={"title-input"}
+                />
+                </label>
+
+
+                <label>
+                <textarea
+                    type='text'
+                    name='body'
+                    placeholder='review (required)'
+                    value={body} onChange={(e) => setBody(e.target.value)}
+                    className={"body-input"}
+                />
+                </label>
+
+                <label>
+                <input type='submit' value='Submit' className={"submit-review"} />
+                </label>
+                <br/>
             </form>
         </div>
     );

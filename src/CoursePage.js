@@ -2,47 +2,21 @@
 // Will also have components:
 
 import { useLocation, Link } from "react-router-dom";
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import getCourses from './getCourses.js'
 import postReview from './postReview.js'
 import ReviewCard from './ReviewCard.js'
 import CreateReview from './CreateReview.js'
 import fetchCourses from './fetchCourses.js'
-
-let RenderReviews = (props) => {
-
-    // Getting courses object from localStorage
-    const courses = JSON.parse(window.localStorage.getItem('courses'))
-    const reviews = courses[props.loc]['reviews']
-
-    // Making sure that a course has at least 1 review, otherwise
-    // displays this message
-    if (!reviews) {
-        return (
-            <div>
-                Course has no reviews.
-            </div>
-        )
-    }
-
-    // Turning object with reviews, into list of reviews
-    const reviewsList = Object.keys(reviews).map((id) => {
-       return reviews[id]
-    })
-    
-    return (
-        <div className="reviews">
-            <div>{props.message}</div>
-            <h1>Reviews:</h1>
-            {reviewsList.map((review) => {
-                return <ReviewCard key={review.id} review={review} />
-            })}
-        </div>
-    )
-}
+import RenderReviews from './RenderReviews'
 
 let CoursePage = (props) => {
+
+    // Scrolls to top of page
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     // This allows us to rerender dom from child component
     const [message, setMessage] = useState('')
@@ -59,17 +33,35 @@ let CoursePage = (props) => {
     // Getting courses from local storage
     const courses = JSON.parse(window.localStorage.getItem('courses'))
     const current_course = courses[url_param]
+    console.log("courses",courses);
+    let createReview
+
+    const username = window.localStorage.getItem('username')
+    //replace (username) with (true) for review testing
+    if (username) {
+        createReview = <CreateReview course={current_course} updateMessage={setMessage} />
+    } else {
+        createReview = 
+        <div>
+            <Link className="course-page-login" to='/cs97-project/login'>Login to leave a review</Link>
+        </div>
+    }
+
 
     return (
+
         <div className="course-page">
-            <Link className="login" to='/cs97-project/login'>Login</Link>
+            {/*removed login option because it already appears on page*/}
+            {/*<Link className="login" to='/cs97-project/login'>Login</Link>*/}
             <Link className="home-button" to='/cs97-project/'>Home</Link>
-            <div className = 'title'>Title: {current_course['title']}</div>
-            <div className = 'author'>Author: {current_course['author']}</div>
-            <div className = 'rating'>Rating: {current_course['course_rating']}</div>
-            <div> Submit a review:
-                <CreateReview course={current_course} updateMessage={setMessage} />
+            <br/><br/>
+            <div className="create-review">
+                <div className = 'create-review-author'><b>Author:</b> {current_course['author']}</div>
+                <div className = 'create-review-title'><b>Current Course:</b> {current_course['title']}</div>
+                {/*<div className = 'rating'>Rating: {current_course['course_rating']}</div>*/}
+                {createReview}
             </div>
+
             <div className='review-cards'>
                 <RenderReviews loc={url_param} message={message} />
             </div>

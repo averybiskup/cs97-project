@@ -134,18 +134,19 @@ body {
     height:100%;
 }
 
-.top_bar input[type=text] {
-    float: right;
-    padding: 6px;
-    border: none;
-    margin-top: 8px;
-    margin-right: 16px;
-    font-size: 17px;
+.title {
+    /*font-weight: bold;*/
+
+}
+.create-review{
+    margin: 0 auto;
+    background-color: aliceblue;
+    border: 1px blue solid;
+    border-radius: 5px;
+    max-width: 400px;
+    color: gray;
 }
 
-.title{
-    font-weight: bold;
-}
 .review-logo{
     height: 40px;
     width: 40px;
@@ -172,8 +173,37 @@ body {
     font-weight: bold;
 }
 
-@media (max-width: 400px) {
+.create-review-title, .create-review-author, label{
+    display: block;
+    padding-top: 12px;
+}
+.rating-text{
+    color: gray;
+    display: inline-block;
+    margin-left: 30px;
+}
+.submit-review{
+    width: 373px;
+}
+
+.title-input{
+    width:90%;
+}
+.body-input{
+    width:93%;
+}
+
+@media (max-width: 360px) {
     .course-card{
       width: 100%;
+    }
+    .review{
+      flex-direction: column;
+    }
+    .submit-review{
+        width: 93%;
+    }
+    .create-review{
+        max-width: 95%;
     }
   }
