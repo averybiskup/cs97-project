@@ -24,9 +24,11 @@ const handleSubmit = (e, course_id, title, body, rating, setMessage) => {
     } else {
 
         const author = window.localStorage.getItem('username')
+
         // change (!author) to (false) for review testing
         if (!author) {
             alert('You are not signed in');
+
             window.location.replace('/cs97-project/login')
         } else {
 
@@ -60,6 +62,7 @@ const CreateReview = (props) => {
     const course_id = props.course.id
 
     return (
+
         <div className='create-review-input'>
             <form id='create-review-form'
                 onSubmit={(e) => {
@@ -112,6 +115,7 @@ const CreateReview = (props) => {
                 <input type='submit' value='Submit' className={"submit-review"} />
                 </label>
                 <br/>
+
             </form>
         </div>
     );
