@@ -8,6 +8,7 @@ import CourseCard from './CourseCard.js'
 import * as JsSearch from 'js-search'
 import { Link } from 'react-router-dom'
 import signout from './signout.js'
+import viewProfile from './viewProfile.js'
 import './CourseRenderer.css'
 
 // Returns all objects in the courses list that match the query
@@ -44,10 +45,13 @@ const CourseRenderer = (props) => {
     const filteredCourses = filterCourses(courses, query)
 
     let loginButton
-    if (window.localStorage.getItem('isAuthenticated')) {
+    let isLoggedIn = false;
+    if (window.localStorage.getItem('isAuthenticated')) { 
         loginButton = <button type='button' className='a' onClick={() => signout()}>Sign out</button>
+        isLoggedIn = true
     } else {
         loginButton = <Link className='a' to='/cs97-project/login'>Login</Link>
+        isLoggedIn = false
     }
     
     return (
@@ -56,6 +60,7 @@ const CourseRenderer = (props) => {
                 {loginButton}
                 <Link to='/cs97-project' className="title">WEBPAGE TITLE</Link>
                 <Link to='/cs97-project/addcourse'>Add Course</Link>
+                {isLoggedIn && <Link to='/cs97-project/profile'>Profile</Link>}
             </div>
             <div className="middle-page">
                 <br></br>
