@@ -36,7 +36,7 @@ let CoursePage = (props) => {
     console.log("courses",courses);
     let createReview
     //the login is not working, because the user name is not set. nothing in the data base for the user name
-    const username = window.localStorage.getItem('true')
+    const username = window.localStorage.getItem('username')
     //replace (username) with (true) for review testing
     if (username) {
         createReview = <CreateReview course={current_course} updateMessage={setMessage} />
