@@ -1,0 +1,472 @@
+{
+    "0": {
+      "author": "Charles Russell Severance",
+      "course_rating": 4.8,
+      "id": 0,
+      "price": 49,
+      "reviews": {
+          "0": {
+            "author": "SM",
+            "body": "excellent for beginners, very well described, great understanding grasped and its simple, very simple, but thats what makes it 5 star, is that its for anyone or as the title says pythong for Everybody",
+            "course_id": 0,
+            "date": "March 24, 2016",
+            "id": 0,
+            "rating": "5",
+            "title": "excellent for beginners"
+            },
+        "1": {
+            "author": "CN",
+            "body": "Extremely basic but Dr. Chuck is so interesting that you never get bored. You can pass the course in a few days with minimum or even no programming knowledge. It's a good starting point for beginners.",
+            "course_id": 0,
+            "date": "Sep 25, 2020",
+            "id": 1,
+            "rating": "4",
+            "title": "Extremely basic but Dr. Chuck is so interesting"
+            },
+        "2": {
+            "author": "BU",
+            "body": "Great teacher Chuck and obviously a great course for people just starting out with programming. Well paced. The suggested timings for the assignments were a bit off, I think, but well, that's just me.",
+            "course_id": 0,
+            "date": "Feb 13, 2017",
+            "id": 2,
+            "rating": "4",
+            "title": "Great teacher Chuck and obviously a great course"
+            },
+        "3": {
+            "author": "AG",
+            "body": "Very good introduction to basic programming. Very easy for beginners in python who have already some programming background - but still extremely useful to quickly and efficiently learn python basics.",
+            "course_id": 0,
+            "date": "Sep 12, 2020",
+            "id": 3,
+            "rating": "5",
+            "title": "Very good introduction to basic programming"
+            }
+        },
+      "tags": "Python Syntax and Semantics\nBasic Programming Language\nComputer Programming\nPython Programming",
+      "title": "Programming for Everybody (Getting Started with Python)",
+      "url": "https://www.coursera.org/learn/python#enroll"
+    },
+    "1": {
+      "author": "Kevin Wayne & Robert Sedgewick",
+      "course_rating": 4.9,
+      "id": 1,
+      "price": "Free",
+      "reviews": {
+          "0": {
+            "author": "RM",
+            "body": "This is a great class. I learned / re-learned a ton. The assignments were challenge and left a definite feel of accomplishment. The programming environment and automated grading system were excellent",
+            "course_id": 1,
+            "date": "May 31, 2017",
+            "id": 0,
+            "rating": "5",
+            "title": "This is a great class"
+            },
+          "1": {
+            "author": "RB",
+            "body": "The course focuses on Java specific implementations of algorithms, so if you're not from a Java background, you would have a little difficulty with the assignments.The course content however is great.",
+            "course_id": 1,
+            "date": "May 31, 2020",
+            "id": 1,
+            "rating": "4",
+            "title": "The course focuses on Java specific implementations of algorithms"
+            },
+          "2": {
+            "author": "BJ",
+            "body": "Good contents and the logic of the whole course structure is very clear for a novice like me. The weekly homework is also awesome. Would recommend to anyone who wants to learn about computer science.",
+            "course_id": 1,
+            "date": "Jun 2, 2018",
+            "id": 2,
+            "rating": "4",
+            "title": "Good contents and the logic of the whole course structure is very clear"
+            },
+          "3": {
+            "author": "RP",
+            "body": "Incredible learning experience. Every programmer in industry should take this course if only to dispel the idea that with the advent of cloud computing exponential algorithms can still ruin your day!",
+            "course_id": 1,
+            "date": "Jun, 10, 2017",
+            "id": 3,
+            "rating": "5",
+            "title": "Incredible learning experience"
+            }
+        },
+      "tags": "Data Structure, Algorithms, Java Programming",
+      "title": "Algorithms, Part 1",
+      "url": "https://www.coursera.org/learn/algorithms-part1#reviews"
+    },
+    "2": {
+      "author": "Yaakov Chaikin",
+      "course_rating": 4.8,
+      "id": 2,
+      "price": 79,
+      "reviews": {
+        "0": {
+          "author": "SM",
+          "body": "Actually the best online course i hv ever learnt,especially the professor yaakov is quiet outstanding.And a field trip in a online course sounds rare and good!!Thank You Coursera and yakkov for this!!",
+          "course_id": 2,
+          "date": "Jun 10, 2020",
+          "id": 0,
+          "rating": "5",
+          "title": "Actually the best online course i hv ever learnt"
+          },
+        "1": {
+          "author": "SW",
+          "body": "This was a really great course, i learned so much, and it was really interesting and very well explained. I will be taking any more courses done by Yaakov! Really excellent course, thank you so much.",
+          "course_id": 2,
+          "date": "Mar 14, 2016",
+          "id": 1,
+          "rating": "5",
+          "title": "This was a really great course"
+          },
+        "2": {
+          "author": "YV",
+          "body": "Many thanks to the creators of this course! It was a very solid refresher for me, even though I have spent in web development a few years by now. I thoroughly enjoyed every lesson. Thank you, Yaakov!",
+          "course_id": 2,
+          "date": "May 30, 2020",
+          "id": 2,
+          "rating": "4",
+          "title": "Many thanks to the creators of this course!"
+          },
+        "3": {
+          "author": "JH",
+          "body": "Very interesting and well presented. It's difficult to address all the different experience levels so some points were (to me) a bit laboured, but overall a useful, informative and enjoyable course.",
+          "course_id": 2,
+          "date": "May 31, 2019",
+          "id": 3,
+          "rating": "5",
+          "title": "Very interesting and well presented"
+          }
+      },
+      "tags": "Html, JavaScript, CSS Frameworks, CSS",
+      "title": "HTML, CSS, and Javascript for Web Developers",
+      "url": "https://www.coursera.org/learn/html-css-javascript-for-web-developers"
+    },
+    "3": {
+      "author": "Dr Matthew Yee-King, Dr Marco Gillies, Dr Kate Devlin",
+      "course_rating": 4.6,
+      "id": 3,
+      "price": "$49 per month",
+      "reviews": {
+        "0": {
+          "author": "CM",
+          "body": "Thought the course did a great job of teaching the basics without getting too ahead of itself. All of the sample code was well commented out to explain exactly what the code did which was very helpful",
+          "course_id": 3,
+          "date": "Oct 10, 2017",
+          "id": 0,
+          "rating": "5",
+          "title": "Thought the course did a great job of teaching the basics"
+          },
+        "1": {
+          "author": "AA",
+          "body": "The course was for absolute beginners. I also felt that the content was less in comparison to other similar courses. But this introduction will be enough for beginners to explore further on their own.",
+          "course_id": 3,
+          "date": "Sep 23, 2018",
+          "id": 1,
+          "rating": "4",
+          "title": "The course was for absolute beginners"
+          },
+        "2": {
+          "author": "CD",
+          "body": "This is an excellent course for the basics in html, css and js I would definitely recommend it to anyone who wanted to build a simple but interactive website using one of the many frameworks available.",
+          "course_id": 3,
+          "date": "May 26, 2018",
+          "id": 2,
+          "rating": "4",
+          "title": "This is an excellent course for the basics in html, css and js"
+          },
+        "3": {
+          "author": "AL",
+          "body": "Course is well structured and up to date.Also material provided is also excellent.But Jquery and JavaScript should be explained in more detailed.And some realistic website project should be provided.",
+          "course_id": 3,
+          "date": "Aug 28, 2020",
+          "id": 3,
+          "rating": "4",
+          "title": "Course is well structured and up to date"
+          }
+      },
+      "tags": "Jquery, Html, JavaScript, CSS",
+      "title": "Responsive Website Basics: Code with HTML, CSS, and JavaScript",
+      "url": "https://www.coursera.org/learn/website-coding"
+    },
+    "4": {
+      "author": "Daniel Randall",
+      "course_rating": 4.7,
+      "id": 4,
+      "price": 79,
+      "reviews": {
+        "0": {
+          "author": "AH",
+          "body": "It was very helpful and I understood things so easily. A beginner in this field will surely be benefited. Also the extra material is very helpful. This helped me take up full stack web development",
+          "course_id": 4,
+          "date": "May 1, 2020",
+          "id": 0,
+          "rating": "5",
+          "title": "It was very helpful and I understood things so easily"
+          },
+        "1": {
+          "author": "AB",
+          "body": "It`s a fantastic course for a beginner. I could feel the effort that was put into to make sure people understood. Thank you Coursera, when I become one the greatest, I will remember this beginning.",
+          "course_id": 4,
+          "date": "Jul 18, 2019",
+          "id": 1,
+          "rating": "5",
+          "title": "It`s a fantastic course for a beginner"
+          },
+        "2": {
+          "author": "AJ",
+          "body": "this was a nice introductory course to get basic knowledge of the vast field of web development. i highly recommend this course for those who want to start their new journey in the field of web-d.",
+          "course_id": 4,
+          "date": "Apr 27, 2020",
+          "id": 2,
+          "rating": "5",
+          "title": "this was a nice introductory course to get basic knowledge of the vast field of web development"
+          },
+        "3": {
+          "author": "V",
+          "body": "Good to learn about Web Development. It helped me a lot for learning and developing a site. I like this course and I'll prefer those to choose this course who want to become a web developer",
+          "course_id": 4,
+          "date": "Sep 4, 2019",
+          "id": 3,
+          "rating": "5",
+          "title": "Good to learn about Web Development"
+          }
+      },
+      "tags": "CSS, Html, JavaScript",
+      "title": "Introduction to Web Development",
+      "url": "https://www.coursera.org/learn/web-development"
+    },
+    "5": {
+      "author": "Charles Russell Severance, Colleen van Lent Ph.D.",
+      "course_rating": 4.7,
+      "id": 5,
+      "price": "$49 per month",
+      "reviews": {
+        "0": {
+          "author": "NP",
+          "body": "I really enjoyed everything about this course. I thought the exercises/quizzes were fair and the instructor showed me many things that will serve me well going forward. Great course, great instructor!",
+          "course_id": 5,
+          "date": "May 18, 2020",
+          "id": 0,
+          "rating": "5",
+          "title": "I really enjoyed everything about this course"
+          },
+        "1": {
+          "author": "CS",
+          "body": "I thought the exercises/quizzes were fair and the instructor showed me many things that will serve me well going forward.",
+          "course_id": 5,
+          "date": "Aug 6, 2020",
+          "id": 1,
+          "rating": "5",
+          "title": "I thought the exercises/quizzes were fair"
+          },
+        "2": {
+          "author": "SP",
+          "body": "This course was very interesting and helpful in the initialization of web development also the course instructor is very good she delivers her knowledge up to maximum possibilities and also motivates",
+          "course_id": 5,
+          "date": "Apr 15, 2020",
+          "id": 2,
+          "rating": "4",
+          "title": "This course was very interesting and helpful in the initialization of web development"
+          },
+        "3": {
+          "author": "RC",
+          "body": "I really enjoyed everything about this course. I thought the exercises/quizzes were fair and the instructor showed me many things that will serve me well going forward. Great course, great instructor!",
+          "course_id": 5,
+          "date": "Apr 18, 2020",
+          "id": 3,
+          "rating": "4",
+          "title": "I really enjoyed everything about this course"
+          }
+      },
+      "tags": "Web Design, Web Accessibility, Html, Html5",
+      "title": "Introduction to HTML5",
+      "url": "https://www.coursera.org/learn/html#about"
+    },
+    "6": {
+      "author": "Andrew D. Hilton, Genevieve M. Lipp, Anne Bracy",
+      "course_rating": 4.7,
+      "id": 6,
+      "price": "$49 per month",
+      "reviews": {
+        "0": {
+          "author": "EE",
+          "body": "The instruction provided in this course are very clear and anyone who can learn coding by this course. But the course has more readable content for you to take notes and reading it may take more time",
+          "course_id": 6,
+          "date": "Aug 13, 2020",
+          "id": 0,
+          "rating": "5",
+          "title": "The instruction provided in this course are very clear"
+          },
+        "1": {
+          "author": "PS",
+          "body": "I love the way of approaching from planning then coding.The basic taught here are really awesome.I think enumeration concepts should be included in upcoming courses in this specialization thank you",
+          "course_id": 6,
+          "date": "Apr 23, 2020",
+          "id": 1,
+          "rating": "4",
+          "title": "I love the way of approaching from planning then coding"
+          },
+        "2": {
+          "author": "RD",
+          "body": "Great for total beginners. Would totally recommend to college students who just started their programming classes in C. Not for professionals eager to brush up their skills.Since it's too basic",
+          "course_id": 6,
+          "date": "Jul 12, 2019",
+          "id": 2,
+          "rating": "4",
+          "title": "Great for total beginners"
+          },
+        "3": {
+          "author": "SS",
+          "body": "The course was quite good in every aspect and it met my expectations and thanks to duke university for providing such a good course and also thanks to coursera for providing such good platform for us",
+          "course_id": 6,
+          "date": "Sep 28, 2020",
+          "id": 3,
+          "rating": "4",
+          "title": "The course was quite good in every aspect"
+          }
+      },
+      "tags": "Algorithms, Programming Language Concepts, Problem Solving, C Programming",
+      "title": "Programming Fundamentals",
+      "url": "https://www.coursera.org/learn/programming-fundamentals#about"
+    },
+    "7": {
+      "author": "Dr. Jerry Roth, Dr. Julie L. Johnson, Dr. Douglas C. Schmidt, Michael Walker",
+      "course_rating": 4.5,
+      "id": 7,
+      "price": "$49 per month",
+      "reviews": {
+        "0": {
+          "author": "JN",
+          "body": "overall its good course many difficult concepts are explained in an easy way but as a beginner, I found this course a bit difficult at the beginning for those who are new to java programming language",
+          "course_id": 7,
+          "date": "Jul 3, 2020",
+          "id": 0,
+          "rating": "4",
+          "title": "overall its good course"
+          },
+        "1": {
+          "author": "RB",
+          "body": "This course will provide all basic information of android and it will also help you to understand the fundamental of java which is used in android. It really help me to improve my skills in android",
+          "course_id": 7,
+          "date": "Aug 3, 2020",
+          "id": 1,
+          "rating": "5",
+          "title": "This course will provide all basic information of android"
+          },
+        "2": {
+          "author": "SP",
+          "body": "Excellent !! As a beginner I found this course a major kick-start to building a strong base for my Android app skills. A lot of practice needed though, but these videos would keep me going well",
+          "course_id": 7,
+          "date": "Nov 16, 2019",
+          "id": 2,
+          "rating": "5",
+          "title": "Excellent !!"
+          },
+        "3": {
+          "author": "TM",
+          "body": "Great content. All the materials are perfectly covered and taught. I just have a huge problem with the peer to peer review system. The amount of plagiarised code I had to flag was annoyingly high",
+          "course_id": 7,
+          "date": "Jul 9, 2020",
+          "id": 3,
+          "rating": "4",
+          "title": "Great content. All the materials are perfectly covered and taught"
+          }
+      },
+      "tags": "Logic Programming, Android Studio, Java Progrmming, Object-Oriented Programming",
+      "title": "Java for Android",
+      "url": "https://www.coursera.org/learn/java-for-android#reviews"
+    },
+    "8": {
+      "author": "Andrew Ng, Kian Katanforoosh, Younes Bensouda Mourri",
+      "course_rating": 4.9,
+      "id": 8,
+      "price": "$49 per month",
+      "reviews": {
+        "0": {
+          "author": "AS",
+          "body": "Its a great course, but I wish things like multiclass classification and regression were also included, also I think there should be more emphasis on different cost functions and their properties etc.",
+          "course_id": 8,
+          "date": "Oct 7, 2017",
+          "id": 0,
+          "rating": "4",
+          "title": "Its a great course"
+          },
+        "1": {
+          "author": "JN",
+          "body": "I know this is intended for a broad audience, but I found that the assignments were too easy. Not that they are testing easy material, but that the answers are almost stated directly in the questions",
+          "course_id": 8,
+          "date": "Feb 19, 2018",
+          "id": 1,
+          "rating": "4",
+          "title": "I know this is intended for a broad audience, but I found that the assignments were too easy"
+          },
+        "2": {
+          "author": "GC",
+          "body": "I have learnt a lot of tricks with numpy and I believe I have a better understanding of what a NN does. Now it does not look like a black box anymore. I look forward to see what's in the next courses!",
+          "course_id": 8,
+          "date": "May 30, 2019",
+          "id": 2,
+          "rating": "5",
+          "title": "I have learnt a lot of tricks with numpy and I believe I have a better understanding of what a NN does"
+          },
+        "3": {
+          "author": "LV",
+          "body": "A bit easy (python wise) but maybe that's just a reflection of personal experience / practice. The contest is easy to digest (week to week) and the intuitions are well thought of in their explanation.",
+          "course_id": 8,
+          "date": "Apr 6, 2019",
+          "id": 3,
+          "rating": "5",
+          "title": "A bit easy (python wise) but maybe that's just a reflection of personal experience / practice"
+          }
+      },
+      "tags": "Artificial Neural Network, Backpropagation, Python Programming, Deep Learning",
+      "title": "Neural Networks and Deep Learning",
+      "url": "https://www.coursera.org/learn/neural-networks-deep-learning#about"
+    },
+    "9": {
+      "author": "Rav Ahuja",
+      "course_rating": 4.8,
+      "id": 9,
+      "price": "$39 per month",
+      "reviews": {
+        "0": {
+          "author": "MB",
+          "body": "Course is really helped me understand the concept of Data Analytics. The viewer's points explained What, Why, and how Data Analytics. And the final assignment gives an exact idea about Data analysis",
+          "course_id": 9,
+          "date": "Nov 15, 2020",
+          "id": 0,
+          "rating": "5",
+          "title": "Course is really helped me understand the concept of Data Analytics"
+          },
+        "1": {
+          "author": "BS",
+          "body": "A great Introductory course by IBM and Coursera to start your career in Data analytics. Learned a lot from this course like what are the skills that are needed in order to become a good data analyst",
+          "course_id": 9,
+          "date": "Oct 21, 2020",
+          "id": 1,
+          "rating": "5",
+          "title": "A great Introductory course by IBM and Coursera to start your career in Data analytics"
+          },
+        "2": {
+          "author": "UT",
+          "body": "Best material so far, I found, for someone who is looking to pursue/transition a career in Data-Driven roles. This will give you a holistic view of the Data-Driven world as a beginner.",
+          "course_id": 9,
+          "date": "Nov 3, 2020",
+          "id": 2,
+          "rating": "5",
+          "title": "Best material so far, I found, for someone who is looking to pursue/transition a career in Data-Driven roles"
+          },
+        "3": {
+          "author": "CP",
+          "body": "This course is very informative and easy to understand especially for learners who has no formal background with I.T. or computer. I enjoyed this course very much! Highly-recommended!",
+          "course_id": 9,
+          "date": "Oct 3, 2020",
+          "id": 3,
+          "rating": "5",
+          "title": "This course is very informative and easy to understand"
+          }
+      },
+      "tags": "Data Science, Spreadsheet, Data Analysis, Microsoft Excel",
+      "title": "Introduction to Data Analytics",
+      "url": "https://www.coursera.org/learn/introduction-to-data-analytics#about"
+    }
+  }
