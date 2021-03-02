@@ -1,9 +1,9 @@
 // Component for the home page of the app
 
-import './App.css';
+import '../style/App.css';
 import CourseRenderer from './CourseRenderer'
-import fetchCourses from './fetchCourses.js'
-import fetchReviews from './fetchReviews.js'
+import fetchCourses from '../helper/fetchCourses.js'
+import fetchReviews from '../helper/fetchReviews.js'
 import { useState, useEffect } from 'react'
 
 const App = () => {

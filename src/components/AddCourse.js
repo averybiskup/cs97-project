@@ -1,6 +1,6 @@
 // Button that appears on CoursePage that adds a static course to the db
 
-import './App.css'
+import '../style/App.css'
 import axios from 'axios'
 
 let add = () => {

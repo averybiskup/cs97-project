@@ -6,7 +6,7 @@
 // Link to the course page
 
 import { useLocation, Link } from "react-router-dom";
-import './CourseCard.css'
+import '../style/CourseCard.css'
 
 let CourseCard = (props) => {
     const path_to_course = "/cs97-project/course/" + props.course_id

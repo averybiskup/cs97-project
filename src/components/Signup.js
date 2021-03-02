@@ -1,11 +1,11 @@
-import './App.css'
-import './login.css'
+import '../style/App.css'
+import '../style/login.css'
 import { useState, useEffect } from 'react'
 import sha256 from 'js-sha256'
-import checkUser from './checkUser.js'
-import addUser from './addUser.js'
+import checkUser from '../helper/checkUser.js'
+import addUser from '../helper/addUser.js'
 import { Link } from 'react-router-dom'
-import signout from './signout.js'
+import signout from '../helper/signout.js'
 
 const handleSubmit = (e, username, password) => {
     e.preventDefault()

@@ -3,12 +3,12 @@
 
 import { useLocation, Link } from "react-router-dom";
 import { useState, useEffect } from 'react'
-import './App.css'
-import getCourses from './getCourses.js'
-import postReview from './postReview.js'
+import '../style/App.css'
+import getCourses from '../helper/getCourses.js'
+import postReview from '../helper/postReview.js'
 import ReviewCard from './ReviewCard.js'
 import CreateReview from './CreateReview.js'
-import fetchCourses from './fetchCourses.js'
+import fetchCourses from '../helper/fetchCourses.js'
 import RenderReviews from './RenderReviews'
 
 let CoursePage = (props) => {

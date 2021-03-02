@@ -1,11 +1,11 @@
 // Component for the input section of the reviews page
 
 
-import './App.css'
+import '../style/App.css'
 import { useState } from 'react'
-import postReview from './postReview.js'
-import fetchCourses from './fetchCourses.js'
-import fetchReviews from './fetchReviews.js'
+import postReview from '../helper/postReview.js'
+import fetchCourses from '../helper/fetchCourses.js'
+import fetchReviews from '../helper/fetchReviews.js'
 import ReviewCard from './ReviewCard.js'
 import StarRatings2 from 'react-star-ratings'
 

@@ -1,10 +1,10 @@
-import './App.css'
-import './login.css'
+import '../style/App.css'
+import '../style/login.css'
 import { useState, useEffect } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import sha256 from 'js-sha256'
-import loginPost from './loginPost.js'
-import signout from './signout.js'
+import loginPost from '../helper/loginPost.js'
+import signout from '../helper/signout.js'
 
 const handleSubmit = (e, username, password, browserHistory) => {
     e.preventDefault()

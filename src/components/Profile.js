@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import signout from './signout.js'
-import loginPost from './loginPost.js'
+import signout from '../helper/signout.js'
+import loginPost from '../helper/loginPost.js'
 
 const loggedInUser = localStorage.getItem('username');
 

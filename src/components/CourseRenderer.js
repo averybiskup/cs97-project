@@ -7,9 +7,9 @@ import {useState} from 'react';
 import CourseCard from './CourseCard.js'
 import * as JsSearch from 'js-search'
 import { Link } from 'react-router-dom'
-import signout from './signout.js'
-import viewProfile from './viewProfile.js'
-import './CourseRenderer.css'
+import signout from '../helper/signout.js'
+import viewProfile from '../helper/viewProfile.js'
+import '../style/CourseRenderer.css'
 
 // Returns all objects in the courses list that match the query
 //                     array  , string
