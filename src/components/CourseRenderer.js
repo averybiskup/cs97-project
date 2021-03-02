@@ -47,7 +47,7 @@ const CourseRenderer = (props) => {
     let loginButton
     let isLoggedIn = false;
     if (window.localStorage.getItem('isAuthenticated')) { 
-        loginButton = <button type='button' className='a' onClick={() => signout()}>Sign out</button>
+        loginButton = <Link className='a' onClick={() => signout()}>Sign out</Link>
         isLoggedIn = true
     } else {
         loginButton = <Link className='a' to='/cs97-project/login'>Login</Link>
