@@ -63,7 +63,7 @@ const CourseRenderer = (props) => {
         <div>
             <div className="top_bar">
                 {loginButton}
-                <Link to='/cs97-project' className="title">WEBPAGE TITLE</Link>
+                <Link to='/cs97-project' className="title">CourseMe</Link>
                 <Link to='/cs97-project/addcourse'>Add Course</Link>
                 {isLoggedIn && <Link to={loginRoute}>Profile</Link>}
             </div>
