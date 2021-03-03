@@ -14,6 +14,7 @@ let CourseCard = (props) => {
         <div className="course-card">
                 {<div><img className="image_id" src={'https://media.geeksforgeeks.org/wp-content/cdn-uploads/titleShadow-1024x341.png'} alt="test image"/></div>}
                 <div className="course_title">{props.name}</div>
+                <div className="course_author">{props.author}</div>
                 <Link className="course_link" to={path_to_course} >Course Page</Link>
         </div>
     );

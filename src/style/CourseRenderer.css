@@ -64,7 +64,8 @@
     display:flex;
     flex-flow: wrap;
     justify-content:space-evenly;
-
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .top_bar {
