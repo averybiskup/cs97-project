@@ -11,7 +11,7 @@ import StarRatings2 from 'react-star-ratings'
 
 // Function for handling the submit button on the form
 // Returns true if form was valid
-const handleSubmit = (e, course_id, title, body, rating, setMessage) => {
+const handleSubmit = (e, course_id, title, body, rating, setMessage, course_name) => {
     e.preventDefault()
 
     // Checking for valid form data
@@ -34,7 +34,7 @@ const handleSubmit = (e, course_id, title, body, rating, setMessage) => {
         } else {
 
             // Posting review
-            postReview(course_id, body, author, title, rating, user_id)
+            postReview(course_id, body, author, title, rating, user_id, course_name)
 
             // Rerendering parent component
             setMessage('Preparing review...')
@@ -61,13 +61,14 @@ const CreateReview = (props) => {
     const [body, setBody] = useState('')
     const [rating, setRating] = useState(0)
     const course_id = props.course.id
+    const course_name = props.course.title
 
     return (
 
         <div className='create-review-input'>
             <form id='create-review-form'
                 onSubmit={(e) => {
-                    if (handleSubmit(e, course_id, title, body, rating, props.updateMessage)) {
+                    if (handleSubmit(e, course_id, title, body, rating, props.updateMessage, course_name)) {
                         // Resetting form inputs
                         setTitle('')
                         setBody('')

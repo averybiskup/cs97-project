@@ -7,7 +7,7 @@
 
 import axios from 'axios'
 
-const postReview = async (course_id, body, author, title, rating, user_id) => {
+const postReview = async (course_id, body, author, title, rating, user_id, course_name) => {
 
     // Creating the review based on function arguments
     const review = {
@@ -16,7 +16,8 @@ const postReview = async (course_id, body, author, title, rating, user_id) => {
         'author': author,
         'title': title,
         'rating': rating,
-        'user_id': user_id
+        'user_id': user_id,
+        'course_name': course_name
     }
 
     // Turning review into a string to post iit

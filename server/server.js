@@ -96,7 +96,7 @@ let addCourse = (title, author, tags, price, course_rating, reviews, url) => {
 
 // Function for adding review
 // Uses the course_id to know which course it's for
-const addReview = (course_id, body, author, title, rating, user_id, callback) => {
+const addReview = (course_id, body, author, title, rating, user_id, course_name, callback) => {
     var id = Date.now();
     let d = new Date();
     let cDay = d.getDate();
@@ -112,7 +112,8 @@ const addReview = (course_id, body, author, title, rating, user_id, callback) =>
         'title': title,
         'rating': rating,
         'date': date,
-        'user_id': user_id
+        'user_id': user_id,
+        'course_name': course_name
     }
 
     dataRef.child('users').child(author).child('reviews').child(id).set(newReview, (error) => {
@@ -169,7 +170,7 @@ app.get('/api/addcourse', (req, res) => {
 // Recieving requests to post a new review
 app.post('/api/postreview', (req, res) => {
     console.log('Attempting to add review')
-    addReview(req.body.course_id, req.body.body, req.body.author, req.body.title, req.body.rating, req.body.user_id, (error) => {
+    addReview(req.body.course_id, req.body.body, req.body.author, req.body.title, req.body.rating, req.body.user_id, req.body.course_name, (error) => {
         if (error) {
             console.log('Post error')
         } else {
