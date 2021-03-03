@@ -1,5 +1,6 @@
 import '../style/ReviewCard.css';
 import StarRatings from 'react-star-ratings';
+import { Link } from 'react-router-dom'
 
 let ReviewCard = (props) => {
     // props.review.rating is already a number
@@ -11,7 +12,7 @@ let ReviewCard = (props) => {
     return (
         <div className='review'>
             <div className='review-left'>
-                <div className='review-logo'>{firstLet}</div>
+                <Link to='/cs97-project/profile' style={{ textDecoration: 'none' }} className='review-logo'>{firstLet}</Link>
                 <div className='review-author'>- {props.review.author}</div>
             </div>
             <div className='right'>

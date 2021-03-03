@@ -44,11 +44,15 @@ const CourseRenderer = (props) => {
 
     const filteredCourses = filterCourses(courses, query)
 
+    //For the loginButton, check to see if the user is logged in or not
     let loginButton
     let isLoggedIn = false;
+
+    //If user is logged in, display Sign Out button
     if (window.localStorage.getItem('isAuthenticated')) { 
-        loginButton = <button type='button' className='a' onClick={() => signout()}>Sign out</button>
+        loginButton = <Link className='a' onClick={() => signout()}>Sign out</Link>
         isLoggedIn = true
+    //Otherwise diplay Login button
     } else {
         loginButton = <Link className='a' to='/cs97-project/login'>Login</Link>
         isLoggedIn = false
