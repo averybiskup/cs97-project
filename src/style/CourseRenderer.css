@@ -23,6 +23,10 @@
     font-weight: bold;
 }
 
+.middle-input::placeholder {
+    color: white;
+}
+
 .middle-input {
     justify-content: center;
     width: 80%;
@@ -30,10 +34,25 @@
     margin-right:10%;
     height:10%;
     min-height: 30px;
+    outline: none;
+    border-top: 0px;
+    border-left-style: hidden;
+    border-right-style: hidden;
+    width: 75vw;
+    height: 10vh;
+    padding-left: 20px;
+    font-size: calc(2vh + 2vw);
+    margin-top: 10px;
+    border: none;
+    background-color: inherit;
+    padding-bottom: 10px;
+    border-bottom: 3px solid white;
+    color: white;
 }
 
 .middle-page {
-    background-image: url('https://miro.medium.com/max/3118/1*iwPLQjyFYRTVeQ2cb4S9rA.png');
+    /*background-image: url('https://miro.medium.com/max/3118/1*iwPLQjyFYRTVeQ2cb4S9rA.png');*/
+    background-color: #111111; 
     height: 60vh;
     background-size:cover;
     display: flex;
