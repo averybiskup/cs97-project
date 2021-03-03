@@ -57,7 +57,7 @@ let CoursePage = (props) => {
             <br/><br/>
             <div className="create-review">
                 <div className = 'create-review-author'><b>Author:</b> {current_course['author']}</div>
-                <div className = 'create-review-title'><b>Current Course:</b> {current_course['title']}</div>
+                <div className = 'create-review-title'><b>Course:</b> {current_course['title']}</div>
                 {/*<div className = 'rating'>Rating: {current_course['course_rating']}</div>*/}
                 {createReview}
             </div>

@@ -2,6 +2,8 @@ import { Link, useLocation } from 'react-router-dom'
 import signout from '../helper/signout.js'
 import loginPost from '../helper/loginPost.js'
 import getUserInfo from '../helper/getUserInfo.js'
+import UserRenderReviews from './UserRenderReviews.js'
+import UserReviewCard from './UserReviewCard.js'
 import { useState, useEffect } from 'react'
 
 
@@ -47,6 +49,9 @@ const Profile = () => {
                 </div>
                 <div>
                     <h4>Reviews: </h4>
+                </div>
+                <div className='review-cards'>
+                    <UserRenderReviews reviews={userInfo.reviews} />
                 </div>
             </div>
         </div>
