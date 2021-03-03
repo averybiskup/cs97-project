@@ -33,6 +33,12 @@ const login = (username, hash, callback) => {
     })
 }
 
+const getUserId = (username, callback) => {
+    dataRef.child('users').child(username).once('value', callback, (error) => {
+        console.log("Error getting username")
+    })
+}
+
 const addUser = (username, hash, callback) => {
     const id = Date.now()
     let d = new Date();
@@ -90,7 +96,7 @@ let addCourse = (title, author, tags, price, course_rating, reviews, url) => {
 
 // Function for adding review
 // Uses the course_id to know which course it's for
-let addReview = (course_id, body, author, title, rating, callback) => {
+const addReview = (course_id, body, author, title, rating, user_id, callback) => {
     var id = Date.now();
     let d = new Date();
     let cDay = d.getDate();
@@ -105,8 +111,13 @@ let addReview = (course_id, body, author, title, rating, callback) => {
         'author': author,
         'title': title,
         'rating': rating,
-        'date': date
+        'date': date,
+        'user_id': user_id
     }
+
+    dataRef.child('users').child(author).child('reviews').child(id).set(newReview, (error) => {
+        console.log('Added review to user');
+    });
 
     courses.child(course_id).child('reviews').child(id).set(newReview, callback)
 }
@@ -151,7 +162,7 @@ app.get('/api/addcourse', (req, res) => {
 // Recieving requests to post a new review
 app.post('/api/postreview', (req, res) => {
     console.log('Attempting to add review')
-    addReview(req.body.course_id, req.body.body, req.body.author, req.body.title, req.body.rating, (error) => {
+    addReview(req.body.course_id, req.body.body, req.body.author, req.body.title, req.body.rating, req.body.user_id, (error) => {
         if (error) {
             console.log('Post error')
         } else {
@@ -212,7 +223,7 @@ app.post('/login', (req, res) => {
         if (snapshot.exists()) {
             if (req.body.hash === snapshot.val().hash) {
                 console.log('Login succesful...')
-                res.status(200).send(true)
+                res.status(200).json({'id': snapshot.val().id, 'username': snapshot.val().username})
             } else {
                 console.log('Bad login')
                 res.status(500).send('Bad login')

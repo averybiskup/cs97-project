@@ -14,7 +14,8 @@ const loginPost = async (username, password, browserHistory) => {
             console.log(res.status)
             if (res.status == 200) {
                 window.localStorage.setItem('isAuthenticated', true)
-                window.localStorage.setItem('username', username)
+                window.localStorage.setItem('username', res.data.username)
+                window.localStorage.setItem('user_id', res.data.id)
                 browserHistory.goBack()
             }
         })

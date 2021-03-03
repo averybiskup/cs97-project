@@ -24,6 +24,7 @@ const handleSubmit = (e, course_id, title, body, rating, setMessage) => {
     } else {
 
         const author = window.localStorage.getItem('username')
+        const user_id = window.localStorage.getItem('user_id')
 
         // change (!author) to (false) for review testing
         if (!author) {
@@ -33,7 +34,7 @@ const handleSubmit = (e, course_id, title, body, rating, setMessage) => {
         } else {
 
             // Posting review
-            postReview(course_id, body, author, title, rating)
+            postReview(course_id, body, author, title, rating, user_id)
 
             // Rerendering parent component
             setMessage('Preparing review...')
