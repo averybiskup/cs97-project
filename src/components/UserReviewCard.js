@@ -7,13 +7,13 @@ let UserReviewCard = (props) => {
     // test with typeof
     // console.log("rating type: ",typeof props.review.rating);
 
-    // get first letter of string of Author
-    let firstLet = props.review.author.charAt(0);
+    // TODO: change course_id to course_name when old users are fixed/removed
+    let firstLet = props.review.course_id
     return (
         <div className='review'>
             <div className='review-left'>
-                <Link to={'/cs97-project/profile/' + props.review.user_id} style={{ textDecoration: 'none' }} className='review-logo'>{firstLet}</Link>
-                <div className='review-author'>- {props.review.author}</div>
+                <div className='review-author'></div>
+                <Link to={'/cs97-project/course/' + props.review.course_id} style={{ textDecoration: 'none' }} className='user-review-logo'>{firstLet}</Link>
             </div>
             <div className='right'>
                 <div className='review-title'>{props.review.title}</div>
