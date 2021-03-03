@@ -26,7 +26,7 @@ let MainRouter = () => {
                     <Route exact path='/cs97-project/addcourse' component={ AddCourse } />
                     <Route exact path='/cs97-project/login' component={ Login } ignoreScrollPosition />
                     <Route exact path='/cs97-project/signup' component={ Signup } />
-                    <Route exact path='/cs97-project/profile' component={ Profile } />
+                    <Route exact path='/cs97-project/profile/:id' component={ Profile } />
                 </Switch>
             </Router>
         </div>

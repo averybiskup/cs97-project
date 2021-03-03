@@ -33,7 +33,7 @@ let CoursePage = (props) => {
     // Getting courses from local storage
     const courses = JSON.parse(window.localStorage.getItem('courses'))
     const current_course = courses[url_param]
-    console.log("courses",courses);
+    console.log("courses",courses)
     let createReview
     //the login is not working, because the user name is not set. nothing in the data base for the user name
     const username = window.localStorage.getItem('username')

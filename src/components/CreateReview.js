@@ -24,7 +24,7 @@ const handleSubmit = (e, course_id, title, body, rating, setMessage) => {
     } else {
 
         const author = window.localStorage.getItem('username')
-        const user_id = window.localStorage.getItem('user_id')
+        const user_id = Number(window.localStorage.getItem('user_id'))
 
         // change (!author) to (false) for review testing
         if (!author) {

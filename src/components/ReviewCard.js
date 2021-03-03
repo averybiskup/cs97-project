@@ -12,7 +12,7 @@ let ReviewCard = (props) => {
     return (
         <div className='review'>
             <div className='review-left'>
-                <Link to='/cs97-project/profile' style={{ textDecoration: 'none' }} className='review-logo'>{firstLet}</Link>
+                <Link to={'/cs97-project/profile/' + props.review.user_id} style={{ textDecoration: 'none' }} className='review-logo'>{firstLet}</Link>
                 <div className='review-author'>- {props.review.author}</div>
             </div>
             <div className='right'>

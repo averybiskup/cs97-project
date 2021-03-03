@@ -134,6 +134,13 @@ const getCourses = (callback) => {
     })
 }
 
+const getUserInfo = (user_id, callback) => {
+    console.log('Searching...', user_id)
+    dataRef.child('users').orderByChild("id").equalTo(Number(user_id)).once("value", callback, (error) => {
+        console.log(error)
+    });
+}
+
 const updateCourse = (course_id, new_rating) => {
     courses.child(course_id).child('course_rating').set(new_rating, (error) => {
         if (error) {
@@ -232,6 +239,22 @@ app.post('/login', (req, res) => {
         else {
             console.log('User doesn\'t exist')
             res.status(500).send('User doesn\'t exist')
+        }
+    })
+})
+
+app.get('/getuserinfo/:user_id', (req, res) => {
+    console.log('Getting user info')
+    getUserInfo(req.params.user_id, (snapshot) => {
+        if (snapshot.exists()) {
+            console.log('Success')
+            const data = snapshot.val()
+            const key = Object.keys(data)[0]
+            console.log(data[key])
+            res.status(200).json(data[key]);
+        } else {
+            console.log('User: ' + req.params.user_id + ' does not exist')
+            res.status(500).send('User does not exist')
         }
     })
 })
