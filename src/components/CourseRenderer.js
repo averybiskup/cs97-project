@@ -47,11 +47,12 @@ const CourseRenderer = (props) => {
     //For the loginButton, check to see if the user is logged in or not
     let loginButton
     let isLoggedIn = false;
-
+    const loginRoute = '/cs97-project/profile/' + window.localStorage.getItem('user_id')
     //If user is logged in, display Sign Out button
     if (window.localStorage.getItem('isAuthenticated')) { 
         loginButton = <Link className='a' onClick={() => signout()}>Sign out</Link>
         isLoggedIn = true
+        
     //Otherwise diplay Login button
     } else {
         loginButton = <Link className='a' to='/cs97-project/login'>Login</Link>
@@ -64,7 +65,7 @@ const CourseRenderer = (props) => {
                 {loginButton}
                 <Link to='/cs97-project' className="title">WEBPAGE TITLE</Link>
                 <Link to='/cs97-project/addcourse'>Add Course</Link>
-                {isLoggedIn && <Link to='/cs97-project/profile'>Profile</Link>}
+                {isLoggedIn && <Link to={loginRoute}>Profile</Link>}
             </div>
             <div className="middle-page">
                 <br></br>
