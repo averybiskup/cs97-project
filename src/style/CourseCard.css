@@ -23,8 +23,11 @@
     background-color: gray;
     width: 400px;
     min-width: 300px;
-    max-width:fit-content;
     overflow:hidden;
+    flex-grow: 1;
+    flex-basis: auto;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .image_id{

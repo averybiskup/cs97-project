@@ -63,7 +63,8 @@
 #wrapper{
     display:flex;
     flex-flow: wrap;
-    justify-content:space-evenly   
+    justify-content:space-evenly;
+
 }
 
 .top_bar {

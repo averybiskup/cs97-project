@@ -75,6 +75,7 @@ const CourseRenderer = (props) => {
             <div id="wrapper">
                 {filteredCourses.map(course => (
                      <CourseCard key={course.id} name={course.title} course_id={course.id} />
+                     
                 ))}
             </div>
 
