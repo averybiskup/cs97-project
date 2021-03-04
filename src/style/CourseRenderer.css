@@ -6,6 +6,7 @@
     text-decoration: none;
     font-size: 100%;
     height:100%;
+    
 }
 
 .top_bar a:hover {
@@ -18,6 +19,12 @@
     background-color: #4CAF50;
     height:100%;
 }
+
+/*
+.top_bar a.title:hover {
+    background-color: #ddd;
+    color: black;
+}*/
 
 .title {
     font-weight: bold;
@@ -75,4 +82,5 @@
     width:100%;
     height:6.8vh;
     min-height: 50px;
+    z-index: 10000;
 }
