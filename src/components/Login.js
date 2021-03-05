@@ -45,6 +45,7 @@ const Login = () => {
 
     return (
         <div className="login-page">
+            <Link className="home-button-signup" to='/cs97-project/'>Home</Link>
             <form id='login' onSubmit={(e) => {
                 handleSubmit(e, username, password, browserHistory)
                 setPassword('')
@@ -60,7 +61,6 @@ const Login = () => {
                     <input className='login-button' type='submit' value='login' />
                     <div className='login-extra-buttons'>
                         <Link className="signup" to='/cs97-project/signup'>or sign up</Link>
-                        <Link className="home-button" to='/cs97-project/'>Home</Link>
                     </div>
                 </div>
             </form>

@@ -51,14 +51,10 @@ let CoursePage = (props) => {
     return (
 
         <div className="course-page">
-            {/*removed login option because it already appears on page*/}
-            {/*<Link className="login" to='/cs97-project/login'>Login</Link>*/}
             <Link className="home-button" to='/cs97-project/'>Home</Link>
-            <br/><br/>
             <div className="create-review">
-                <div className = 'create-review-author'><b>Author:</b> {current_course['author']}</div>
-                <div className = 'create-review-title'><b>Course:</b> {current_course['title']}</div>
-                {/*<div className = 'rating'>Rating: {current_course['course_rating']}</div>*/}
+                <div className = 'create-review-title'> <b>{current_course['title']}</b></div>
+                <div className = 'create-review-author'>Author: {current_course['author']}</div>
                 {createReview}
             </div>
 

@@ -14,6 +14,12 @@ import StarRatings from 'react-star-ratings';
 
 let CourseCard = (props) => {
     const path_to_course = "/cs97-project/course/" + props.course_id
+    let num_reviews;
+    if (props.num_reviews) {
+        num_reviews = Object.keys(props.num_reviews).length
+    } else {
+        num_reviews = 0
+    }
     return (
         <div className="course-card">
                 {/*<div><img className="image_id" src={'https://media.geeksforgeeks.org/wp-content/cdn-uploads/titleShadow-1024x341.png'} alt="test image"/></div>*/}
@@ -25,9 +31,10 @@ let CourseCard = (props) => {
                     starRatedColor="orange"
                     numberOfStars={5}
                     name='rating'
-                    starDimension="16px"
+                    starDimension="20px"
                     starSpacing="1px"
                     />
+                    <div className='num-reviews'>({num_reviews})</div>
                 </div>
                 {/*<Link className="course_link" to={path_to_course} >Course Page</Link>*/}
         </div>

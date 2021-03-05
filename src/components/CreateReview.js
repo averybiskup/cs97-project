@@ -76,7 +76,25 @@ const CreateReview = (props) => {
                     }
                 }}
             >
-                <label>
+            <div className='review-inputs'>
+                <input
+                    type='text'
+                    name='title'
+                    placeholder='title (required)'
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                    className={"title-input"}
+                />
+
+                <textarea
+                    type='text'
+                    name='body'
+                    placeholder='review (required)'
+                    value={body} onChange={(e) => setBody(e.target.value)}
+                    className={"body-input"}
+                />
+
+                <div className='create-star-rating'>
                 <StarRatings2
                     rating={rating}
                     starRatedColor="orange"
@@ -88,35 +106,11 @@ const CreateReview = (props) => {
                     starSpacing="5px"
                     changeRating={(rating)=>setRating(rating)}
                 />
-                    <span className="rating-text">select your rating</span>
-                </label>
+                </div>
 
-                <label>
-                <input
-                    type='text'
-                    name='title'
-                    placeholder='title (required)'
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                    className={"title-input"}
-                />
-                </label>
-
-
-                <label>
-                <textarea
-                    type='text'
-                    name='body'
-                    placeholder='review (required)'
-                    value={body} onChange={(e) => setBody(e.target.value)}
-                    className={"body-input"}
-                />
-                </label>
-
-                <label>
                 <input type='submit' value='Submit' className={"submit-review"} />
-                </label>
                 <br/>
+            </div>
 
             </form>
         </div>

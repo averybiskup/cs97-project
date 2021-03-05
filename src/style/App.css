@@ -50,49 +50,60 @@ body {
     height:100%;
 }
 
-.title {
-    /*font-weight: bold;*/
-
-}
-.create-review{
-    margin: 0 auto;
-    background-color: aliceblue;
-    border: 1px blue solid;
-    border-radius: 5px;
-    max-width: 400px;
+.create-review {
+    width: 100%;
     color: gray;
 }
 
-.review-logo{
-    height: 40px;
-    width: 40px;
-    background-color: lightblue;
-    border-radius: 50%;
-    display: inline-block;
-    font-size: 30px;
-    margin-bottom: 20px;
-}
-
-.star-rating, .review-body, .review-title, .star-container{
+.star-ratings, .review-body, .review-title, .star-container{
     text-align: left;
     margin: 1px;
 }
+
+.create-star-rating {
+    margin-bottom: 20px;
+}
+
 .review-left{
     flex: 0 0 120px;
     margin-right: 10px;
 }
+
+.submit-review {
+    color: white;
+    background-color: #111111;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
 .review-author{
     text-align: center;
-    margin-bottom: 20px;
 }
+
 .review-title{
     font-weight: bold;
 }
 
-.create-review-title, .create-review-author, label{
-    display: block;
-    padding-top: 12px;
+.create-review-title {
+    padding-top: 20px;
 }
+
+.course-page-login {
+    color: #111111;
+    text-decoration: none;
+}
+
+.create-review-title, .create-review-author, label{
+    color: white;
+    font-size: 40px;
+    width: 100%;
+    background-color: #111111;
+    padding-bottom: 30px;
+}
+
 .rating-text{
     color: gray;
     display: inline-block;
@@ -103,10 +114,47 @@ body {
 }
 
 .title-input{
-    width:90%;
+    width: 400px;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    margin-bottom: 20px;
 }
+
 .body-input{
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
     width:93%;
+    max-width: 93%;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    max-height: 500px;
+}
+
+.home-button-signup {
+    color: #111111;
+}
+
+.home-button {
+    color: white;
+}
+
+
+.home-button {
+    color: white;
+}
+.home-button, .home-button-signup {
+    text-decoration: none;
+    position: absolute;
+    float: left;
+    display: block;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+html, #root, .Router, body {
+    height: 100%;
 }
 
 @media (max-width: 360px) {
@@ -119,7 +167,16 @@ body {
     .submit-review{
         width: 93%;
     }
+
     .create-review{
         max-width: 95%;
     }
   }
+
+.review-inputs {
+    background-color: #111111;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

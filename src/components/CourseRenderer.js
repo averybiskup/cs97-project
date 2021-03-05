@@ -58,13 +58,13 @@ const CourseRenderer = (props) => {
         loginButton = <Link className='a' to='/cs97-project/login'>Login</Link>
         isLoggedIn = false
     }
-    
+
+
     return (
         <div>
             <div className="top_bar">
                 {loginButton}
                 <Link to='/cs97-project' className="title">CourseMe</Link>
-                {/*<Link to='/cs97-project/addcourse'>Add Course</Link>*/}
                 {isLoggedIn && <Link to={loginRoute}>Profile</Link>}
             </div>
             <div className="middle-page">
@@ -74,7 +74,7 @@ const CourseRenderer = (props) => {
 
             <div id="wrapper">
                 {filteredCourses.map(course => (
-                     <CourseCard key={course.id} name={course.title} author={course.author} rating={course.course_rating} course_id={course.id} />
+                     <CourseCard key={course.id} name={course.title} author={course.author} rating={course.course_rating} course_id={course.id} num_reviews={course.reviews} />
                      
                 ))}
             </div>

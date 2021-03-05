@@ -23,7 +23,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 50px;
+    padding-top: 50px;
+    background-color: white;
 }
 
 .login-button {
@@ -49,16 +50,17 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    background-color: #111111;
-    transition: background-color 1s linear;
     margin-top: 50px;
+}
+
+html, #root, .Router {
+    height: 100%;
 }
 
 .login-extra-buttons {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 45vh;
     color: white;
 }
 
@@ -79,13 +81,19 @@
     font-size: calc(1vh + 2vw);
 }
 
+.login-page, .signup-page {
+    transition: background-color 1s linear;
+    height: 100%;
+    background-color: #111111;
+}
+
 .password-button {
-    width: 15vw;
     text-align: center;
     background-color: inherit;
     cursor: pointer;
     border: none;
     font-size: calc(1vh + 1vw);
+    margin-bottom: 50px;
 }
 
 

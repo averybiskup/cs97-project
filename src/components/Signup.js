@@ -70,7 +70,7 @@ const Signup = () => {
     let color = '#11' + test + '11'
 
     if (password.length > 0 && password.length < 10) {
-        document.getElementById('lower-bg').style.backgroundColor = color
+        document.getElementById('signup-page').style.backgroundColor = color
         document.getElementById('password').style.borderColor = color
     }
 
@@ -85,7 +85,8 @@ const Signup = () => {
     }
 
     return (
-        <div className="signup-page">
+        <div className="signup-page" id="signup-page">
+            <Link className="home-button-signup" to='/cs97-project/'>Home</Link>
             <form id='signup' onSubmit={(e) => {
                 handleSubmit(e, username, password)
                 setPassword('')
@@ -101,7 +102,6 @@ const Signup = () => {
                 <input className='login-button' type='submit' value='sign up' />
                 <div className='login-extra-buttons'>
                     <Link className="login" to='/cs97-project/login'>or login</Link>
-                    <Link className="home-button" to='/cs97-project/'>Home</Link>
                 </div>
             </div>
             </form>

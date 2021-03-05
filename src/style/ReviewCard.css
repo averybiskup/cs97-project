@@ -2,23 +2,12 @@
     margin-top: 20px;
     display: flex;
     flex-direction: row;
-    background-color: aliceblue;
-    border-bottom: 1px solid blue;
+    border-bottom: 1px solid black;
 }
 
 .review-logo {
     height: 40px;
     width: 40px;
-    background-color: lightblue;
-    border-radius: 50%;
-    display: inline-block;
-    font-size: 30px;
-    margin-bottom: 20px;
-}
-
-.user-review.logo {
-    height: 40px;
-    width: 200px;
     background-color: lightblue;
     border-radius: 50%;
     display: inline-block;
