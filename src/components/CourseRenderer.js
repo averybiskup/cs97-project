@@ -2,7 +2,6 @@
 // Also contains the code for the search bar
 // Uses js-search which is for searching for matches in a list of objects
 
-
 import {useState} from 'react';
 import CourseCard from './CourseCard.js'
 import * as JsSearch from 'js-search'
@@ -48,9 +47,9 @@ const CourseRenderer = (props) => {
     let loginButton
     let isLoggedIn = false;
     const loginRoute = '/cs97-project/profile/' + window.localStorage.getItem('user_id')
-    //If user is logged in, display Sign Out button
+    //If user is logged in (isAuthenticated), display Sign Out button
     if (window.localStorage.getItem('isAuthenticated')) { 
-        loginButton = <Link className='a' onClick={() => signout()}>Sign out</Link>
+        loginButton = <Link className='a' onClick={() => signout()}>Sign Out</Link>
         isLoggedIn = true
         
     //Otherwise diplay Login button
@@ -62,16 +61,21 @@ const CourseRenderer = (props) => {
 
     return (
         <div>
+            {/*For the top bar, display the loginButton (which we assigned as Login or Sign Out above), the Course Title
+               and the Profile button IF the user is logged in*/}
             <div className="top_bar">
                 {loginButton}
                 <Link to='/cs97-project' className="title">CourseMe</Link>
                 {isLoggedIn && <Link to={loginRoute}>Profile</Link>}
             </div>
+
+            {/*For the middle of the page we have a Search Bar, which users can use to search for courses*/}
             <div className="middle-page">
                 <br></br>
                 <input type="text"  className="middle-input" id="course-search" placeholder="Search for Course..." name="s" onChange={e => setQuery(e.target.value)}/>
             </div>
-
+            
+            {/*The rest of the page is dedicated to the CourseCards, which displays the course title, author, and rating*/}
             <div id="wrapper">
                 {filteredCourses.map(course => (
                      <CourseCard key={course.id} name={course.title} author={course.author} rating={course.course_rating} course_id={course.id} num_reviews={course.reviews} />
