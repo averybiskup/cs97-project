@@ -13,30 +13,43 @@ import StarRatings from 'react-star-ratings';
 
 
 let CourseCard = (props) => {
+    
+    //Create a path for each course so we can direct the user to the correct course page later
     const path_to_course = "/cs97-project/course/" + props.course_id
+
+    //Sets the number of reviews for each course
     let num_reviews;
     if (props.num_reviews) {
         num_reviews = Object.keys(props.num_reviews).length
     } else {
         num_reviews = 0
     }
+
     return (
+        //Inside each course card, display:
         <div className="course-card">
-                {/*<div><img className="image_id" src={'https://media.geeksforgeeks.org/wp-content/cdn-uploads/titleShadow-1024x341.png'} alt="test image"/></div>*/}
-                <Link className="course_title" to={path_to_course}>{props.name}</Link>
-                <div className="course_author">{props.author}</div>
-                <div className="course_rating">
-                    <StarRatings
-                    rating={Number(props.rating)}
-                    starRatedColor="orange"
-                    numberOfStars={5}
-                    name='rating'
-                    starDimension="20px"
-                    starSpacing="1px"
-                    />
-                    <div className='num-reviews'>({num_reviews})</div>
-                </div>
-                {/*<Link className="course_link" to={path_to_course} >Course Page</Link>*/}
+            {/*The title, which is a clickable link which takes you to the course chosen*/}
+            <Link className="course_title" to={path_to_course}>{props.name}</Link>
+
+            {/*The course author*/}
+            <div className="course_author">{props.author}</div>
+
+            {/*And the course rating, given through a 5 star interface, as well as the number of ratings for the course*/}
+            <div className="course_rating">
+
+                {/*Star Rating*/}
+                <StarRatings
+                rating={Number(props.rating)}
+                starRatedColor="orange"
+                numberOfStars={5}
+                name='rating'
+                starDimension="20px"
+                starSpacing="1px"
+                />
+                
+                {/*Number Rating*/}
+                <div className='num-reviews'>({num_reviews})</div>
+            </div>
         </div>
     );
 }

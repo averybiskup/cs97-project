@@ -64,8 +64,9 @@ const CreateReview = (props) => {
     const course_name = props.course.title
 
     return (
-
         <div className='create-review-input'>
+            
+            {/*Create an empty review form*/}
             <form id='create-review-form'
                 onSubmit={(e) => {
                     if (handleSubmit(e, course_id, title, body, rating, props.updateMessage, course_name)) {
@@ -76,7 +77,10 @@ const CreateReview = (props) => {
                     }
                 }}
             >
+
+            {/*The user must fill out 3 inputs: */}
             <div className='review-inputs'>
+                {/*The title of their review*/}
                 <input
                     type='text'
                     name='title'
@@ -86,6 +90,7 @@ const CreateReview = (props) => {
                     className={"title-input"}
                 />
 
+                {/*The review itself*/}
                 <textarea
                     type='text'
                     name='body'
@@ -94,6 +99,7 @@ const CreateReview = (props) => {
                     className={"body-input"}
                 />
 
+                {/*And the star rating*/}
                 <div className='create-star-rating'>
                 <StarRatings2
                     rating={rating}
@@ -108,6 +114,7 @@ const CreateReview = (props) => {
                 />
                 </div>
 
+                {/*A submit button to submit their review*/}
                 <input type='submit' value='Submit' className={"submit-review"} />
                 <br/>
             </div>

@@ -22,7 +22,6 @@ const filterCourses = (courses, query) => {
     var search = new JsSearch.Search('id')
     search.addIndex('title')
     search.addIndex('tags')
-
     search.addDocuments(courses)
     const result = search.search(query)
 
@@ -41,12 +40,14 @@ const CourseRenderer = (props) => {
        return coursesObj[id]
     })
 
+    //If user searched for certain courses only, then store the filtered courses
     const filteredCourses = filterCourses(courses, query)
 
     //For the loginButton, check to see if the user is logged in or not
     let loginButton
     let isLoggedIn = false;
     const loginRoute = '/cs97-project/profile/' + window.localStorage.getItem('user_id')
+    
     //If user is logged in (isAuthenticated), display Sign Out button
     if (window.localStorage.getItem('isAuthenticated')) { 
         loginButton = <Link className='a' onClick={() => signout()}>Sign Out</Link>

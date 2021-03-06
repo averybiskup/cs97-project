@@ -49,15 +49,21 @@ let CoursePage = (props) => {
 
 
     return (
-
         <div className="course-page">
+            {/*Link to Home page*/}
             <Link className="home-button" to='/cs97-project/'>Home</Link>
+
+            {/*Display the Title and Author of the course*/}
             <div className="create-review">
                 <div className = 'create-review-title'> <b>{current_course['title']}</b></div>
                 <div className = 'create-review-author'>Author: {current_course['author']}</div>
+
+                {/*If the user is logged in, this will display a section for the user to create a review and rate the course
+                   If the user is not logged in, this will display the message "Login to leave a review"*/}
                 {createReview}
             </div>
-
+            
+            {/*The rest of the page is dedicated to showing the reviews of the course*/}
             <div className='review-cards'>
                 <RenderReviews loc={url_param} message={message} />
             </div>
