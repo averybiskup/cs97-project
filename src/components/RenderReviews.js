@@ -25,12 +25,12 @@ let RenderReviews = (props) => {
     return (
         <div className="reviews">
             <div>{props.message}</div>
+            <h1>Reviews:</h1>
             {reviewsList.map((review) => {
                 return <ReviewCard key={review.id} review={review} />
             })}
         </div>
     )
 }
-
 
 export default RenderReviews
