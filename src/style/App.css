@@ -55,7 +55,7 @@ body {
     color: gray;
 }
 
-.star-ratings, .review-body, .review-title, .star-container{
+.star-ratings,.review-body, .review-title, .star-container{
     text-align: left;
     margin: 1px;
 }
@@ -102,6 +102,14 @@ body {
     width: 100%;
     background-color: #111111;
     padding-bottom: 30px;
+}
+.create-review-description{
+    color: white;
+    font-size: 20px;
+    width: 100%;
+    background-color: #111111;
+    padding-bottom: 30px;
+    text-align: left;
 }
 
 .rating-text{

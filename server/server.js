@@ -67,7 +67,7 @@ const addUser = (username, hash, callback) => {
 // Function for adding courses
 // Will likely be deprecated in the future as support for
 // this functionality is still being decided
-let addCourse = (title, author, tags, price, course_rating, reviews, url) => {
+let addCourse = (title, author, tags, price, course_rating,course_description, reviews, url) => {
     var id = Date.now();
 
     let newCourse = {
@@ -77,6 +77,7 @@ let addCourse = (title, author, tags, price, course_rating, reviews, url) => {
         'tags': tags,
         'price': price,
         'course_rating': course_rating,
+        'course_description': course_description,
         'reviews': reviews,
         'url': url
     }

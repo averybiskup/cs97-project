@@ -57,7 +57,7 @@ let CoursePage = (props) => {
             <div className="create-review">
                 <div className = 'create-review-title'> <b>{current_course['title']}</b></div>
                 <div className = 'create-review-author'>Author: {current_course['author']}</div>
-
+                <div className = 'create-review-description'> Course Description: {current_course['course_description']}</div>
                 {/*If the user is logged in, this will display a section for the user to create a review and rate the course
                    If the user is not logged in, this will display the message "Login to leave a review"*/}
                 {createReview}

@@ -17,6 +17,7 @@ let UserReviewCard = (props) => {
             </div>
             <div className='right'>
                 <div className='review-title'>{props.review.title}</div>
+                <div className='review-course_descrition'>{props.review.course_description}</div>
                 <div className='star-container'>
                     <StarRatings
                     rating={Number(props.review.rating)}
