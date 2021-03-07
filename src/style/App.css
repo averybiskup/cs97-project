@@ -58,8 +58,8 @@ body {
     color: #f2f2f2;
     text-align: center;
     padding: 1% 1%;
-    padding-left: 3%;
-    padding-right: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
     position:relative;
     text-decoration:none;
 }
@@ -67,8 +67,6 @@ body {
 .top_bar a.title{
     font-weight: bold;
 }
-
-
 
 .top_bar a.title {
     float: left;
