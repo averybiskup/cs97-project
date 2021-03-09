@@ -8,7 +8,6 @@
 .review-logo {
     height: 40px;
     width: 40px;
-    background-color: lightblue;
     border-radius: 50%;
     display: inline-block;
     font-size: 30px;
@@ -20,20 +19,22 @@
     position: absolute;
     right: 9%;
     padding-bottom: 10px;
-
 }
 
-.review-left{
+.review-left {
     flex: 0 0 120px;
     margin-right: 10px;
 }
 
-.review-author{
-    margin-bottom: 20px;
+.review-author {
+    color: #3B83EE;
+    font-size: 17px;
+    text-decoration: none;
+    display: inline-block;
 }
 
 
-.review-title{
+.review-title {
     font-weight: bold;
 }
 

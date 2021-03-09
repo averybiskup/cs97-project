@@ -17,7 +17,7 @@ let ReviewCard = (props) => {
                 <div className='star-container'>
                     <StarRatings
                     rating={Number(props.review.rating)}
-                    starRatedColor="orange"
+                    starRatedColor="#3B83EE"
                     numberOfStars={5}
                     name='rating'
                     starDimension="16px"

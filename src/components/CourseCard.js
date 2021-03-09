@@ -29,18 +29,18 @@ let CourseCard = (props) => {
         //Inside each course card, display:
         <div className="course-card">
             {/*The title, which is a clickable link which takes you to the course chosen*/}
-            <Link className="course_title" to={path_to_course}>{props.name}</Link>
+            <Link className="course-title" to={path_to_course}>{props.name}</Link>
 
             {/*The course author*/}
-            <div className="course_author">{props.author}</div>
+            <div className="course-author">{props.author}</div>
 
             {/*And the course rating, given through a 5 star interface, as well as the number of ratings for the course*/}
-            <div className="course_rating">
+            <div className="course-rating">
 
                 {/*Star Rating*/}
                 <StarRatings
                 rating={Number(props.rating)}
-                starRatedColor="orange"
+                starRatedColor="#3B83EE"
                 numberOfStars={5}
                 name='rating'
                 starDimension="20px"

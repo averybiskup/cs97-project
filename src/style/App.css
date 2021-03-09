@@ -30,6 +30,30 @@ body {
     margin-top: 10px;
 }
 
+.course-link-review-page {
+    background-color: #111111;
+    color: white;
+    text-decoration: none;
+}
+
+.save-course {
+   position: absolute;
+   border: none;
+   background-color: inherit;
+   color: white;
+   font-size: inherit;
+   right: 0;
+   cursor: pointer;
+   margin-top: 10px;
+   margin-right: 10px;
+} 
+
+
+.course-link-container {
+    background-color: #111111;
+    padding-bottom: 10px;
+}
+
 .profile-top {
     margin-bottom: 100px;
 }
@@ -87,10 +111,6 @@ body {
     margin: 1px;
 }
 
-.create-star-rating {
-    margin-bottom: 20px;
-}
-
 .review-left{
     flex: 0 0 120px;
     margin-right: 10px;
@@ -126,6 +146,7 @@ body {
     background-color: #111111;
     padding-bottom: 30px;
 }
+
 .create-review-description {
     color: white;
     font-size: 20px;
@@ -141,7 +162,6 @@ body {
 
 .course-page-stars {
     background-color: #111111;
-    padding-bottom: 20px;
 }
 
 .review-inputs {
@@ -187,7 +207,7 @@ body {
 }
 
 .home-button {
-    color: white;
+    color: #111111;
 }
 
 

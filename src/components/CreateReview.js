@@ -103,8 +103,8 @@ const CreateReview = (props) => {
                 <div className='create-star-rating'>
                 <StarRatings2
                     rating={rating}
-                    starRatedColor="orange"
-                    starHoverColor="orange"
+                    starRatedColor="#3B83EE"
+                    starHoverColor="#3B83EE"
                     isSelectable={true}
                     numberOfStars={5}
                     name='rating'

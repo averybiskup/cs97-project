@@ -67,12 +67,12 @@ const addUser = (username, hash, callback) => {
 // Function for adding courses
 // Will likely be deprecated in the future as support for
 // this functionality is still being decided
-let addCourse = (title, author, tags, price, course_rating,course_description, reviews, url) => {
+const addCourse = (title, author, tags, price, course_rating,course_description, reviews, url) => {
     var id = Date.now();
 
     let newCourse = {
         'id': id,
-        'title': title,
+        'title': titlecourse_id,
         'author': author,
         'tags': tags,
         'price': price,
@@ -153,6 +153,15 @@ const updateCourse = (course_id, new_rating) => {
     })
 }
 
+const saveCourse = (user_name, course_id, course_title, callback) => {
+    dataRef.child('users').child(user_name).child('saved_courses').child(course_id).set(course_title, callback);
+}
+
+const checkSavedCourse = (user_name, course_id, callback) => {
+    dataRef.child('users').child(user_name).child('saved_courses').child(course_id).once('value', callback, error => {
+        console.log(error)
+    })
+}
 
 // Root domain, this won't be used because this is an api
 app.get('/', (req, res) => {
@@ -256,6 +265,31 @@ app.get('/getuserinfo/:user_id', (req, res) => {
         } else {
             console.log('User: ' + req.params.user_id + ' does not exist')
             res.status(500).send('User does not exist')
+        }
+    })
+})
+
+app.post('/savecourse', (req, res) => {
+    console.log('Adding course to user')
+    console.log(req.body.user_name, req.body.course_id, req.body.course_name)
+    saveCourse(req.body.user_name, req.body.course_id, req.body.course_name, error => {
+        if (error) {
+            console.log(error)
+        } else {
+            console.log('Success')
+        }
+    });
+})
+
+app.post('/checksavedcourse', (req, res) => {
+    console.log('Checking saved courses')
+    console.log(req.body.user_name, req.body.course_id)
+    checkSavedCourse(req.body.user_name, req.body.course_id, (snapshot) => {
+        if (snapshot.exists()) {
+            console.log('Course Saved')
+            res.status(200).send(true)
+        } else {
+            res.status(200).send(false)
         }
     })
 })
