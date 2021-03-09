@@ -30,6 +30,15 @@ body {
     margin-top: 10px;
 }
 
+.saved-course-list {
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+    text-align: left;
+    margin-left: 20px;
+}
+
 .course-link-review-page {
     background-color: #111111;
     color: white;
@@ -47,6 +56,16 @@ body {
    margin-top: 10px;
    margin-right: 10px;
 } 
+
+.single-saved-course {
+    color: #3B83EE;
+    text-decoration: none;
+    font-size: 20px;
+    padding-top: 15px;
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+    text-align: left;
+}
 
 
 .course-link-container {
@@ -72,6 +91,8 @@ body {
 
 .review-course-link {
     text-align: left;
+    color: #3B83EE;
+    text-decoration: none;
 }
 
 .review-author {
