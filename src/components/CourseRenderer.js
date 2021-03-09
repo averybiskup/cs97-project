@@ -64,7 +64,7 @@ const CourseRenderer = (props) => {
         <div>
             {/*For the top bar, display the loginButton (which we assigned as Login or Sign Out above), the Course Title
                and the Profile button IF the user is logged in*/}
-            <div className="top_bar">
+            <div className="top-bar">
                 <div className='user'>{window.localStorage.getItem('username')}</div>
                 {loginButton}
                 <Link to='/cs97-project' className="title">CourseMe</Link>

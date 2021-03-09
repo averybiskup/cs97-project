@@ -77,48 +77,6 @@ body {
     font-weight: bold;
 }
 
-.top_bar a, .top_bar .user {
-    float: right;
-    color: #f2f2f2;
-    text-align: center;
-    padding-top: 1%;
-    padding-bottom: none;
-    padding-left: 2%;
-    padding-right: 2%;
-    position:relative;
-    text-decoration:none;
-}
-
-.top_bar a.title{
-    font-weight: bold;
-}
-
-.top_bar a.title {
-    float: left;
-}
-
-.top_bar a:after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    right: 0;
-    width: 0;
-    bottom: -5px;
-    background: #f2f2f2;
-    height: 4px;
-    transition-property: width;
-    transition-duration: 0.3s;
-    transition-timing-function: ease-out;
-}
-
-.top_bar a:hover:after,
-.top_bar a:focus:after,
-.top_bar a:active:after{
-    left: 0;
-    right: auto;
-    width: 100%;
-}
-
 .create-review {
     width: 100%;
     color: gray;
