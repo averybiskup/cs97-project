@@ -252,7 +252,6 @@ app.get('/getuserinfo/:user_id', (req, res) => {
             console.log('Success')
             const data = snapshot.val()
             const key = Object.keys(data)[0]
-            console.log(data[key])
             res.status(200).json(data[key]);
         } else {
             console.log('User: ' + req.params.user_id + ' does not exist')
