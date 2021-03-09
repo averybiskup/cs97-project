@@ -23,6 +23,13 @@ react-dom-router
 react  
 - should be self explanatory  
 
+js-sha256  
+- for creating the sha hash for passwords  
+
+react-star-ratings  
+- for displaying stars  
+
+
 ====================  
 Object models:  
 Course: {  
@@ -44,4 +51,5 @@ Review: {
 - body: string  
 - rating: int  
 - date: string  
+- course\_name  
 }
