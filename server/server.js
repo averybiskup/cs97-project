@@ -72,7 +72,7 @@ const addCourse = (title, author, tags, price, course_rating,course_description,
 
     let newCourse = {
         'id': id,
-        'title': titlecourse_id,
+        'title': title,
         'author': author,
         'tags': tags,
         'price': price,

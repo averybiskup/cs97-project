@@ -12,7 +12,7 @@ let RenderSavedCourses = (props) => {
             Saved Courses:
             {Object.entries(props.courses).map((arr) => {
                 return <div  key={arr[0]}>
-                    <Link className='single-saved-course' to={'/cs97-project/' + arr[0]}>{arr[1]}</Link>                    
+                    <Link className='single-saved-course' to={'/cs97-project/course/' + arr[0]}>{arr[1]}</Link>                    
                 </div>
                 
             })} 

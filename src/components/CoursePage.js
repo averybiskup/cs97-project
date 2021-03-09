@@ -25,6 +25,7 @@ let CoursePage = (props) => {
     // This allows us to rerender dom from child component
     const [message, setMessage] = useState('')
     const [saved, setSaved] = useState(false)
+    const [courseMsg, setCourseMsg] = useState('Save Course')
     
     // Scrolls to top of page
     useEffect(() => {
@@ -57,8 +58,9 @@ let CoursePage = (props) => {
         if (!saved) {
             saveCourseButton = <button className='save-course' onClick={() => {
                 saveCourse(window.localStorage.getItem('username'), current_course['id'], current_course['title'])
-                setMessage('Course Saved!')
-            }}>Save Course</button>
+                setCourseMsg('Course Saved!')
+            }}>{courseMsg}</button>
+        
         } else {
             saveCourseButton = <div className='save-course'>Course Saved</div>
         }
