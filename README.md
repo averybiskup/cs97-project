@@ -1,12 +1,11 @@
-Project for CS97  
-=====================  
-Team Members:  
-Harshil Bhullar,  
-Dorian Jimenez,  
-Luis Frias,  
-Avery Biskup,  
-Ping-Yang Gao  
-====================  
+# CS97 Project- *CourseMe* 
+**Description:**
+For the project we decided on a website application where users can discover 
+computer science courses that are applicable to the fied they want to learn more about. 
+Users who create an account can save, add, and rate courses.  
+
+## Demo
+## Tech/Framework
 Package | Usage  
 js-search  
 - for the search bar implementation  
@@ -53,3 +52,15 @@ Review: {
 - date: string  
 - course\_name  
 }
+
+## Features
+## Installation
+## API Reference
+## How to use?
+## Contributors
+Team Members:  
+Harshil Bhullar,  
+Dorian Jimenez,  
+Luis Frias,  
+Avery Biskup,  
+Ping-Yang Gao  
