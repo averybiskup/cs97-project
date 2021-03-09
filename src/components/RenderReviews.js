@@ -23,9 +23,8 @@ let RenderReviews = (props) => {
     })
     
     return (
-        <div className="reviews">
-            <div>{props.message}</div>
-            <h1>Reviews:</h1>
+        <div className='reviews'>
+            <div className='status-message'>{props.message}</div>
             {reviewsList.map((review) => {
                 return <ReviewCard key={review.id} review={review} />
             })}

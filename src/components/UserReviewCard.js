@@ -8,14 +8,11 @@ let UserReviewCard = (props) => {
     // console.log("rating type: ",typeof props.review.rating);
 
     // TODO: change course_id to course_name when old users are fixed/removed
-    let firstLet = props.review.course_id
     return (
         <div className='review'>
-            <div className='review-left'>
-                <div className='review-author'></div>
-                <Link to={'/cs97-project/course/' + props.review.course_id} style={{ textDecoration: 'none' }} className='user-review-logo'>{firstLet}</Link>
-            </div>
+            <div className='review-author'></div>
             <div className='right'>
+                <Link to={'/cs97-project/course/' + props.review.course_id} className='review-course-link'>{props.review.course_name}</Link>
                 <div className='review-title'>{props.review.title}</div>
                 <div className='review-course_descrition'>{props.review.course_description}</div>
                 <div className='star-container'>
@@ -29,6 +26,7 @@ let UserReviewCard = (props) => {
                     />
                 </div>
                 <div className='review-body'>{props.review.body}</div>
+                <div className='review-date'>{props.review.date}</div>
             </div>
         </div>
     );

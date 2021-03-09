@@ -28,23 +28,23 @@ const Profile = () => {
     }, [])
 
     if (isLoading) {
-        console.log(userInfo)
         return (
-            <div>Loading Reviews</div>
+            <div className='profile-loading'>Loading Reviews</div>
         )
     }
 
     return (
         <div>
+            <Link className='home-button-signup' to='/cs97-project/'>Home</Link>
             <div>
-            <button type='button' className='a' onClick={() => signout()}>Sign out</button>
-                <div>
-                    <h1>{userInfo.username}</h1>
-                    <h4>Joined: {userInfo.joined}</h4>
-                </div>
-                <div className='review-cards'>
-                    <UserRenderReviews reviews={userInfo.reviews} />
-                </div>
+            <button className='profile-logout' type='button' onClick={() => signout()}>Sign out</button>
+            <div className='profile-top'>
+                    <div className='profile-name'>{userInfo.username}</div>
+                    <div className='profile-date'>Joined: {userInfo.joined}</div>
+            </div>
+            <div className='review-cards'>
+                <UserRenderReviews reviews={userInfo.reviews} />
+            </div>
             </div>
         </div>
     )

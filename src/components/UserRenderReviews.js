@@ -10,7 +10,7 @@ let UserRenderReviews = (props) => {
     // displays this message
     if (!reviews) {
         return (
-            <div>
+            <div className='profile-no-reviews'>
                 User has no reviews.
             </div>
         )
@@ -23,7 +23,6 @@ let UserRenderReviews = (props) => {
     
     return (
         <div className="reviews">
-            <h1>Reviews:</h1>
             {reviewsList.map((review) => {
                 return <UserReviewCard key={review.id} review={review}/>
             })}

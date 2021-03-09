@@ -10,6 +10,7 @@ import ReviewCard from './ReviewCard.js'
 import CreateReview from './CreateReview.js'
 import fetchCourses from '../helper/fetchCourses.js'
 import RenderReviews from './RenderReviews'
+import StarRatings from 'react-star-ratings';
 
 let CoursePage = (props) => {
 
@@ -57,7 +58,17 @@ let CoursePage = (props) => {
             <div className="create-review">
                 <div className = 'create-review-title'> <b>{current_course['title']}</b></div>
                 <div className = 'create-review-author'>Author: {current_course['author']}</div>
-                <div className = 'create-review-description'> Course Description: {current_course['course_description']}</div>
+                <div className='course-page-stars'>
+                    <StarRatings
+                        rating={Number(current_course['course_rating'])}
+                        starRatedColor="orange"
+                        numberOfStars={5}
+                        name='rating'
+                        starDimension="20px"
+                        starSpacing="1px"
+                    />
+                </div>
+
                 {/*If the user is logged in, this will display a section for the user to create a review and rate the course
                    If the user is not logged in, this will display the message "Login to leave a review"*/}
                 {createReview}

@@ -7,11 +7,57 @@
     margin-left: 20px;
 }
 
+.user {
+    color: white;
+}
+
 body {
     background-color: whitesmoke;
     font-family: Arial;
     text-align: center;
     justify-content:center;
+}
+
+.profile-logout {
+    position: absolute;
+    right: 10px;
+    border: none;
+    background-color: inherit;
+    text-decoration: none;
+    position: absolute;
+    cursor: pointer;
+    font-size: inherit;
+    margin-top: 10px;
+}
+
+.profile-top {
+    margin-bottom: 100px;
+}
+
+.profile-name {
+    font-size: 30px;
+}
+
+.profile-no-reviews {
+    text-align: left;
+}
+
+.review-cards {
+    padding-bottom: 50px;
+}
+
+.review-course-link {
+    text-align: left;
+}
+
+.review-author {
+    display: block;
+    text-align: left;
+}
+
+.review {
+    padding-bottom: 20px;
+    text-align: left;
 }
 
 
@@ -20,7 +66,6 @@ body {
     align-items: center;
     justify-content: center;
     font-size:10vh;
-    font-family: 'Times New Roman', Times, serif;
     min-height:30px;
 }
 
@@ -28,36 +73,16 @@ body {
     color: white;
 }
 
-/*
-.top_bar a {
+.user {
+    font-weight: bold;
+}
+
+.top_bar a, .top_bar .user {
     float: right;
     color: #f2f2f2;
     text-align: center;
-    padding: 1% 1%;
-    padding-left: 3%;
-    padding-right: 3%;
-    text-decoration: none;
-    font-size: 100%;
-    height:100%;
-}
-
-.top_bar a:hover {
-    background-color: #ddd;
-    color: black;
-}
-
-.top_bar a.title {
-    float:left;
-    background-color: #4CAF50;
-    height:100%;
-}
-*/
-
-.top_bar a {
-    float: right;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 1% 1%;
+    padding-top: 1%;
+    padding-bottom: none;
     padding-left: 2%;
     padding-right: 2%;
     position:relative;
@@ -123,16 +148,12 @@ body {
     border-radius: 10px;
 }
 
-.review-author{
-    text-align: center;
-}
-
 .review-title{
     font-weight: bold;
 }
 
 .create-review-title {
-    padding-top: 20px;
+    padding-top: 30px;
 }
 
 .course-page-login {
@@ -140,14 +161,14 @@ body {
     text-decoration: none;
 }
 
-.create-review-title, .create-review-author, label{
+.create-review-title, .create-review-author, label {
     color: white;
     font-size: 40px;
     width: 100%;
     background-color: #111111;
     padding-bottom: 30px;
 }
-.create-review-description{
+.create-review-description {
     color: white;
     font-size: 20px;
     width: 100%;
@@ -156,16 +177,35 @@ body {
     text-align: left;
 }
 
-.rating-text{
+.course-page {
+    padding-bottom: 50px;
+}
+
+.course-page-stars {
+    background-color: #111111;
+    padding-bottom: 20px;
+}
+
+.review-inputs {
+    border-top: 1px solid white;
+    padding-top: 20px;
+}
+
+.status-message {
+    text-align: left;
+}
+
+.rating-text {
     color: gray;
     display: inline-block;
     margin-left: 30px;
 }
-.submit-review{
+
+.submit-review {
     width: 373px;
 }
 
-.title-input{
+.title-input {
     width: 400px;
     border-radius: 10px;
     border: none;
@@ -173,7 +213,7 @@ body {
     margin-bottom: 20px;
 }
 
-.body-input{
+.body-input {
     border-radius: 10px;
     border: none;
     padding: 10px;
