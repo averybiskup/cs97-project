@@ -29,6 +29,7 @@ const handleSubmit = (e, username, password) => {
     }
 }
 
+// Code for analyizing password strength in realtime
 const analyzePassword = (password) => {
 
     if (password.length < 6) {
@@ -76,11 +77,7 @@ const Signup = () => {
 
     if (window.localStorage.getItem('isAuthenticated')) {
         return (
-            <div>
-                <div>You are already signed in.</div>
-                <Link className="home-button" to='/cs97-project/'>Home</Link>
-                <button className='sign-out' onClick={() => signout()}>Sign out</button>
-            </div>
+            window.location = '/cs97-project/'
         )
     }
 
