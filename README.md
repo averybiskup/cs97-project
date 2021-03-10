@@ -6,6 +6,9 @@ Users who create an account can save, add, and rate courses.
 
 ## Demo
 ## Tech/Framework
+* **Node.js**
+* **React**
+
 Package | Usage  
 js-search  
 - for the search bar implementation  
@@ -62,7 +65,6 @@ Review: {
 * [x] saving courses
 * [x] Password strength indicator
 ## Installation
-## API Reference
 ## How to use?
 ## Contributors  
 Harshil Bhullar,  
