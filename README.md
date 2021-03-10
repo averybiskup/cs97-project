@@ -1,8 +1,8 @@
 # CS97 Project- *CourseMe* 
 **Description:**
 For the project we decided on a website application where users can discover 
-computer science courses that are applicable to the fied they want to learn more about. 
-Users who create an account can save, add, and rate courses.  
+computer science courses that are applicable to the field they want to learn more about. 
+Users who create an account can save, add, and rate courses, as well as leave reviews.
 
 ## Demo
 ## Tech/Framework
