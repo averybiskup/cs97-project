@@ -83,7 +83,7 @@ const Signup = () => {
 
     return (
         <div className="signup-page" id="signup-page">
-            <Link className="home-button-signup" to='/cs97-project/'>Home</Link>
+            <Link className="home-button home-button-signup" to='/cs97-project/'>Home</Link>
             <form id='signup' onSubmit={(e) => {
                 handleSubmit(e, username, password)
                 setPassword('')

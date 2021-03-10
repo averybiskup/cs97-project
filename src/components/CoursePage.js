@@ -76,7 +76,7 @@ let CoursePage = (props) => {
     return (
         <div className="course-page">
             {/*Link to Home page*/}
-            <Link className="home-button" to='/cs97-project/'>Home</Link>
+            <Link className="course-page-home-button home-button" to='/cs97-project/'>Home</Link>
             {saveCourseButton}
 
             {/*Display the Title and Author of the course*/}

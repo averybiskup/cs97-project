@@ -46,7 +46,7 @@ const Profile = () => {
 
     return (
         <div>
-            <Link className='home-button-signup' to='/cs97-project/'>Home</Link>
+            <Link className='home-button-profile home-button' to='/cs97-project/'>Home</Link>
             <div>
                 {signoutButton}
                 <div className='profile-top'>

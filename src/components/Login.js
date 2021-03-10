@@ -38,7 +38,7 @@ const Login = () => {
         return (
             <div>
                 <div>You are already signed in.</div>
-                <Link className="home-button-signup" to='/cs97-project/'>Home</Link>
+                <Link className="home-button" to='/cs97-project/'>Home</Link>
                 <button className='sign-out' onClick={() => signout()}>Sign out</button>
             </div>
         )
@@ -49,7 +49,7 @@ const Login = () => {
         //For the login page,
         <div className="login-page">
             {/*Display a Home page link*/}
-            <Link className="home-button-signup" to='/cs97-project/'>Home</Link>
+            <Link className="home-button home-button-signup" to='/cs97-project/'>Home</Link>
 
             <form id='login' onSubmit={(e) => {
                 handleSubmit(e, username, password, browserHistory)

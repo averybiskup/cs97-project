@@ -80,15 +80,35 @@ const CreateReview = (props) => {
 
             {/*The user must fill out 3 inputs: */}
             <div className='review-inputs'>
-                {/*The title of their review*/}
-                <input
-                    type='text'
-                    name='title'
-                    placeholder='title (required)'
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                    className={"title-input"}
-                />
+                <div className='star-title'>
+                    {/*The title of their review*/}
+                    <input
+                        type='text'
+                        name='title'
+                        placeholder='title (required)'
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                        className="title-input"
+                    />
+
+                    {/*And the star rating*/}
+                    <div className='create-star-rating'>
+                    <StarRatings2
+                        rating={rating}
+                        starRatedColor="#3B83EE"
+                        starHoverColor="#3B83EE"
+                        isSelectable={true}
+                        numberOfStars={5}
+                        name='rating'
+                        starDimension="32px"
+                        starSpacing="5px"
+                        changeRating={(rating)=>setRating(rating)}
+                    />
+                    </div>
+
+                    {/*A submit button to submit their review*/}
+                    <input type='submit' value='Submit' className={"submit-review"} />
+                </div>
 
                 {/*The review itself*/}
                 <textarea
@@ -99,23 +119,8 @@ const CreateReview = (props) => {
                     className={"body-input"}
                 />
 
-                {/*And the star rating*/}
-                <div className='create-star-rating'>
-                <StarRatings2
-                    rating={rating}
-                    starRatedColor="#3B83EE"
-                    starHoverColor="#3B83EE"
-                    isSelectable={true}
-                    numberOfStars={5}
-                    name='rating'
-                    starDimension="32px"
-                    starSpacing="5px"
-                    changeRating={(rating)=>setRating(rating)}
-                />
-                </div>
+                
 
-                {/*A submit button to submit their review*/}
-                <input type='submit' value='Submit' className={"submit-review"} />
                 <br/>
             </div>
 
