@@ -29,7 +29,7 @@ react-star-ratings
 - for displaying stars  
 
 
-====================  
+## Code style
 Object models:  
 Course: {  
 - id: int  
