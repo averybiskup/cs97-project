@@ -54,11 +54,17 @@ Review: {
 }
 
 ## Features
+* [x] Display dynamic data to the user: display courses 
+* [x] Upload data from the client to the back-end: username and password
+* [x] Meaningfully search through server-side data: search for courses 
+* [x] Rate courses 
+* [x] Add courses  
+* [x] saving courses
+* [x] Password strength indicator
 ## Installation
 ## API Reference
 ## How to use?
-## Contributors
-Team Members:  
+## Contributors  
 Harshil Bhullar,  
 Dorian Jimenez,  
 Luis Frias,  
