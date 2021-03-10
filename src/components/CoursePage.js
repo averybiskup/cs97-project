@@ -35,11 +35,12 @@ let CoursePage = (props) => {
             const data = await checkSavedCourse(window.localStorage.getItem('username'), current_course['id'])
             setSaved(data)
         }
-
-        checkSaved()
+        
+        if (window.localStorage.getItem('username')) {
+            checkSaved()
+        }
 
     }, [])
-
 
     // Checking that the localStorage has courses
     if (window.localStorage.getItem('courses') === null) {
@@ -53,7 +54,6 @@ let CoursePage = (props) => {
     const username = window.localStorage.getItem('username')
 
     if (username) {
-        console.log(saved)
         createReview = <CreateReview course={current_course} updateMessage={setMessage} />
         if (!saved) {
             saveCourseButton = <button className='save-course' onClick={() => {
@@ -69,7 +69,7 @@ let CoursePage = (props) => {
         <div>
             <Link className="course-page-login" to='/cs97-project/login'>Login to leave a review</Link>
         </div>
-        saveCourseButton = <div className='save-course'>Course Saved</div>
+        saveCourseButton = <div className='save-course'></div>
     }
 
 

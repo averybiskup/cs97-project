@@ -1,19 +1,32 @@
 import { Link } from 'react-router-dom'
+import unsaveCourse from '../helper/unsaveCourse.js'
+import { useState } from 'react'
+import '../style/Profile.css'
 
 let RenderSavedCourses = (props) => {
 
-    // Turning object with reviews, into list of reviews
-    Object.entries(props.courses).map((arr) => {
-        console.log(arr[0], arr[1])
-    })
+    if (!props.courses) {
+        return (
+            <div>No saved courses</div>
+        )
+    }
 
     return (
         <div className='saved-course-list'>
             Saved Courses:
             {Object.entries(props.courses).map((arr) => {
-                return <div  key={arr[0]}>
-                    <Link className='single-saved-course' to={'/cs97-project/course/' + arr[0]}>{arr[1]}</Link>                    
-                </div>
+                if (arr[1] != null) {
+                    return <div key={arr[0]} id='profile-course'>
+                        <button type='button' className='remove-button' onClick={() => {
+                            unsaveCourse(window.localStorage.getItem('username'), arr[0])
+                                .then(() => {
+                                    document.getElementById('profile-course').style.display = 'none';
+                                })
+                        }}>x</button>
+
+                        <Link className='single-saved-course' to={'/cs97-project/course/' + arr[0]}>{arr[1]}</Link>
+                    </div>
+                }
                 
             })} 
         </div>

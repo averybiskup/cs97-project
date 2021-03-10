@@ -1,0 +1,6 @@
+.remove-button {
+    border: none;
+    background-color: inherit;
+    color: #111111;
+    cursor: pointer;
+}

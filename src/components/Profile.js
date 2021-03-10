@@ -6,6 +6,7 @@ import UserRenderReviews from './UserRenderReviews.js'
 import UserReviewCard from './UserReviewCard.js'
 import { useState, useEffect } from 'react'
 import RenderSavedCourses from './RenderSavedCourses.js'
+import '../style/Profile.css'
 
 
 const loggedInUser = localStorage.getItem('username')
@@ -53,7 +54,7 @@ const Profile = () => {
                     <div className='profile-date'>Joined: {userInfo.joined}</div>
                 </div>
                 <div className='saved-courses'>
-                    <RenderSavedCourses courses={userInfo.saved_courses} />
+                    <RenderSavedCourses courses={userInfo.saved_courses}/>
                 </div>
                 <div className='review-cards'>
                     <UserRenderReviews reviews={userInfo.reviews} />

@@ -281,6 +281,24 @@ app.post('/savecourse', (req, res) => {
     });
 })
 
+const unsaveCourse = (user_name, course_id) => {
+    dataRef.child('users').child(user_name).child('saved_courses').child(course_id).remove()
+        .then(() => {
+            console.log(course_id, ' - Deleted')
+            return true
+        })
+        .catch((err) => {
+            console.log(err)
+            return false
+        })
+}
+
+app.post('/unsavecourse', (req, res) => {
+    console.log('Deleting course: ', req.body.course_id)
+    const deleted = unsaveCourse(req.body.user_name, req.body.course_id)
+    res.send(deleted ? 200 : 500)
+})
+
 app.post('/checksavedcourse', (req, res) => {
     console.log('Checking saved courses')
     console.log(req.body.user_name, req.body.course_id)
