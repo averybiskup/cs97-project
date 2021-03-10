@@ -38,8 +38,10 @@ const Profile = () => {
 
     // Making sure the user is signed in and matches the profile to display the signout button
     let signoutButton;
+    let myProfile = false
     if (window.localStorage.getItem('username') == userInfo.username) {
         signoutButton = <button className='profile-logout' type='button' onClick={() => signout()}>Sign out</button>
+        myProfile = true
     } else {
         signoutButton = <div></div>
     }
@@ -54,7 +56,7 @@ const Profile = () => {
                     <div className='profile-date'>Joined: {userInfo.joined}</div>
                 </div>
                 <div className='saved-courses'>
-                    <RenderSavedCourses courses={userInfo.saved_courses}/>
+                    <RenderSavedCourses courses={userInfo.saved_courses} myProfile={myProfile}/>
                 </div>
                 <div className='review-cards'>
                     <UserRenderReviews reviews={userInfo.reviews} />
