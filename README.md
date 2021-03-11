@@ -5,6 +5,14 @@ computer science courses that are applicable to the field they want to learn mor
 Users who create an account can save, add, and rate courses, as well as leave reviews.
 
 ## Demo
+Here's a Demo each gif covers a portion of our features:
+
+![](https://i.imgur.com/cBH4hlu.gif)
+
+![](https://i.imgur.com/0I0JrV2.gif)
+
+![](https://i.imgur.com/BvTwm1z.gif)
+
 ## Tech/Framework
 * **Node.js**
 * **React**
@@ -61,9 +69,9 @@ Review: {
 * [x] Upload data from the client to the back-end: username and password
 * [x] Meaningfully search through server-side data: search for courses 
 * [x] Rate courses 
-* [x] Add courses  
-* [x] saving courses
+* [x] saving courses to profile
 * [x] Password strength indicator
+* [x] saving reviews left to your profile
 ## Installation
 ## How to use?
 ## Contributors  
