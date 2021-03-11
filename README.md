@@ -5,13 +5,21 @@ computer science courses that are applicable to the field they want to learn mor
 Users who create an account can save, add, and rate courses, as well as leave reviews.
 
 ## Demo
-Here's a Demo each gif covers a portion of our features:
+**Login and Sign Up**
 
-![](https://i.imgur.com/cBH4hlu.gif)
+* ![](https://i.imgur.com/cBH4hlu.gif)
 
-![](https://i.imgur.com/0I0JrV2.gif)
+**Course Search and Course View**
 
-![](https://i.imgur.com/BvTwm1z.gif)
+* ![](https://i.imgur.com/0I0JrV2.gif)
+
+**Adding Reviews and Saving Courses**
+
+* ![](https://i.imgur.com/BvTwm1z.gif)
+
+**Profile View and Removing Courses**
+
+*![](https://i.imgur.com/v8rogjZ.gif)
 
 ## Tech/Framework
 * **Node.js**
