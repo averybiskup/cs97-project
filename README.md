@@ -19,7 +19,7 @@ Users who create an account can save, add, and rate courses, as well as leave re
 
 **Profile View and Removing Courses**
 
-*![](https://i.imgur.com/v8rogjZ.gif)
+* ![](https://i.imgur.com/v8rogjZ.gif)
 
 ## Tech/Framework
 * **Node.js**
