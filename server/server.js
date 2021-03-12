@@ -57,6 +57,7 @@ const addUser = (username, hash, callback) => {
     dataRef.child('users').child(username).set(newUser, (error) => {
         if (error) {
             console.log('User sign up error')
+            
         } else {
             callback()
             console.log('User sign up succesful')
@@ -314,10 +315,5 @@ app.post('/checksavedcourse', (req, res) => {
 
 console.log('Listening on: localhost:' + PORT)
 app.listen(PORT)
-
-
-
-
-
 
 

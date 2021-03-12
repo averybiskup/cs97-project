@@ -7,6 +7,9 @@ let add = () => {
     axios.get('/api/addcourse')
 }
 
+// This was an internal function that we used to add a course
+// Users won't use this, but eventually we want to allow them to add their own
+// courses
 const AddCourse = () => {
     return (
         <div>

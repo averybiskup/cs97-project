@@ -1,3 +1,5 @@
+// Component for Signup page
+
 import '../style/App.css'
 import '../style/login.css'
 import { useState, useEffect } from 'react'
@@ -82,8 +84,8 @@ const Signup = () => {
     }
 
     return (
-        <div className="signup-page" id="signup-page">
-            <Link className="home-button home-button-signup" to='/cs97-project/'>Home</Link>
+        <div className='signup-page' id='signup-page'>
+            <Link className='home-button home-button-signup' to='/cs97-project/'>Home</Link>
             <form id='signup' onSubmit={(e) => {
                 handleSubmit(e, username, password)
                 setPassword('')
@@ -98,7 +100,7 @@ const Signup = () => {
                 <div className='hello'>Welcome, <span className='hello-name'>{username}</span></div>
                 <input className='login-button' type='submit' value='sign up' />
                 <div className='login-extra-buttons'>
-                    <Link className="login" to='/cs97-project/login'>or login</Link>
+                    <Link className='login' to='/cs97-project/login'>or login</Link>
                 </div>
             </div>
             </form>

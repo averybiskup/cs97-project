@@ -1,4 +1,6 @@
 // Function for getting courses, later this will fetch from server
+// This was the test data we were using at the beginning before we had the
+// server up
 
 const testpara = "This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!This is a great course!"
 

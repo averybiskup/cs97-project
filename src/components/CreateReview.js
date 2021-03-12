@@ -1,6 +1,5 @@
 // Component for the input section of the reviews page
 
-
 import '../style/App.css'
 import { useState } from 'react'
 import postReview from '../helper/postReview.js'
@@ -88,26 +87,26 @@ const CreateReview = (props) => {
                         placeholder='title (required)'
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
-                        className="title-input"
+                        className='title-input'
                     />
 
                     {/*And the star rating*/}
                     <div className='create-star-rating'>
                     <StarRatings2
                         rating={rating}
-                        starRatedColor="#3B83EE"
-                        starHoverColor="#3B83EE"
+                        starRatedColor='#3B83EE'
+                        starHoverColor='#3B83EE'
                         isSelectable={true}
                         numberOfStars={5}
                         name='rating'
-                        starDimension="32px"
-                        starSpacing="5px"
+                        starDimension='32px'
+                        starSpacing='5px'
                         changeRating={(rating)=>setRating(rating)}
                     />
                     </div>
 
                     {/*A submit button to submit their review*/}
-                    <input type='submit' value='Submit' className={"submit-review"} />
+                    <input type='submit' value='Submit' className={'submit-review'} />
                 </div>
 
                 {/*The review itself*/}
@@ -116,7 +115,7 @@ const CreateReview = (props) => {
                     name='body'
                     placeholder='review (required)'
                     value={body} onChange={(e) => setBody(e.target.value)}
-                    className={"body-input"}
+                    className={'body-input'}
                 />
 
                 

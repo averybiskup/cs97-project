@@ -1,3 +1,5 @@
+// Function for getting which courses the user has saved
+
 import axios from 'axios'
 
 const checkSavedCourse = async (user_name, course_id) => {
@@ -8,10 +10,10 @@ const checkSavedCourse = async (user_name, course_id) => {
         'user_name': user_name,
     }
 
-    // Turning review into a string to post iit
+    // Turning review into a string to post it
     const json = JSON.stringify(save)
 
-    console.log('Posting review')
+    // Posting to server
     const p = await axios.post('/checksavedcourse', json, { headers: { 'Content-Type': 'application/json' }}) 
         .then((res) => {
             return res.data

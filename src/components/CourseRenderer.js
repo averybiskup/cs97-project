@@ -31,8 +31,7 @@ const filterCourses = (courses, query) => {
     })
 };
 
-
-
+// This is the component that renders the courses on the home page
 const CourseRenderer = (props) => {
     const [query, setQuery] = useState('');
     const coursesObj = props.courses
@@ -64,21 +63,21 @@ const CourseRenderer = (props) => {
         <div>
             {/*For the top bar, display the loginButton (which we assigned as Login or Sign Out above), the Course Title
                and the Profile button IF the user is logged in*/}
-            <div className="top-bar">
+            <div className='top-bar'>
                 <div className='user'>{window.localStorage.getItem('username')}</div>
                 {loginButton}
-                <Link to='/cs97-project' className="title">CourseMe</Link>
+                <Link to='/cs97-project' className='title'>CourseMe</Link>
                 {isLoggedIn && <Link to={loginRoute}>Profile</Link>}
             </div>
 
             {/*For the middle of the page we have a Search Bar, which users can use to search for courses*/}
-            <div className="middle-page">
+            <div className='middle-page'>
                 <br></br>
-                <input type="text"  className="middle-input" id="course-search" placeholder="Search for Course..." name="s" onChange={e => setQuery(e.target.value)}/>
+                <input type='text'  className='middle-input' id='course-search' placeholder='Search for Course...' name='s' onChange={e => setQuery(e.target.value)}/>
             </div>
             
             {/*The rest of the page is dedicated to the CourseCards, which displays the course title, author, and rating*/}
-            <div id="wrapper">
+            <div id='wrapper'>
                 {filteredCourses.map(course => (
                      <CourseCard key={course.id} name={course.title} author={course.author} rating={course.course_rating} course_id={course.id} num_reviews={course.reviews} />
                      

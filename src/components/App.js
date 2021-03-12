@@ -28,9 +28,10 @@ const App = () => {
         return <div body></div>
     }
 
+    // Returning the CourseRenderer to render the courses on the page
     return (
-        <div className="App">
-          <header className="App-header">
+        <div className='App'>
+          <header className='App-header'>
             <CourseRenderer courses={courses} />
           </header>
         </div>

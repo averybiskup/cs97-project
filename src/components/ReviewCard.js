@@ -1,11 +1,10 @@
+// Component for each review
+
 import '../style/ReviewCard.css';
 import StarRatings from 'react-star-ratings';
 import { Link } from 'react-router-dom'
 
 let ReviewCard = (props) => {
-    // props.review.rating is already a number
-    // test with typeof
-    // console.log("rating type: ",typeof props.review.rating);
 
     // get first letter of string of Author
     let firstLet = props.review.author.charAt(0);
@@ -17,11 +16,11 @@ let ReviewCard = (props) => {
                 <div className='star-container'>
                     <StarRatings
                     rating={Number(props.review.rating)}
-                    starRatedColor="#3B83EE"
+                    starRatedColor='#3B83EE'
                     numberOfStars={5}
                     name='rating'
-                    starDimension="16px"
-                    starSpacing="1px"
+                    starDimension='16px'
+                    starSpacing='1px'
                     />
 
 

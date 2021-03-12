@@ -1,3 +1,6 @@
+// This was a file included by the boilerplate we used,
+// Nothing of interest here
+
 import { render, screen } from '@testing-library/react';
 import App from './App';
 

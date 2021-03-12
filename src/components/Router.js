@@ -18,7 +18,7 @@ import {
 let MainRouter = () => {
 
     return (
-        <div className="Router">
+        <div className='Router'>
             <Router>
                 <Switch>
                     <Route exact path='/cs97-project/' component={ App } />

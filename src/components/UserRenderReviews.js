@@ -1,3 +1,5 @@
+// Component for rendering reviews of the user on their profile page
+
 import UserReviewCard from './UserReviewCard.js'
 import getUserInfo from '../helper/getUserInfo.js'
 import { useState, useEffect } from 'react'
@@ -22,7 +24,7 @@ let UserRenderReviews = (props) => {
     })
     
     return (
-        <div className="reviews">
+        <div className='reviews'>
             {reviewsList.map((review) => {
                 return <UserReviewCard key={review.id} review={review}/>
             })}

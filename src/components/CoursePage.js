@@ -1,7 +1,7 @@
 // Component for each course
-// Will also have components:
+// This is where users can leave reviews, and save courses  
 
-import { useLocation, Link } from "react-router-dom"
+import { useLocation, Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import '../style/App.css'
 import getCourses from '../helper/getCourses.js'
@@ -20,7 +20,6 @@ let CoursePage = (props) => {
     const url_param = location.pathname.split('/')[location.pathname.split('/').length - 1]
     const courses = JSON.parse(window.localStorage.getItem('courses'))
     const current_course = courses[url_param]
-    console.log("courses",courses)
 
     // This allows us to rerender dom from child component
     const [message, setMessage] = useState('')
@@ -53,8 +52,15 @@ let CoursePage = (props) => {
 
     const username = window.localStorage.getItem('username')
 
+    // Making sure the user is logged in
+    // If they aren't, we don't allow them to create a review, so we don't
+    // render that part of the page
     if (username) {
+
         createReview = <CreateReview course={current_course} updateMessage={setMessage} />
+
+        // Checking if the user has already saved the course, and displaying
+        // that they have
         if (!saved) {
             saveCourseButton = <button className='save-course' onClick={() => {
                 saveCourse(window.localStorage.getItem('username'), current_course['id'], current_course['title'])
@@ -67,36 +73,36 @@ let CoursePage = (props) => {
     } else {
         createReview = 
         <div>
-            <Link className="course-page-login" to='/cs97-project/login'>Login to leave a review</Link>
+            <Link className='course-page-login' to='/cs97-project/login'>Login to leave a review</Link>
         </div>
         saveCourseButton = <div className='save-course'></div>
     }
 
 
     return (
-        <div className="course-page">
+        <div className='course-page'>
             {/*Link to Home page*/}
-            <Link className="course-page-home-button home-button" to='/cs97-project/'>Home</Link>
+            <Link className='course-page-home-button home-button' to='/cs97-project/'>Home</Link>
             {saveCourseButton}
 
             {/*Display the Title and Author of the course*/}
-            <div className="create-review">
+            <div className='create-review'>
                 <div className = 'create-review-title'> <b>{current_course['title']}</b></div>
                 <div className = 'create-review-author'>Author: {current_course['author']}</div>
                 <div className='course-page-stars'>
                     <StarRatings
                         rating={Number(current_course['course_rating'])}
-                        starRatedColor="#3B83EE"
+                        starRatedColor='#3B83EE'
                         numberOfStars={5}
                         name='rating'
-                        starDimension="20px"
-                        starSpacing="1px"
+                        starDimension='20px'
+                        starSpacing='1px'
                     />
                 </div>
                 <div className='course-link-container'><a className='course-link-review-page' href={current_course.url} target='_blank'>View Course</a></div>
 
                 {/*If the user is logged in, this will display a section for the user to create a review and rate the course
-                   If the user is not logged in, this will display the message "Login to leave a review"*/}
+                   If the user is not logged in, this will display the message 'Login to leave a review'*/}
                 {createReview}
             </div>
             

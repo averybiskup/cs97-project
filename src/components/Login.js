@@ -1,3 +1,5 @@
+// Component for the login page
+
 import '../style/App.css'
 import '../style/login.css'
 import { useState, useEffect } from 'react'
@@ -22,6 +24,7 @@ const handleSubmit = (e, username, password, browserHistory) => {
 
 const Login = () => {
     
+    // Storing user input in the state
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [showPassword, setShowPassword] = useState(false)
@@ -38,7 +41,7 @@ const Login = () => {
         return (
             <div>
                 <div>You are already signed in.</div>
-                <Link className="home-button" to='/cs97-project/'>Home</Link>
+                <Link className='home-button' to='/cs97-project/'>Home</Link>
                 <button className='sign-out' onClick={() => signout()}>Sign out</button>
             </div>
         )
@@ -47,9 +50,9 @@ const Login = () => {
 
     return (
         //For the login page,
-        <div className="login-page">
+        <div className='login-page'>
             {/*Display a Home page link*/}
-            <Link className="home-button home-button-signup" to='/cs97-project/'>Home</Link>
+            <Link className='home-button home-button-signup' to='/cs97-project/'>Home</Link>
 
             <form id='login' onSubmit={(e) => {
                 handleSubmit(e, username, password, browserHistory)
@@ -71,7 +74,7 @@ const Login = () => {
                     <div className='hello'>Welcome back, <span className='hello-name'>{username}</span></div>
                     <input className='login-button' type='submit' value='login' />
                     <div className='login-extra-buttons'>
-                        <Link className="signup" to='/cs97-project/signup'>or sign up</Link>
+                        <Link className='signup' to='/cs97-project/signup'>or sign up</Link>
                     </div>
                 </div>
             </form>

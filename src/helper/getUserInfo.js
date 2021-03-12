@@ -1,3 +1,5 @@
+// Function for getting a user's information
+
 import axios from 'axios';
 
 const getUserInfo = async (user_id) => {

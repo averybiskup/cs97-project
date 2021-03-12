@@ -1,3 +1,5 @@
+// Component for the profile page
+
 import { Link, useLocation } from 'react-router-dom'
 import signout from '../helper/signout.js'
 import loginPost from '../helper/loginPost.js'
@@ -13,12 +15,15 @@ const loggedInUser = localStorage.getItem('username')
 
 const Profile = () => {
 
+    // Storing user data in state
     const [userInfo, setUserInfo] = useState({})
     const [isLoading, setIsLoading] = useState(true)
 
+    // Getting the current user id
     const location = useLocation()
     const url_param = location.pathname.split('/')[location.pathname.split('/').length - 1]
 
+    // Getting the user data
     useEffect(() => {
         const getInfo = async () => {
             const data = await getUserInfo(url_param)
@@ -39,6 +44,8 @@ const Profile = () => {
     // Making sure the user is signed in and matches the profile to display the signout button
     let signoutButton;
     let myProfile = false
+
+    // If the profile is of the current logged in user, display the signout button
     if (window.localStorage.getItem('username') == userInfo.username) {
         signoutButton = <button className='profile-logout' type='button' onClick={() => signout()}>Sign out</button>
         myProfile = true

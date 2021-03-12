@@ -1,7 +1,8 @@
+// Component to render each review
+
 import ReviewCard from './ReviewCard.js'
 
 let RenderReviews = (props) => {
-
 
     // Getting courses object from localStorage
     const courses = JSON.parse(window.localStorage.getItem('courses'))

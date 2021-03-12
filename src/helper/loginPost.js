@@ -1,7 +1,10 @@
+// Function for logging a user in
+
 import axios from 'axios'
 
 const loginPost = async (username, password, browserHistory) => {
 
+    // Passing hash and username
     const data = {
         'username': username,
         'hash': password
@@ -9,10 +12,13 @@ const loginPost = async (username, password, browserHistory) => {
 
     const json = JSON.stringify(data)
 
+    // Posting to server
     const p = await axios.post('/login', json, { headers: { 'Content-Type': 'application/json' }}) 
         .then((res) => {
             console.log(res.status)
             if (res.status == 200) {
+                
+                // Setting local storage to user's info
                 window.localStorage.setItem('isAuthenticated', true)
                 window.localStorage.setItem('username', res.data.username)
                 window.localStorage.setItem('user_id', res.data.id)

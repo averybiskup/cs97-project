@@ -13,7 +13,6 @@ const saveCourse = async (user_name, course_id, course_name) => {
     // Turning review into a string to post iit
     const json = JSON.stringify(save)
 
-    console.log('Posting review')
     const p = await axios.post('/savecourse', json, { headers: { 'Content-Type': 'application/json' }}) 
         .then((res) => {
             console.log(res.status)

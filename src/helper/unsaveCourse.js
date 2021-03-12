@@ -1,3 +1,6 @@
+// Function for unsaving a course, this is called when a user presses
+// the little delete button next to a saved course on their profile
+
 import axios from 'axios'
 
 const unsaveCourse = async (username, course_id) => {
