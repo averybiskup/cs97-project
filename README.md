@@ -80,8 +80,26 @@ Review: {
 * [x] saving courses to profile
 * [x] Password strength indicator
 * [x] saving reviews left to your profile
-## Installation
+
 ## How to use?
+**Clone the git repository**
+
+**run the following shell command in the local repository directory**
+```javascript
+npm install
+```
+**run the following shell command in the server subdirectory of the local repository directory to start the server**
+```javascript
+node server.js
+```
+**run the shell command in the local repository directory to start the client**
+```javascript
+npm start
+```
+**A browser will open to view the local instance of the application**
+
+**NOTE: you need to add the secret.json in the server subdirectory which is obtainable by the repository owner**
+
 ## Contributors  
 Harshil Bhullar,  
 Dorian Jimenez,  
