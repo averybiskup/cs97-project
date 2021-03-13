@@ -5,6 +5,7 @@ import '../style/Profile.css'
 
 const RenderSavedCourses = (props) => {
 
+    {/*If no courses saved*/}
     if (!props.courses) {
         return (
             <div>No saved courses</div>
@@ -13,6 +14,7 @@ const RenderSavedCourses = (props) => {
 
     return (
         <div className='saved-course-list'>
+        {/*Display saved courses if user has saved courses*/}
             Saved Courses:
             {Object.entries(props.courses).map((arr) => {
                 if (arr[1] != null) {

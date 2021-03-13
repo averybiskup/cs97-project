@@ -34,7 +34,7 @@ const Profile = () => {
         getInfo()
     }, [])
 
-    // Make sure the reviews are loaded from database before trying ti display them
+    // Make sure the reviews are loaded from database before trying to display them
     if (isLoading) {
         return (
             <div className='profile-loading'>Loading Reviews</div>
@@ -57,6 +57,7 @@ const Profile = () => {
         <div>
             <Link className='home-button-profile home-button' to='/cs97-project/'>Home</Link>
             <div>
+                {/*Display the signout button, the username, date joined, saved courses, as well as the reviews the user has left*/}
                 {signoutButton}
                 <div className='profile-top'>
                     <div className='profile-name'>{userInfo.username}</div>
