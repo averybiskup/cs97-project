@@ -53,8 +53,8 @@ create-react-app - https://github.com/facebook/create-react-app
 gh-pages - https://github.com/tschaub/gh-pages  
 - for building the static cite
 
-## Code style
-Object models:  
+## Object Models
+
 Course: {  
 - id: int  
 - title: string  
@@ -75,6 +75,15 @@ Review: {
 - rating: int  
 - date: string  
 - course\_name  
+}
+
+User: {  
+- id: int  
+- username: string  
+- password: sha256 hash  
+- date\_joined: string  
+- reviews: object of reviews  
+- saved\_courses: object of course names and ids  
 }
 
 ## Features
