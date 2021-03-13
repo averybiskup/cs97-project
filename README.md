@@ -26,27 +26,32 @@ Users who create an account can save, add, and rate courses, as well as leave re
 * **React**
 
 Package | Usage  
-js-search  
+js-search - https://github.com/bvaughn/js-search  
 - for the search bar implementation  
   
-axios  
+axios - https://github.com/axios/axios  
 - for getting/posting data to the server  
   
-firebase-admin  
+firebase-admin - https://github.com/firebase/firebase-admin-node  
 - for authentication to database  
   
-react-dom-router  
+react-dom-router - https://github.com/ReactTraining/react-router  
 - for routing components  
   
-react  
+react - https://github.com/facebook/react  
 - should be self explanatory  
 
-js-sha256  
+js-sha256 - https://github.com/emn178/js-sha256  
 - for creating the sha hash for passwords  
 
-react-star-ratings  
+react-star-ratings - https://github.com/ekeric13/react-star-ratings  
 - for displaying stars  
 
+create-react-app - https://github.com/facebook/create-react-app  
+- boiler plate
+
+gh-pages - https://github.com/tschaub/gh-pages  
+- for building the static cite
 
 ## Code style
 Object models:  
