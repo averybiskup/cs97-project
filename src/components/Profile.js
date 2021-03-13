@@ -42,7 +42,7 @@ const Profile = () => {
     }
 
     // Making sure the user is signed in and matches the profile to display the signout button
-    let signoutButton;
+    let signoutButton
     let myProfile = false
 
     // If the profile is of the current logged in user, display the signout button

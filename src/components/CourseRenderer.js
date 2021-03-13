@@ -2,7 +2,7 @@
 // Also contains the code for the search bar
 // Uses js-search which is for searching for matches in a list of objects
 
-import {useState} from 'react';
+import {useState} from 'react'
 import CourseCard from './CourseCard.js'
 import * as JsSearch from 'js-search'
 import { Link } from 'react-router-dom'
@@ -27,13 +27,13 @@ const filterCourses = (courses, query) => {
 
     // Returning courses that match the search
     return courses.filter((course) => {
-        return result.includes(course); 
+        return result.includes(course) 
     })
-};
+}
 
 // This is the component that renders the courses on the home page
 const CourseRenderer = (props) => {
-    const [query, setQuery] = useState('');
+    const [query, setQuery] = useState('')
     const coursesObj = props.courses
     const courses = Object.keys(coursesObj).map((id) => {
        return coursesObj[id]
@@ -44,7 +44,7 @@ const CourseRenderer = (props) => {
 
     //For the loginButton, check to see if the user is logged in or not
     let loginButton
-    let isLoggedIn = false;
+    let isLoggedIn = false
     const loginRoute = '/cs97-project/profile/' + window.localStorage.getItem('user_id')
     
     //If user is logged in (isAuthenticated), display Sign Out button

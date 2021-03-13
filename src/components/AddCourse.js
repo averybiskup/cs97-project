@@ -15,7 +15,7 @@ const AddCourse = () => {
         <div>
             <button onClick={() => add()}>add course</button>
         </div>
-    );
+    )
 }
 
-export default AddCourse;
+export default AddCourse

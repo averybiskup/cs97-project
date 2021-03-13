@@ -1,19 +1,19 @@
 // Component for routing. Renders components based on given path.
 
 
-import React from 'react';
-import App from './App.js';
-import CoursePage from './CoursePage.js';
-import AddCourse from './AddCourse.js';
-import Login from './Login.js';
-import Signup from './Signup.js';
-import Profile from './Profile.js';
+import React from 'react'
+import App from './App.js'
+import CoursePage from './CoursePage.js'
+import AddCourse from './AddCourse.js'
+import Login from './Login.js'
+import Signup from './Signup.js'
+import Profile from './Profile.js'
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     Link
-} from 'react-router-dom';
+} from 'react-router-dom'
 
 let MainRouter = () => {
 
@@ -30,7 +30,7 @@ let MainRouter = () => {
                 </Switch>
             </Router>
         </div>
-    );
+    )
 }
 
-export default MainRouter;
+export default MainRouter

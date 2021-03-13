@@ -33,4 +33,4 @@ let UserRenderReviews = (props) => {
 }
 
 
-export default UserRenderReviews;
+export default UserRenderReviews

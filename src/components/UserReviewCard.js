@@ -2,8 +2,8 @@
 // It doesn't need to show the same data as the other review card
 // so we had to make another one
 
-import '../style/ReviewCard.css';
-import StarRatings from 'react-star-ratings';
+import '../style/ReviewCard.css'
+import StarRatings from 'react-star-ratings'
 import { Link } from 'react-router-dom'
 
 let UserReviewCard = (props) => {
@@ -28,7 +28,7 @@ let UserReviewCard = (props) => {
                 <div className='review-date'>{props.review.date}</div>
             </div>
         </div>
-    );
+    )
 }
 
-export default UserReviewCard;
+export default UserReviewCard

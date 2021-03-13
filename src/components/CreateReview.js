@@ -27,7 +27,7 @@ const handleSubmit = (e, course_id, title, body, rating, setMessage, course_name
 
         // change (!author) to (false) for review testing
         if (!author) {
-            alert('You are not signed in');
+            alert('You are not signed in')
 
             window.location.replace('/cs97-project/login')
         } else {
@@ -125,7 +125,7 @@ const CreateReview = (props) => {
 
             </form>
         </div>
-    );
+    )
 }
 
-export default CreateReview;
+export default CreateReview

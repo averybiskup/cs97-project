@@ -6,9 +6,9 @@
 // Link to the course page
 
 
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom'
 import '../style/CourseCard.css'
-import StarRatings from 'react-star-ratings';
+import StarRatings from 'react-star-ratings'
 
 
 
@@ -18,7 +18,7 @@ let CourseCard = (props) => {
     const path_to_course = '/cs97-project/course/' + props.course_id
 
     //Sets the number of reviews for each course
-    let num_reviews;
+    let num_reviews
     if (props.num_reviews) {
         num_reviews = Object.keys(props.num_reviews).length
     } else {
@@ -51,7 +51,7 @@ let CourseCard = (props) => {
                 <div className='num-reviews'>({num_reviews})</div>
             </div>
         </div>
-    );
+    )
 }
 
-export default CourseCard;
+export default CourseCard

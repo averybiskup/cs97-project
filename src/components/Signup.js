@@ -19,7 +19,7 @@ const handleSubmit = (e, username, password) => {
     } else {
 
         const check = async (username) => {
-            const data = await checkUser(username);
+            const data = await checkUser(username)
 
             if (!data.data) {
                 addUser(username, sha256(password))
@@ -105,7 +105,7 @@ const Signup = () => {
             </div>
             </form>
         </div>
-    );
+    )
 }
 
 export default Signup

@@ -1,6 +1,6 @@
 // Function for getting a user's information
 
-import axios from 'axios';
+import axios from 'axios'
 
 const getUserInfo = async (user_id) => {
     const data = await axios.get('/getuserinfo/' + user_id)
@@ -13,7 +13,7 @@ const getUserInfo = async (user_id) => {
             console.log(err)
         })
 
-    return data;
+    return data
 
 }
 
