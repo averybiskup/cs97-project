@@ -2,7 +2,7 @@
   "name": "coursereview",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:8000",
+  "proxy": "https://courseme97.herokuapp.com",
   "homepage": "https://averybiskup.github.io/cs97-project",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
