@@ -13,7 +13,7 @@ const loginPost = async (username, password, browserHistory) => {
     const json = JSON.stringify(data)
 
     // Posting to server
-    const p = await axios.post('/login', json, { headers: { 'Content-Type': 'application/json' }}) 
+    const p = await axios.post('https://courseme97.herokuapp.com/login', json, { headers: { 'Content-Type': 'application/json' }}) 
         .then((res) => {
             console.log(res.status)
             if (res.status == 200) {

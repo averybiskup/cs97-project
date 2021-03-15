@@ -13,7 +13,7 @@ const checkUser = async (username) => {
     const json = JSON.stringify(data)
 
     // Getting data from server
-    const p = await axios.get('/checkuser/' + username) 
+    const p = await axios.get('https://courseme97.herokuapp.com/checkuser/' + username) 
         .then((res) => {
             return res
         })

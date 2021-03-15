@@ -12,7 +12,7 @@ const unsaveCourse = async (username, course_id) => {
     
     const json = JSON.stringify(send)
 
-    const p = await axios.post('/unsavecourse', json, { headers: { 'Content-Type': 'application/json' }}) 
+    const p = await axios.post('https://courseme97.herokuapp.com/unsavecourse', json, { headers: { 'Content-Type': 'application/json' }}) 
         .then(res => {
             console.log(res)
         })

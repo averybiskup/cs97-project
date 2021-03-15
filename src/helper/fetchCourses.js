@@ -9,7 +9,7 @@ const fetchCourses = async () => {
 
     // We can use /api/test because we have a proxy in package.json which
     // points to the server address (localhost:8000)
-    const data = await axios.get('/api/getcourses')
+    const data = await axios.get('https://courseme97.herokuapp.com/api/getcourses')
         .then(res => {
             console.log('Got data')
             window.localStorage.setItem('courses', JSON.stringify(res.data))

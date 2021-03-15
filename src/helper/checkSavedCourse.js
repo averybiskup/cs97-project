@@ -14,7 +14,7 @@ const checkSavedCourse = async (user_name, course_id) => {
     const json = JSON.stringify(save)
 
     // Posting to server
-    const p = await axios.post('/checksavedcourse', json, { headers: { 'Content-Type': 'application/json' }}) 
+    const p = await axios.post('https://courseme97.herokuapp.com/checksavedcourse', json, { headers: { 'Content-Type': 'application/json' }}) 
         .then((res) => {
             return res.data
         })

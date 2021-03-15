@@ -14,7 +14,7 @@ const addUser = async (username, password) => {
     const json = JSON.stringify(data)
 
     // Posting to the server
-    const p = await axios.post('/signup', json, { headers: { 'Content-Type': 'application/json' }}) 
+    const p = await axios.post('https://courseme97.herokuapp.com/signup', json, { headers: { 'Content-Type': 'application/json' }}) 
         .then(res => {
             console.log(res.status)
             window.location.replace('/cs97-project/login')

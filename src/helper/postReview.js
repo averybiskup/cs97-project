@@ -24,7 +24,7 @@ const postReview = async (course_id, body, author, title, rating, user_id, cours
     const json = JSON.stringify(review)
 
     console.log('Posting review')
-    const p = await axios.post('/api/postreview', json, { headers: { 'Content-Type': 'application/json' }}) 
+    const p = await axios.post('https://courseme97.herokuapp.com/api/postreview', json, { headers: { 'Content-Type': 'application/json' }}) 
         .then((res) => {
             console.log(res.status)
         })

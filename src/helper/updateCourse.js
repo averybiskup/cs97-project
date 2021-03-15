@@ -19,7 +19,7 @@ const updateCourse = async (course_id, new_rating) => {
     const json = JSON.stringify(info)
 
     console.log('Updating course')
-    const data = await axios.post('/api/updatecourse', json, { headers: { 'Content-Type': 'application/json' }})
+    const data = await axios.post('https://courseme97.herokuapp.com/api/updatecourse', json, { headers: { 'Content-Type': 'application/json' }})
         .then(res => {
             console.log('Course updated')
             return res.data

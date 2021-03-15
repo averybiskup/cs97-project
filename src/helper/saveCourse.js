@@ -13,7 +13,7 @@ const saveCourse = async (user_name, course_id, course_name) => {
     // Turning review into a string to post iit
     const json = JSON.stringify(save)
 
-    const p = await axios.post('/savecourse', json, { headers: { 'Content-Type': 'application/json' }}) 
+    const p = await axios.post('https://courseme97.herokuapp.com/savecourse', json, { headers: { 'Content-Type': 'application/json' }}) 
         .then((res) => {
             console.log(res.status)
         })

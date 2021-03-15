@@ -13,7 +13,7 @@ const fetchReviews = async (course_id) => {
 
     // We can use /api/fetchreviews because we have a proxy in package.json which
     // points to the server address (localhost:8000)
-    const data = await axios.get('/api/fetchreviews/' + course_id)
+    const data = await axios.get('https://courseme97.herokuapp.com/api/fetchreviews/' + course_id)
         .then(res => {
             const courses = JSON.parse(window.localStorage.getItem('courses'))
             courses[course_id] = res.data
