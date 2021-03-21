@@ -17,8 +17,7 @@ const fetchCourses = async () => {
         })
         .catch(err => {
             console.log('Server error')
-            window.localStorage.setItem('courses', JSON.stringify(getCourses()))
-            return getCourses()
+            return false
             
         })
     return data

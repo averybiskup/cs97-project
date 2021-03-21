@@ -17,9 +17,13 @@ const App = () => {
         const grabCourses = async () => {
             const data = await fetchCourses()
             setCourses(data)
-            setLoading(false)
+            console.log(data)
         }
         grabCourses()
+            .then((t) => {
+                console.log('testing', t)
+                setLoading(false)
+            })
 
     }, [])
 
